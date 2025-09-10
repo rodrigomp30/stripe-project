@@ -5,6 +5,8 @@ import logging
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+def new_function():
+    logging.info("New function")
 
 def validate_completeness(engine):
     segment_df = pd.read_csv('segmentation.csv', delimiter=';')
