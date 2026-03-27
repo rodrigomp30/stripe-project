@@ -1,0 +1,386 @@
+﻿Business Questions
+
+
+#
+	Business Question
+	BQ1
+	Are Master Yi players satisfied with how the champion feels after the nerf?
+	BQ2
+	Is the dissatisfaction concentrated in specific player segments (ranked vs casual, skill tiers)?
+	BQ3
+	Which aspect of the nerf is causing the most frustration — early game weakness, scaling, or overall damage output?
+	BQ4
+	How does the nerf affect players' intent to continue playing Master Yi (or League overall)?
+	BQ5
+	What would Master Yi players want changed to make the champion feel better?
+	BQ6
+	Do NON-Master Yi players feel the game is more fair/balanced now?
+	
+
+Survey Questions
+Screening
+Purpose: Separate Master Yi players from non-Master Yi players.
+Optional: Explore other segmentations if needed (Main Master Yi players | Not Main Master Yi players).
+
+
+
+
+Question 1: Do you play as master Yi? (single choice)
+* Yes
+* No
+
+
+Follow-up question:
+* If yes:
+   * Did you play the champion in the patch 15.24? (single choice)
+* Yes
+* No
+
+
+
+
+Question 2: Is Master Yi your main champion? (single choice)
+* Yes – Master Yi is my primary/one-trick champion
+* Somewhat – Yi is one of my top 3 champions
+* No – I play Yi occasionally, but mainly other champions
+
+
+________________
+
+
+
+
+BQ1: Are Master Yi players satisfied with how the champion feels after the nerf?
+Purpose: Determines if the change is a problem at all
+Focus: Sentiment
+
+
+Survey Questions purpose: Understand overall sentiment towards the nerf and the difference in satisfaction with Master Yi compared to the previous patch.
+
+
+
+
+Question 3: How satisfied are you with Master Yi after the Patch 15.24? (single choice)
+* Very dissatisfied (1)
+* Dissatisfied (2)
+* Neutral (3)
+* Satisfied (4)
+* Very satisfied (5)
+
+
+
+
+Type of analysis:
+* Mean overall sentiment: 3/5
+* T2B (Top 2 Box): % selecting 4 or 5 (positive %)
+* B2B (Bottom 2 Box): % selecting 1 or 2 (negative %)
+
+
+Metric: 
+* Mean Satisfaction Score
+* Relative Positive and Negative Sentiment
+
+
+Resolution:
+"Master Yi satisfaction is 2.8/5 with only 32% positive (T2B).”
+
+
+
+
+Question 4: Compared to BEFORE patch 15.24, playing Master Yi feels… (single choice)
+* Much worse
+* Somewhat worse
+* About the same
+* Somewhat better
+* Much better
+
+
+
+
+Type of analysis:
+* T2B (Top 2 Box): % selecting 4 or 5 (positive %)
+* B2B (Bottom 2 Box): % selecting 1 or 2 (negative %)
+
+
+Metric: 
+* Net Score Change
+* Mode (Most Common answer, overall direction of change)
+
+
+Resolution:
+“Net change score is -28% (32% (positive) - 60% (negative)) (more players say 'worse' than 'better')."
+
+
+________________
+
+
+
+
+BQ2: Is the dissatisfaction concentrated in specific player segments (ranked vs casual, skill tiers)?
+Purpose: Helps decide if a universal fix or targeted adjustment is needed
+Focus: Segmentation/Comparison
+
+
+Survey Questions purpose: Get self-reported segmentation if needed (don't have behavioral data to join)
+
+
+
+
+Question 5: What mode do you primarily play Master Yi in? (single choice)
+* Ranked (Solo/Duo or Flex)
+* Normal / Quick Play
+* ARAM / Other modes
+
+
+
+
+Follow-up question:
+* If Ranked:
+   * Question 6: What is your current rank? (single choice)
+* Iron – Silver
+* Gold – Platinum
+* Emerald – Diamond
+* Master+
+
+
+________________
+
+
+
+
+BQ3: Which aspect of the nerf is causing the most frustration — early game weakness, scaling, or overall damage output?
+Purpose: Guides WHERE to make adjustments if needed
+Focus: Sentiment driver
+
+
+Survey Questions purpose: Understand statistically what the sentiment driver is by order of importance.
+
+
+
+
+Question 7: What impacts your satisfaction the MOST and LEAST when playing Master Yi after the changes: (After patch 15.24) (4 sets, two choices)
+
+
+MaxDiff
+	Most
+	Least
+	Base damage in early game
+	* 	* 	Damage scaling into late game
+	* 	* 	Clear speed in jungle
+	* 	* 	Dueling power (1v1)
+	* 	* 	Teamfight effectiveness
+	* 	* 	
+
+
+
+Type of analysis:
+* MaxDiff
+
+
+Metric: 
+* Utility Score
+* Ranking
+* Gaps
+
+
+Resolution:
+"Dueling power (1v1) is the #1 issue driving dissatisfaction, with a utility score of 42 — nearly 3x higher than late-game scaling. If adjustments are made, focus on 1v1 dueling scenarios."
+
+
+________________
+
+
+
+
+BQ4: How does the nerf affect players' intent to continue playing Master Yi (or League overall)?
+Purpose: Measures urgency — is this a retention risk?
+Focus: Intent
+
+
+Survey Questions Purpose: Understand the user's churn risk based on their satisfaction levels. Will the user leave the champion? Will the user leave the game also? 
+
+
+
+
+Question 8: How likely are you to continue playing Master Yi in the current patch? (single choice)
+* Definitely will not (1)
+* Probably will not (2)
+* Might or might not (3)
+* Probably will (4)
+* Definitely will (5)
+
+
+
+
+Follow-up question:
+* If Definitely/Probably will not:
+   * Question 9: If Master Yi stays as is, how likely are you to continue playing League of Legends? (single choice)
+* Definitely will not (1)
+* Probably will not (2)
+* Might or might not (3)
+* Probably will (4)
+* Definitely will (5)
+
+
+Type of analysis:
+* T2B (Top 2 Box): % selecting 4 or 5 (positive %)
+* B2B (Bottom 2 Box): % selecting 1 or 2 (negative %)
+
+
+Metric: 
+* Staying Intent (champion and game)
+* Churn Risk (champion and game)
+
+
+Resolution:
+"24% of Master Yi players are at risk of abandoning the champion, but 82% of those would continue playing League. This is a champion loyalty issue, not a game retention emergency."
+
+
+________________
+
+
+
+
+BQ5: What would Master Yi players want changed to make the champion feel better?
+Purpose: Identifies specific fixes the balance team could consider
+Focus: Qualitative - New themes, Quotas, Insights
+
+
+Survey Question Purpose: Getting insights, themes, and user quotas
+
+
+
+
+Question 10: What, if anything, would you change about Master Yi to improve your experience? (open-ended)
+
+
+
+
+________________
+
+
+
+
+BQ6: Do NON-Master Yi players feel the game is more fair/balanced now?
+Purpose: Ensures we don't revert a change that improved health for the broader playerbase
+Focus: Segmentation/Comparison
+
+
+Survey Question Purpose: Understand the overall sentiment of non-Master Yi players
+
+
+
+
+Follow-up question:
+* If No on Screening
+   * Question 11: How has Master Yi's nerf affected matches when playing against him? (single choice)
+* Matches feel much less fair (1)
+* Matches feel somewhat less fair (2)
+* No change (3)
+* Matches feel somewhat more fair (4)
+* Matches feel much more fair (5)
+* I don't play against Master Yi often (N/A)
+
+
+
+
+Type of analysis:
+* Distribution: % of each response
+* T2B (Top 2 Box): % selecting 4 or 5 (positive %)
+* B2B (Bottom 2 Box): % selecting 1 or 2 (negative %)
+
+
+Metric: 
+* Net Fairness Score
+* Mode (Most Common answer, overall direction of fairness)
+
+
+Resolution:
+"49% of non-Yi players feel matches are MORE fair after the nerf, vs 23% who feel LESS fair (Net: +26%). The nerf improved perceived game health for the broader playerbase."
+
+
+
+
+Data Quality Ensurance
+Rules
+
+
+Quality Issue
+	Detection Method
+	Threshold
+	Action
+	Incomplete
+	questions_answered / total
+	< 50%
+	Remove
+	Speeder
+	completion_time_seconds
+	< 2 min
+	Remove
+	Failed attention
+	attention_check_response
+	≠ continue
+	Remove
+	Duplicate
+	COUNT(player_id)
+	> 1
+	Keep first
+	
+
+Sample Size
+* Rule of thumb: 500 responses per segment ensures complex analysis that needs statistical significance. (minimum is 100)
+   * Yi players = 500
+   * Non-Yi players = 500
+   * Mode (Ranked/normal) = 1000
+   * Tier (Iron-Silver, Gold-Platinum, Emerald-Diamond, Master+) = 2000
+   * Experience as Yi (Main/not main) = 1000
+
+
+Considering:
+* The response amount needed for each segment (and the minimum)
+* The population Distribution
+* The loss after cleaning: 15% of the responses
+* Sending method: Email (12% response rate)
+
+
+Calculation: (Always based on the smallest segment)
+
+
+Target: 150 clean Master+ responses
+Master+ population: 3%
+
+
+Step 1: Clean responses needed (to get 150 responses, with a 3% population size)
+        150 ÷ 0.03 = 5,000 clean total
+
+
+Step 2: Add 15% cleaning buffer
+        5,000 ÷ 0.85 = 5,882 raw responses
+
+
+Step 3: Email send volume (at 6% response rate benchmark)
+        5,882 ÷ 0.06 = ~98,000 emails
+
+
+Total minimum: 100k emails sent - 6% response rate, 6000 responses
+
+
+
+
+Representativeness Ensurance
+
+
+1. Understand Population distribution
+2. Ensure proper sample size
+3. Set up quotas for each population segment (region, platform, gender, etc.)
+4. Mid-Survey Check
+   1. Send reminders if necessary (Focus on the segment with a deficit)
+
+
+Summary
+
+
+Product
+
+
+Marketing

@@ -1,0 +1,531 @@
+================================================================================
+RESEARCH: ACQUISITION CHANNEL OPTIMIZATION
+Agendor (Brazilian B2B CRM)
+================================================================================
+
+BUSINESS CONTEXT
+────────────────────────────────────────────────────────────────────────────────
+
+Company: Agendor — CRM for small/medium sales teams in Brazil
+Challenge: Marketing needed to optimize acquisition spend across channels
+My Role: Data Analyst supporting Marketing team
+
+STAKEHOLDER REQUEST:
+"We're spending across Google Ads, LinkedIn, organic content, and referrals.
+We don't know which channel brings the best customers or what messaging 
+resonates. Help us understand where to double down."
+
+================================================================================
+STAGE 1: REQUEST — UNDERSTANDING REQUIREMENTS
+================================================================================
+
+INTAKE QUESTIONS & ANSWERS:
+─────────────────────────────────────────────────────────────────────────────────
+
+Q: "What decision will this research inform?"
+A: "Budget allocation for next quarter — shift spend to highest-value channels."
+→ Need: ROI-focused analysis, not just volume
+
+Q: "Who will use these results?"
+A: "Marketing Director for budget decisions, Content team for messaging."
+→ Need: Executive summary + actionable messaging insights
+
+Q: "What segments need separate analysis?"
+A: "Company size (1-5, 6-20, 21-50 employees) and industry if possible."
+→ Need: ~200 per company size segment = 600 minimum responses
+
+Q: "Is this one-time or ongoing?"
+A: "One-time for quarterly planning, but might become a tracker."
+→ Deliverable: Static report + presentation, dashboard optional
+
+RESEARCH QUESTIONS:
+─────────────────────────────────────────────────────────────────────────────────
+
+RQ1: Which acquisition channel delivers the highest-quality customers?
+RQ2: What messaging/value proposition resonates most by segment?
+RQ3: What is the ideal timing and touchpoint sequence for conversion?
+
+================================================================================
+STAGE 2: DESIGN — METHODOLOGY
+================================================================================
+
+APPROACH:
+Survey customers who converted in the last 90 days, combining self-reported
+discovery channel with behavioral data from product database.
+
+TARGET POPULATION:
+- Users who signed up in last 12 months
+- Paid customers OR active trial users (7+ days in trial)
+- Logged in at least 3x in last 30 days
+
+SAMPLE SIZE CALCULATION (500-per-segment rule):
+─────────────────────────────────────────────────────────────────────────────────
+
+Segments: 3 company sizes (1-5, 6-20, 21-50 employees)
+Smallest segment: 21-50 employees (~20% of customer base)
+
+Calculation:
+  500 / 0.20 = 2,500 clean responses needed (ideal)
+  Target 1,000+ clean to match large-scale research standards
+  
+Available population:
+  - Paid customers (12 months): ~4,500
+  - Active trial users (12 months): ~12,000
+  - Total eligible: ~16,500 users
+  
+Expected yield:
+  - Email response rate: 25% → 4,125 raw responses
+  - Clean rate: 85% → 3,506 clean responses ✓
+  
+→ Large-scale research: 3,500+ clean responses
+→ All segments will have n > 500 for robust subgroup analysis
+
+================================================================================
+STAGE 3: BUILD — SURVEY DESIGN
+================================================================================
+
+TOOL: SurveyMonkey (Pro plan)
+
+SURVEY STRUCTURE (10 questions, ~5 minutes):
+─────────────────────────────────────────────────────────────────────────────────
+
+SECTION 1: DISCOVERY (RQ1 - Channel Attribution)
+
+Q1. How did you first hear about Agendor? [Single choice]
+    □ Google search
+    □ LinkedIn (ad or post)
+    □ Blog article / SEO content
+    □ Referral from colleague/friend
+    □ Industry event / webinar
+    □ Other: _______
+
+Q2. Before signing up, which of these did you interact with? [Multi-select]
+    □ Visited website multiple times
+    □ Read blog articles
+    □ Downloaded an ebook/guide
+    □ Watched a demo video
+    □ Talked to sales rep
+    □ Saw customer testimonials
+    □ None of these
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 2: MESSAGING (RQ2 - Value Proposition)
+
+Q3. What was the #1 reason you decided to try Agendor? [Single choice]
+    □ Easy to use / simple interface
+    □ Price / affordability
+    □ Mobile app for field sales
+    □ Integration with WhatsApp
+    □ Recommended by someone I trust
+    □ Brazilian company / local support
+    □ Other: _______
+
+Q4. How appealing is each message? Rate 1-5 (1=Not at all, 5=Extremely)
+    [Rating matrix - rows are messages, columns are 1-5 scale]
+    
+    - "Close more deals with less effort"
+    - "CRM that your team will actually use"
+    - "Built for Brazilian sales teams"
+    - "See all your pipeline in one place"
+    - "Free forever for small teams"
+    - "Mobile-first for field sales"
+    - "Integrates with WhatsApp and email"
+    - "Start selling more in 5 minutes"
+
+Q5. ATTENTION CHECK: Please select "Agree" for this question. [5-point scale]
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 3: TIMING & OBJECTIONS (RQ3 - Conversion Journey)
+
+Q6. How long did you evaluate CRM options before choosing Agendor? [Single]
+    □ Same day (impulse)
+    □ 1-7 days
+    □ 1-4 weeks
+    □ 1-3 months
+    □ More than 3 months
+
+Q7. What almost stopped you from signing up? [Multi-select]
+    □ Wasn't sure if team would adopt it
+    □ Concerned about price
+    □ Needed approval from boss
+    □ Wasn't sure about data migration
+    □ Wanted to compare more options
+    □ Nothing — decision was easy
+    □ Other: _______
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 4: SATISFACTION & CLOSE
+
+Q8. How likely are you to recommend Agendor to a colleague? [0-10 NPS]
+
+Q9. What would make Agendor even better for you? [Open text, optional]
+
+Q10. May we follow up for a brief interview? [Yes/No + email if yes]
+
+────────────────────────────────────────────────────────────────────────────────
+METHODOLOGY NOTE:
+─────────────────────────────────────────────────────────────────────────────────
+
+Why rating scales instead of MaxDiff for messaging?
+- Prioritized response rate over methodological complexity
+- Rating matrix gives directional preference with lower cognitive load
+- MaxDiff would add 2-3 minutes, reducing completion rate
+- For this decision (budget allocation), directional insights were sufficient
+
+Trade-off acknowledged: Rating scales can suffer from scale bias (everyone 
+rates high). Mitigated by looking at RELATIVE rankings, not absolute scores.
+
+FIRMOGRAPHICS NOTE: Company size and industry pulled from database 
+(not self-reported) to reduce survey length and improve accuracy.
+
+================================================================================
+STAGE 4: DISTRIBUTE
+================================================================================
+
+TOOL: SurveyMonkey (email distribution)
+
+DISTRIBUTION STRATEGY:
+─────────────────────────────────────────────────────────────────────────────────
+
+Channel: Email with personalized survey link (SurveyMonkey collector)
+Timing: Sent on Tuesday 10am (highest open rates for B2B)
+Incentive: Entry into R$500 iFood voucher raffle
+Subject line: "Quick question about your Agendor experience (2 min)"
+
+Why email instead of in-app (Intercom)?
+- Survey has 10 questions (~5 min) — too long for in-app interruption
+- Email allows respondent to choose when to complete
+- Higher quality responses (dedicated attention vs. multitasking)
+- Trade-off: Lower response rate (20-25% vs 40% in-app)
+
+TARGETING QUERY (PostgreSQL):
+─────────────────────────────────────────────────────────────────────────────────
+
+SELECT 
+    u.user_id,
+    u.email,
+    u.company_size,
+    u.signup_date,
+    u.acquisition_source,  -- UTM captured at signup
+    u.subscription_status,
+    COUNT(d.deal_id) as deals_logged
+FROM users u
+LEFT JOIN deals d ON u.user_id = d.user_id
+WHERE 
+    u.signup_date >= CURRENT_DATE - INTERVAL '12 months'
+    AND (
+        u.subscription_status = 'paid'
+        OR (u.subscription_status = 'trial' AND u.trial_days_active >= 7)
+    )
+    AND u.last_login >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY u.user_id, u.email, u.company_size, u.signup_date, 
+         u.acquisition_source, u.subscription_status
+HAVING COUNT(d.deal_id) >= 1 OR u.subscription_status = 'trial';
+
+-- Result: 16,482 eligible users
+
+REPRESENTATIVENESS CHECK (before sending):
+─────────────────────────────────────────────────────────────────────────────────
+
+SELECT 
+    company_size,
+    COUNT(*) as count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 1) as pct
+FROM survey_targets
+GROUP BY company_size;
+
+-- Result:
+-- 1-5 employees:   8,076 (49%)
+-- 6-20 employees:  5,109 (31%)
+-- 21-50 employees: 3,297 (20%)
+
+→ Smallest segment (21-50) has 3,297 targets
+→ At 25% response × 85% clean: ~700 clean responses for smallest segment ✓
+→ All segments will exceed 500+ threshold for robust subgroup analysis
+
+================================================================================
+STAGE 5: COLLECT
+================================================================================
+
+MONITORING (14 days):
+─────────────────────────────────────────────────────────────────────────────────
+
+Day 1:  1,012 responses (6% response rate) — initial send
+Day 3:  2,143 responses (13% response rate)
+Day 5:  2,967 responses (18% response rate) — sent reminder email
+Day 7:  3,461 responses (21% response rate)
+Day 10: 3,872 responses (23% response rate)
+Day 14: 4,121 responses (25% response rate) — closed survey
+
+EMAIL METRICS:
+─────────────────────────────────────────────────────────────────────────────────
+• Open rate: 47% (7,747 opened)
+• Click-to-open rate: 53% (4,121 started survey)
+• Completion rate: 86% (3,544 completed)
+
+RESPONSE RATE BY SEGMENT:
+─────────────────────────────────────────────────────────────────────────────────
+
+Company Size     | Sent   | Responses | Rate
+───────────────────────────────────────────
+1-5 employees    |  8,076 | 2,099     | 26%
+6-20 employees   |  5,109 | 1,226     | 24%
+21-50 employees  |  3,297 |   796     | 24%
+───────────────────────────────────────────
+TOTAL            | 16,482 | 4,121     | 25%
+
+✓ Response rates consistent across segments (no major bias detected)
+✓ Large-scale research: 4,000+ raw responses
+
+================================================================================
+STAGE 6: CLEAN — DATA QUALITY
+================================================================================
+
+CLEANING STEPS:
+─────────────────────────────────────────────────────────────────────────────────
+
+Step 1: Remove incomplete responses (<80% completion)
+        → Removed: 276 responses (6.7%)
+        → Remaining: 3,845
+
+Step 2: Remove speeders (completion time <60 seconds for 10 questions)
+        → Removed: 96 responses (2.5%)
+        → Remaining: 3,749
+
+Step 3: Remove failed attention check (Q5 ≠ "Agree")
+        → Removed: 150 responses (4.0%)
+        → Remaining: 3,599
+
+Step 4: Remove straight-liners (zero variance on Q4 rating matrix)
+        → Removed: 58 responses (1.6%)
+        → Remaining: 3,541
+
+Step 5: Validate against database (cross-check behavioral data)
+        → Mismatches flagged: 43 (kept but noted)
+        → Final adjustment: none removed
+
+FINAL CLEAN SAMPLE: 3,541 responses (85.9% clean rate)
+
+CLEAN SAMPLE BY SEGMENT:
+─────────────────────────────────────────────────────────────────────────────────
+
+Company Size     | Clean n | Margin of Error (95% CI)
+──────────────────────────────────────────────────────
+1-5 employees    | 1,795   | ±2.3%
+6-20 employees   | 1,055   | ±3.0%
+21-50 employees  |   691   | ±3.7%
+──────────────────────────────────────────────────────
+TOTAL            | 3,541   | ±1.6%
+
+✓ All segments exceed 500+ threshold for robust subgroup analysis
+✓ Large-scale research: 3,500+ clean responses
+
+================================================================================
+STAGE 7: ANALYZE
+================================================================================
+
+RQ1: WHICH CHANNEL DELIVERS HIGHEST-QUALITY CUSTOMERS?
+─────────────────────────────────────────────────────────────────────────────────
+
+Method: Cross-tabulate discovery channel × customer quality metrics (from DB)
+
+Discovery Channel Analysis:
+─────────────────────────────────────────────────────────────────────────────────
+                          │ Survey % │ Avg Deal │ 30-Day    │ Quality
+Channel                   │ (n=3,541)│ Value    │ Retention │ Score*
+─────────────────────────────────────────────────────────────────────
+Referral                  │ 24%      │ R$2,840  │ 94%       │ HIGH
+Google Search (branded)   │ 19%      │ R$2,150  │ 88%       │ HIGH
+Blog / SEO content        │ 18%      │ R$1,920  │ 85%       │ MEDIUM
+LinkedIn                  │ 15%      │ R$1,680  │ 79%       │ MEDIUM
+Google Search (generic)   │ 14%      │ R$1,450  │ 72%       │ LOW
+Event / Webinar           │ 7%       │ R$2,680  │ 91%       │ HIGH
+Other                     │ 3%       │ --       │ --        │ --
+─────────────────────────────────────────────────────────────────────
+*Quality Score combines deal value + retention + team adoption rate
+
+KEY FINDING: Referrals and events deliver highest-quality customers 
+but lowest volume. Generic Google search has high volume but low quality.
+
+─────────────────────────────────────────────────────────────────────────────────
+
+RQ2: WHAT MESSAGING RESONATES MOST?
+─────────────────────────────────────────────────────────────────────────────────
+
+Method: Rating scale analysis (1-5 appeal rating per message)
+
+Overall Messaging Preference (n=3,541):
+─────────────────────────────────────────────────────────────────────────────────
+Message                                          │ Avg Rating │ % Top-2 │ Rank
+                                                 │ (1-5)      │ (4 or 5)│
+─────────────────────────────────────────────────────────────────────────────────
+"CRM that your team will actually use"           │ 4.3        │ 78%     │ 1 ★
+"Integrates with WhatsApp and email"             │ 4.1        │ 71%     │ 2
+"See all your pipeline in one place"             │ 3.9        │ 64%     │ 3
+"Mobile-first for field sales"                   │ 3.8        │ 59%     │ 4
+"Start selling more in 5 minutes"                │ 3.6        │ 52%     │ 5
+"Built for Brazilian sales teams"                │ 3.4        │ 45%     │ 6
+"Free forever for small teams"                   │ 3.3        │ 42%     │ 7
+"Close more deals with less effort"              │ 3.1        │ 38%     │ 8
+─────────────────────────────────────────────────────────────────────────────────
+
+Note: Used Top-2 Box (% rating 4 or 5) to differentiate messages, since 
+average ratings can cluster. Top-2 shows clearer separation.
+
+BY SEGMENT (Top message):
+─────────────────────────────────────────────────────────────────────────────────
+1-5 employees:   "Free forever for small teams" (Top-2: 68% vs 42% overall)
+6-20 employees:  "CRM that your team will actually use" (Top-2: 84%)
+21-50 employees: "See all your pipeline in one place" (Top-2: 76%)
+─────────────────────────────────────────────────────────────────────────────────
+
+KEY FINDING: Adoption messaging wins overall, but segment-specific 
+messaging differs significantly. Small teams care about price, 
+larger teams care about visibility and adoption.
+
+─────────────────────────────────────────────────────────────────────────────────
+
+RQ3: CONVERSION JOURNEY TIMING
+─────────────────────────────────────────────────────────────────────────────────
+
+Evaluation Period:
+- Same day: 12%
+- 1-7 days: 34%
+- 1-4 weeks: 38%
+- 1-3 months: 14%
+- 3+ months: 2%
+
+→ 84% decide within 4 weeks. Content strategy should focus on 
+  first-month touchpoints.
+
+Top Objections (what almost stopped signup):
+1. "Wasn't sure if team would adopt it" — 47%
+2. "Wanted to compare more options" — 34%
+3. "Concerned about price" — 28%
+4. "Needed approval from boss" — 22%
+
+→ Objection #1 aligns with winning message ("team will actually use")
+
+================================================================================
+STAGE 8: DELIVER
+================================================================================
+
+DELIVERABLES:
+─────────────────────────────────────────────────────────────────────────────────
+
+1. Executive Summary (1-page PDF)
+   - Key finding in headline
+   - Channel quality ranking
+   - Top 3 messaging recommendations
+   - Budget allocation suggestion
+
+2. Presentation Deck (12 slides)
+   - For Marketing Director to present to leadership
+   - Channel × Quality matrix visualization
+   - Segment-specific messaging recommendations
+
+3. Messaging Cheat Sheet (1-page)
+   - For Content team
+   - Winning messages by segment
+   - Objection-handling talking points
+
+KEY RECOMMENDATIONS:
+─────────────────────────────────────────────────────────────────────────────────
+
+1. CHANNEL ALLOCATION:
+   • Increase referral program investment (highest quality, scalable)
+   • Reduce generic Google Ads spend (high volume, low quality)
+   • Maintain LinkedIn for mid-market (6-20 employee) targeting
+
+2. MESSAGING BY SEGMENT:
+   • Small teams (1-5): Lead with "Free forever" pricing message
+   • Mid-market (6-20): Lead with "Team adoption" message
+   • Larger teams (21-50): Lead with "Pipeline visibility" message
+
+3. CONTENT STRATEGY:
+   • Create adoption-focused content (addresses #1 objection)
+   • Focus nurture sequence on first 4 weeks (84% decide by then)
+   • Build comparison content (addresses #2 objection)
+
+================================================================================
+INTERVIEW TALKING POINTS
+================================================================================
+
+TOOLS USED:
+─────────────────────────────────────────────────────────────────────────────────
+• SurveyMonkey Pro — Survey design, email distribution, response collection
+• PostgreSQL — Targeting query, behavioral data join, validation
+• Excel/Google Sheets — Analysis, cross-tabulation, visualizations
+
+DATA QUALITY MEASURES:
+─────────────────────────────────────────────────────────────────────────────────
+• Attention check question (Q5)
+• Completion time threshold (removed 96 speeders <60 sec)
+• Straight-liner detection (zero variance on rating matrix — removed 58)
+• Database validation (cross-checked firmographics)
+• Clean rate: 85.9% (healthy)
+
+REPRESENTATIVENESS MEASURES:
+─────────────────────────────────────────────────────────────────────────────────
+• Pre-checked segment distribution before sending (49/31/20 split)
+• Response rates consistent across segments (24-26%)
+• All segments exceed 500+ respondents for robust subgroup analysis
+• Overall margin of error: ±1.6%
+
+CONTEXTUALIZED INTERPRETATION:
+─────────────────────────────────────────────────────────────────────────────────
+• Combined survey data (self-reported channel) with database metrics 
+  (deal value, retention) for quality scoring
+• Used Top-2 Box analysis to differentiate messages (not just averages)
+• Segment-level analysis revealed messaging differences hidden in overall data
+• Objection data directly informed messaging strategy (not just preference data)
+
+METHODOLOGY TRADE-OFFS (good to mention in interview):
+─────────────────────────────────────────────────────────────────────────────────
+• Chose rating scales over MaxDiff to keep survey short and response rate high
+• Used email instead of in-app to allow longer, more thoughtful survey
+• Pulled firmographics from database instead of asking (reduced survey length)
+• Included active trial users to reach 1,000+ sample size threshold
+
+================================================================================
+QUESTIONS TO ASK EPIC GAMES TEAM (3-5)
+================================================================================
+
+1. ABOUT THE WORK:
+   "What does a typical research request look like — do they come from 
+   specific product teams, or is there a central intake process?"
+
+2. ABOUT SCALE:
+   "With 5,000+ respondent surveys, what are the biggest challenges 
+   around data quality and cleaning at that scale?"
+
+3. ABOUT INTEGRATION:
+   "How closely do you work with the behavioral analytics team? 
+   Is survey data regularly joined with telemetry, or are they 
+   usually separate workstreams?"
+
+4. ABOUT IMPACT:
+   "Can you share an example of research that directly changed a 
+   game design or product decision?"
+
+5. ABOUT THE TEAM:
+   "What does the peer review process look like for survey design 
+   and insights presentation?"
+
+================================================================================
+QUICK REFERENCE: KEY NUMBERS TO REMEMBER
+================================================================================
+
+• 16,500 users targeted (4.5k paid + 12k active trial)
+• 4,121 raw responses (25% response rate)
+• 3,541 clean responses (86% clean rate)
+• 3 segments analyzed (all with n > 500)
+• 10 survey questions (~5 min completion)
+• 8 messages tested via rating scale
+• 84% of customers decide within 4 weeks
+• #1 objection: "Will my team adopt it?" (47%)
+• #1 message: "CRM that your team will actually use" (78% Top-2 Box)
+• Overall margin of error: ±1.6%
+
+================================================================================
+

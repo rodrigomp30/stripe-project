@@ -1,0 +1,957 @@
+================================================================================
+SURVEY RESEARCH GUIDE FOR GAMING INDUSTRY
+Organized by Stakeholder
+================================================================================
+
+================================================================================
+PRODUCT TEAM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. POST-PATCH / POST-UPDATE SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Measure player reaction to game updates, identify what needs fixing
+
+SIMPLE TECHNIQUES:
+- Likert Scale (1-5 satisfaction)
+- Single-select multiple choice
+- Open-ended text
+
+Example 1:
+"How satisfied are you with the changes in Patch v14.2?"
+○ Very Dissatisfied (1)
+○ Dissatisfied (2)
+○ Neutral (3)
+○ Satisfied (4)
+○ Very Satisfied (5)
+
+Example 2:
+"Which change had the most NEGATIVE impact on your experience?"
+○ Weapon balance changes
+○ Map updates
+○ Matchmaking changes
+○ Building mechanics
+○ None — all changes were positive
+
+ADVANCED TECHNIQUES:
+- MaxDiff (Maximum Difference Scaling)
+- Sentiment analysis on open-text
+
+Example 1 (MaxDiff):
+"Of these patch changes, which had the MOST POSITIVE and MOST NEGATIVE impact?"
+                        MOST NEGATIVE    MOST POSITIVE
+Shotgun damage nerf          ○                ○
+New POI additions            ○                ○
+Vehicle speed buff           ○                ○
+Storm circle changes         ○                ○
+
+Example 2 (Open-text for sentiment analysis):
+"In your own words, what would you change about this update?"
+[Free text response — analyzed for themes and sentiment]
+
+KEY METRICS:
+- Patch Satisfaction Score (1-5 average)
+- % Positive vs Negative sentiment
+- Top issues ranked by MaxDiff importance score
+- Theme frequency from open-text analysis
+
+
+--------------------------------------------------------------------------------
+2. FEATURE/CONTENT FEEDBACK SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Deep-dive into specific features (weapons, modes, maps)
+
+SIMPLE TECHNIQUES:
+- Likert Scale matrix (rate multiple attributes)
+- Binary yes/no questions
+- Ranking questions
+
+Example 1 (Likert Matrix):
+"Rate the Thunder Shotgun on the following:"
+                              Very Poor  Poor  Neutral  Good  Excellent
+Fun to use                        ○       ○       ○       ○       ○
+Balanced vs other weapons         ○       ○       ○       ○       ○
+Sound/visual feedback             ○       ○       ○       ○       ○
+Appropriate for its rarity        ○       ○       ○       ○       ○
+
+Example 2 (Ranking):
+"Rank these shotguns from favorite (1) to least favorite (4):"
+___ Thunder Shotgun
+___ Pump Shotgun
+___ Tactical Shotgun
+___ Auto Shotgun
+
+ADVANCED TECHNIQUES:
+- MaxDiff for feature prioritization
+- Choice-Based Conjoint for trade-off analysis
+
+Example 1 (MaxDiff):
+"Which weapon feature is MOST and LEAST important to your enjoyment?"
+                    LEAST IMPORTANT    MOST IMPORTANT
+Damage per shot           ○                 ○
+Fire rate                 ○                 ○
+Reload speed              ○                 ○
+Accuracy/spread           ○                 ○
+Ammo capacity             ○                 ○
+
+Example 2 (Conjoint):
+"Which weapon configuration would you prefer to use?"
+Option A           Option B           Option C
+High damage        Medium damage      Low damage
+Slow fire rate     Medium fire rate   Fast fire rate
+Small magazine     Medium magazine    Large magazine
+Rare rarity        Epic rarity        Legendary rarity
+    ○                  ○                  ○
+
+KEY METRICS:
+- Feature satisfaction scores (1-5)
+- Attribute importance ranking (MaxDiff utility scores)
+- Part-worth utilities (Conjoint)
+- Optimal feature configuration (Conjoint)
+
+
+--------------------------------------------------------------------------------
+3. CONCEPT TESTING SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Validate new ideas before development investment
+
+SIMPLE TECHNIQUES:
+- Purchase/Use intent scales
+- Likert appeal rating
+- Open-ended pros/cons
+
+Example 1 (Intent Scale):
+"How likely would you be to play this new game mode?"
+○ Definitely would not play
+○ Probably would not play
+○ Might or might not play
+○ Probably would play
+○ Definitely would play
+
+Example 2 (Appeal Rating):
+"How appealing is this concept to you?"
+○ Not at all appealing (1)
+○ Slightly appealing (2)
+○ Moderately appealing (3)
+○ Very appealing (4)
+○ Extremely appealing (5)
+
+ADVANCED TECHNIQUES:
+- Conjoint for concept optimization
+- TURF analysis (Total Unduplicated Reach and Frequency)
+
+Example 1 (Conjoint for new mode):
+"Which game mode would you most want to play?"
+Option A              Option B              Option C
+50 players            100 players           150 players
+Solo only             Duos                  Squads
+Small map             Medium map            Large map
+15 min matches        20 min matches        25 min matches
+    ○                     ○                     ○
+
+Example 2 (TURF - for content bundles):
+"Which of these collaboration themes interest you?" [Select all]
+□ Marvel superheroes
+□ Star Wars characters
+□ Music artists
+□ Sports athletes
+□ Anime characters
+[TURF analysis identifies which combination reaches most players]
+
+KEY METRICS:
+- Top-2-Box Intent Score (% "Probably" + "Definitely" would use)
+- Concept appeal score (1-5)
+- Optimal configuration (Conjoint)
+- Reach percentage (TURF)
+
+
+--------------------------------------------------------------------------------
+4. NEW PLAYER EXPERIENCE (NPE) SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Understand onboarding friction, improve new player retention
+
+SIMPLE TECHNIQUES:
+- Ease of use scales
+- Single-select barriers
+- Task completion questions
+
+Example 1 (Ease Scale):
+"How easy was it to learn how to play Fortnite?"
+○ Very difficult (1)
+○ Difficult (2)
+○ Neither easy nor difficult (3)
+○ Easy (4)
+○ Very easy (5)
+
+Example 2 (Barrier Identification):
+"What was the most confusing part of getting started?"
+○ Understanding the controls
+○ Learning how to build
+○ Knowing where to go on the map
+○ Understanding the objective
+○ Finding matches with similar skill players
+○ Nothing was confusing
+
+ADVANCED TECHNIQUES:
+- Journey mapping questions
+- Sequential experience rating
+
+Example 1 (Journey Mapping):
+"Rate your experience at each stage of your first session:"
+                              Very Poor ←→ Excellent
+Downloading/installing            1  2  3  4  5
+Creating account                  1  2  3  4  5
+Tutorial                          1  2  3  4  5
+First match                       1  2  3  4  5
+Understanding progression         1  2  3  4  5
+
+Example 2 (Moment of Truth):
+"At what point did you feel confident you understood how to play?"
+○ During the tutorial
+○ After 1-2 matches
+○ After 5-10 matches
+○ After a few days of playing
+○ I still don't feel confident
+
+KEY METRICS:
+- Onboarding ease score (1-5)
+- Tutorial completion rate (from behavioral data)
+- Primary barrier (% selecting each)
+- Time to confidence
+- Day 1, Day 7, Day 30 retention (combined with behavioral)
+
+
+================================================================================
+MARKETING TEAM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. PLAYER SEGMENTATION STUDIES
+--------------------------------------------------------------------------------
+Purpose: Build player personas, inform targeting and messaging
+
+SIMPLE TECHNIQUES:
+- Behavioral frequency questions
+- Motivation ranking
+- Demographics
+
+Example 1 (Motivation):
+"What is your PRIMARY reason for playing Fortnite?"
+○ To compete and win
+○ To hang out with friends
+○ To relax and have fun
+○ To complete challenges and collect rewards
+○ To build and create
+○ To watch/participate in events
+
+Example 2 (Behavioral):
+"How many hours do you typically play Fortnite per week?"
+○ Less than 2 hours
+○ 2-5 hours
+○ 5-10 hours
+○ 10-20 hours
+○ More than 20 hours
+
+ADVANCED TECHNIQUES:
+- Psychographic clustering (analyzed with factor analysis)
+- Latent class analysis
+
+Example 1 (Psychographic Battery):
+"How much do you agree with the following statements?" (1-5 scale)
+- Winning is the most important part of gaming
+- I play games mainly to socialize with friends
+- I enjoy collecting rare items and completing my collection
+- I like games that challenge me and help me improve
+- I prefer games I can play in short sessions
+- I follow gaming news and watch streamers regularly
+
+Example 2 (Values/Lifestyle):
+"Which statement best describes you as a gamer?"
+○ Gaming is my primary hobby — I'm deeply invested
+○ Gaming is one of several hobbies I enjoy
+○ I game casually to pass time or socialize
+○ I only game occasionally when friends invite me
+
+KEY METRICS:
+- Segment size (% of player base)
+- Segment characteristics (demographics, behaviors)
+- Segment value (spending, engagement)
+- Segment needs/motivations
+- Segment-specific satisfaction scores
+
+
+--------------------------------------------------------------------------------
+2. BRAND HEALTH TRACKER
+--------------------------------------------------------------------------------
+Purpose: Monitor brand perception over time, track vs competitors
+
+SIMPLE TECHNIQUES:
+- Brand awareness (aided/unaided)
+- Brand favorability
+- Net Promoter Score (NPS)
+
+Example 1 (NPS):
+"How likely are you to recommend Fortnite to a friend or colleague?"
+0   1   2   3   4   5   6   7   8   9   10
+Not at all likely          Extremely likely
+
+Example 2 (Favorability):
+"What is your overall opinion of Fortnite?"
+○ Very unfavorable
+○ Somewhat unfavorable
+○ Neutral
+○ Somewhat favorable
+○ Very favorable
+
+ADVANCED TECHNIQUES:
+- Brand attribute mapping
+- Competitive positioning analysis
+
+Example 1 (Brand Attribute Matrix):
+"How well does each word describe Fortnite?" (1-5)
+                    Not at all ←→ Extremely well
+Fun                     1  2  3  4  5
+Innovative              1  2  3  4  5
+Fair                    1  2  3  4  5
+Community-focused       1  2  3  4  5
+Worth the time          1  2  3  4  5
+For everyone            1  2  3  4  5
+
+Example 2 (Competitive Positioning):
+"Compared to [Apex Legends/Warzone], Fortnite is..."
+                          Much worse ←→ Much better
+Gameplay fun                 1  2  3  4  5
+Regular updates              1  2  3  4  5
+Value for money              1  2  3  4  5
+Playing with friends         1  2  3  4  5
+Skill-based matchmaking      1  2  3  4  5
+
+KEY METRICS:
+- Net Promoter Score (NPS) = % Promoters (9-10) - % Detractors (0-6)
+- Brand favorability (% favorable)
+- Aided/unaided awareness
+- Brand attribute scores
+- Competitive gaps (Fortnite score - Competitor score)
+
+
+--------------------------------------------------------------------------------
+3. COMPETITIVE INTELLIGENCE SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Understand competitive landscape, identify threats and opportunities
+
+SIMPLE TECHNIQUES:
+- Share of play questions
+- Competitive consideration set
+- Switching intent
+
+Example 1 (Share of Play):
+"Of your total gaming time in the past month, what % did you spend on each?"
+Fortnite:        ____%
+Apex Legends:    ____%
+Warzone:         ____%
+Other games:     ____%
+Total:           100%
+
+Example 2 (Switching):
+"Have you reduced your Fortnite playtime in favor of another game recently?"
+○ Yes — playing more [Which game? ____]
+○ No — Fortnite is still my main game
+○ No — I never played Fortnite much
+
+ADVANCED TECHNIQUES:
+- Competitive MaxDiff
+- Win/Loss analysis
+
+Example 1 (Competitive MaxDiff):
+"Which game is BEST and WORST at each attribute?"
+                    WORST    BEST
+Fun gameplay          ○        ○    Fortnite
+                      ○        ○    Apex Legends
+                      ○        ○    Warzone
+                      ○        ○    Valorant
+
+Example 2 (Win/Loss):
+"Why did you choose [Competitor] over Fortnite for your main game?"
+□ Better gunplay/mechanics
+□ Friends play it more
+□ More mature/serious tone
+□ Better matchmaking
+□ Fresher/newer experience
+□ Better performance on my device
+□ Other: ____
+
+KEY METRICS:
+- Share of play (%)
+- Primary game share (% naming as #1)
+- Competitive attribute gaps
+- Switching reasons (ranked)
+- Threat assessment by competitor
+
+
+--------------------------------------------------------------------------------
+4. CAMPAIGN EFFECTIVENESS SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Measure marketing campaign impact on awareness and perception
+
+SIMPLE TECHNIQUES:
+- Ad recall
+- Message association
+- Aided awareness
+
+Example 1 (Ad Recall):
+"Have you seen any advertising for Fortnite in the past 30 days?"
+○ Yes, definitely
+○ Yes, I think so
+○ No
+○ Not sure
+
+"Where did you see it?" [Select all]
+□ YouTube
+□ TikTok
+□ Instagram
+□ Twitch
+□ TV
+□ Other: ____
+
+Example 2 (Message Recall):
+"What do you remember about the Fortnite ad you saw?"
+[Open-ended for coded analysis]
+
+ADVANCED TECHNIQUES:
+- Brand lift study (exposed vs control group)
+- Message testing with concept rotation
+
+Example 1 (Brand Lift):
+Compare metrics between:
+- Group A: Exposed to campaign
+- Group B: Not exposed (control)
+Measure: Awareness, favorability, intent differences
+
+Example 2 (Message Testing):
+"Which of these messages makes you most interested in trying Fortnite?"
+○ "Build. Battle. Create. The only limit is your imagination."
+○ "Drop in with friends for free — anytime, anywhere."
+○ "New season, new map, new ways to win."
+○ "Join 400 million players worldwide."
+
+KEY METRICS:
+- Ad recall (% aware)
+- Brand lift (exposed vs control difference)
+- Message resonance (% selecting each)
+- Intent lift (change in play/purchase intent)
+
+
+================================================================================
+DESIGN TEAM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. USABILITY/UX SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Identify friction points in game interface and experience
+
+SIMPLE TECHNIQUES:
+- System Usability Scale (SUS)
+- Task ease ratings
+- Findability questions
+
+Example 1 (Task Ease):
+"How easy or difficult was it to find the following?"
+                              Very difficult ←→ Very easy
+Changing your outfit               1  2  3  4  5
+Inviting a friend                  1  2  3  4  5
+Viewing your challenges            1  2  3  4  5
+Accessing settings                 1  2  3  4  5
+
+Example 2 (SUS-style):
+"I found the game menus easy to navigate."
+○ Strongly disagree
+○ Disagree
+○ Neutral
+○ Agree
+○ Strongly agree
+
+ADVANCED TECHNIQUES:
+- Task-based success measurement
+- Comparative UX testing
+
+Example 1 (Task Success):
+"Were you able to successfully complete the following tasks?"
+                                  Yes    No    Didn't try
+Customize your character           ○      ○        ○
+Find and join a Creative map       ○      ○        ○
+Report another player              ○      ○        ○
+Adjust audio settings              ○      ○        ○
+
+Example 2 (Comparative):
+"Which menu layout do you prefer?" [Show options A and B]
+○ Layout A (current)
+○ Layout B (new design)
+○ No preference
+
+"Why?" [Open-ended]
+
+KEY METRICS:
+- System Usability Scale score (0-100)
+- Task ease scores (1-5)
+- Task success rate (%)
+- Preference split (% favoring each design)
+
+
+--------------------------------------------------------------------------------
+2. MAP/ENVIRONMENT FEEDBACK SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Gather feedback on map design, POIs, visual quality
+
+SIMPLE TECHNIQUES:
+- Location satisfaction ratings
+- Favorite/least favorite selection
+- Visual appeal rating
+
+Example 1 (Location Rating):
+"Rate your experience at each location:"
+                          Very Poor ←→ Excellent
+Tilted Towers                1  2  3  4  5
+Pleasant Park                1  2  3  4  5
+Lazy Lake                    1  2  3  4  5
+Retail Row                   1  2  3  4  5
+
+Example 2 (Favorite Selection):
+"Which is your FAVORITE landing spot?"
+[Dropdown of all POIs]
+
+"Which POI do you AVOID the most?"
+[Dropdown of all POIs]
+
+ADVANCED TECHNIQUES:
+- Heat map preference questions
+- Attribute-based location analysis
+
+Example 1 (Attribute Analysis):
+"For your favorite POI, rate how important each factor is:"
+                              Not important ←→ Very important
+Amount of loot                    1  2  3  4  5
+Number of players landing         1  2  3  4  5
+Distance from storm               1  2  3  4  5
+Interesting terrain               1  2  3  4  5
+Rotation options                  1  2  3  4  5
+
+Example 2 (Map Region Preference):
+"Which area of the map do you prefer for gameplay?"
+[Show map divided into regions — player selects]
+
+KEY METRICS:
+- POI satisfaction scores
+- Landing frequency (from behavioral + survey)
+- POI attribute importance
+- Problem areas identified
+
+
+================================================================================
+ANALYTICS TEAM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. BEHAVIORAL VALIDATION SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Understand the "why" behind behavioral data patterns
+
+SIMPLE TECHNIQUES:
+- Reason selection
+- Behavior confirmation
+
+Example 1 (Behavior Reason):
+"Our data shows you haven't played in 14 days. What's the main reason?"
+○ Taking a break / burnout
+○ Playing other games
+○ Busy with work/school
+○ Frustrated with recent changes
+○ Technical issues
+○ Friends stopped playing
+○ Other: ____
+
+Example 2 (Confirmation):
+"You've played 50+ hours of Zero Build mode. Is this your preferred mode?"
+○ Yes, I prefer Zero Build
+○ No, I play it because friends prefer it
+○ No, I switch between modes equally
+○ No, I'm just trying it out
+
+ADVANCED TECHNIQUES:
+- Cohort comparison surveys
+- Predictive indicator validation
+
+Example 1 (Cohort Comparison):
+Survey sent to two groups identified from behavioral data:
+- Group A: High engagement, high spending
+- Group B: High engagement, zero spending
+Question: "What prevents you from purchasing in Fortnite?"
+
+Example 2 (Churn Prediction Validation):
+"Based on your recent experience, how likely are you to stop playing?"
+○ Very unlikely — I'm committed to Fortnite
+○ Unlikely — but I might take a break
+○ Neutral
+○ Likely — I'm losing interest
+○ Very likely — I'm basically done
+
+[Correlate with behavioral churn prediction model]
+
+KEY METRICS:
+- Reason distribution (%)
+- Behavioral-stated consistency rate
+- Churn prediction accuracy (model vs survey intent)
+- Segment behavior validation
+
+
+--------------------------------------------------------------------------------
+2. PLAYER SATISFACTION TRACKER (WEEKLY/MONTHLY)
+--------------------------------------------------------------------------------
+Purpose: Ongoing pulse check on player health
+
+SIMPLE TECHNIQUES:
+- Overall satisfaction
+- Recommend intent (NPS)
+- Continue playing intent
+
+Example 1 (Satisfaction):
+"Overall, how satisfied are you with Fortnite right now?"
+○ Very dissatisfied (1)
+○ Dissatisfied (2)
+○ Neutral (3)
+○ Satisfied (4)
+○ Very satisfied (5)
+
+Example 2 (Continue Intent):
+"How likely are you to continue playing Fortnite in the next month?"
+○ Definitely will not
+○ Probably will not
+○ Might or might not
+○ Probably will
+○ Definitely will
+
+ADVANCED TECHNIQUES:
+- Driver analysis (what predicts satisfaction)
+- Trend decomposition
+
+Example 1 (Driver Battery):
+"Rate your satisfaction with each aspect:" (1-5)
+- Weapon balance
+- Matchmaking fairness
+- New content frequency
+- Game performance
+- Battle Pass value
+- Community/social features
+[Regression analysis identifies which drives overall satisfaction]
+
+Example 2 (Trend Questions):
+"Compared to last month, Fortnite has gotten..."
+○ Much worse
+○ Somewhat worse
+○ Stayed the same
+○ Somewhat better
+○ Much better
+
+KEY METRICS:
+- Overall satisfaction score (tracked over time)
+- NPS (tracked over time)
+- Continue intent (% top-2-box)
+- Key drivers of satisfaction
+- Week-over-week / Month-over-month change
+
+
+================================================================================
+MONETIZATION TEAM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. PURCHASE BEHAVIOR SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Understand spending patterns, barriers, and motivations
+
+SIMPLE TECHNIQUES:
+- Spending frequency
+- Purchase barriers
+- Value perception
+
+Example 1 (Spending Behavior):
+"How often do you purchase V-Bucks or items in Fortnite?"
+○ Never
+○ Rarely (once or twice ever)
+○ Occasionally (every few months)
+○ Regularly (monthly)
+○ Frequently (weekly)
+
+Example 2 (Barrier):
+"What is the PRIMARY reason you don't spend more in Fortnite?"
+○ Items are too expensive
+○ Don't see value in cosmetics
+○ Can't afford to spend on games
+○ Already spend enough
+○ Nothing I want to buy
+○ Other: ____
+
+ADVANCED TECHNIQUES:
+- Price sensitivity analysis (Van Westendorp)
+- Conjoint for bundle optimization
+
+Example 1 (Van Westendorp):
+"At what price would this skin be..."
+- Too expensive to consider: $____
+- Expensive but might buy: $____
+- A good value: $____
+- Too cheap (suspect quality): $____
+
+Example 2 (Bundle Conjoint):
+"Which bundle would you be most likely to purchase?"
+Option A              Option B              Option C
+1 Legendary Skin      2 Epic Skins          1 Epic Skin
+500 V-Bucks          No V-Bucks            1000 V-Bucks
+1 Emote              2 Emotes              No Emote
+$15                  $12                   $18
+    ○                    ○                     ○
+
+KEY METRICS:
+- Spending tier distribution
+- Purchase barriers (ranked)
+- Optimal price point (Van Westendorp)
+- Bundle preference (Conjoint utility)
+- Willingness to pay
+
+
+--------------------------------------------------------------------------------
+2. BATTLE PASS FEEDBACK SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Evaluate Battle Pass value, progression, and satisfaction
+
+SIMPLE TECHNIQUES:
+- Value rating
+- Completion satisfaction
+- Reward satisfaction
+
+Example 1 (Value):
+"How would you rate the value of this season's Battle Pass?"
+○ Very poor value (1)
+○ Poor value (2)
+○ Fair value (3)
+○ Good value (4)
+○ Excellent value (5)
+
+Example 2 (Reward Satisfaction):
+"How satisfied are you with the following Battle Pass rewards?"
+                          Very dissatisfied ←→ Very satisfied
+Skins                          1  2  3  4  5
+Emotes                         1  2  3  4  5
+V-Bucks included               1  2  3  4  5
+Loading screens                1  2  3  4  5
+Bonus rewards                  1  2  3  4  5
+
+ADVANCED TECHNIQUES:
+- MaxDiff for reward prioritization
+- Progression pacing analysis
+
+Example 1 (Reward MaxDiff):
+"Which reward type is MOST and LEAST important to your Battle Pass purchase?"
+                    LEAST        MOST
+Skins                 ○            ○
+Emotes                ○            ○
+V-Bucks               ○            ○
+Pickaxes              ○            ○
+Wraps                 ○            ○
+
+Example 2 (Progression):
+"How do you feel about the pace of Battle Pass progression?"
+○ Way too slow — I won't finish
+○ Slightly too slow
+○ Just right
+○ Slightly too fast
+○ Way too fast — I finished too early
+
+KEY METRICS:
+- Battle Pass purchase rate (behavioral)
+- Value perception score
+- Completion rate (behavioral + stated)
+- Reward importance ranking
+- Progression satisfaction
+
+
+================================================================================
+LIVE OPS TEAM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. LIVE EVENT FEEDBACK SURVEYS
+--------------------------------------------------------------------------------
+Purpose: Measure event success, identify technical issues
+
+SIMPLE TECHNIQUES:
+- Event satisfaction
+- Attendance/participation
+- Technical experience
+
+Example 1 (Satisfaction):
+"How would you rate your overall experience at the [Event Name]?"
+○ Very poor (1)
+○ Poor (2)
+○ Neutral (3)
+○ Good (4)
+○ Excellent (5)
+
+Example 2 (Technical):
+"Did you experience any technical issues during the event?"
+□ Lag / frame drops
+□ Audio issues
+□ Disconnection
+□ Visual glitches
+□ Couldn't join the event
+□ No issues
+
+ADVANCED TECHNIQUES:
+- Moment-by-moment rating
+- Emotional journey mapping
+
+Example 1 (Moment Rating):
+"Rate each moment of the event:"
+                          Boring ←→ Amazing
+Opening sequence            1  2  3  4  5
+Music performance           1  2  3  4  5
+Interactive segment         1  2  3  4  5
+Finale/reveal               1  2  3  4  5
+
+Example 2 (Emotional Response):
+"What emotions did you feel during the event?" [Select all]
+□ Excited
+□ Amazed
+□ Happy
+□ Nostalgic
+□ Bored
+□ Confused
+□ Frustrated
+□ Disappointed
+
+KEY METRICS:
+- Event satisfaction score
+- Attendance rate (behavioral)
+- Technical issue rate
+- Emotional response profile
+- Intent to attend future events
+
+
+--------------------------------------------------------------------------------
+2. SEASONAL RECAP SURVEYS
+--------------------------------------------------------------------------------
+Purpose: End-of-season feedback to inform next season planning
+
+SIMPLE TECHNIQUES:
+- Season satisfaction
+- Best/worst moments
+- Content satisfaction
+
+Example 1 (Season Rating):
+"Overall, how would you rate Chapter 4 Season 2?"
+○ 1 - Terrible
+○ 2
+○ 3
+○ 4
+○ 5 - Amazing
+
+Example 2 (Best/Worst):
+"What was the BEST part of this season?"
+○ New map changes
+○ New weapons
+○ Battle Pass content
+○ Live events
+○ Collaborations
+○ Limited time modes
+
+"What was the WORST part of this season?"
+[Same options]
+
+ADVANCED TECHNIQUES:
+- Season element MaxDiff
+- Improvement prioritization
+
+Example 1 (Season MaxDiff):
+"Which season element had MOST POSITIVE and MOST NEGATIVE impact?"
+                        MOST NEGATIVE    MOST POSITIVE
+Map changes                  ○                ○
+Weapon meta                  ○                ○
+Battle Pass                  ○                ○
+Live events                  ○                ○
+Collaborations               ○                ○
+Matchmaking                  ○                ○
+
+Example 2 (Next Season Priority):
+"What should be the TOP priority for next season?"
+[Rank 1-5]
+___ New map areas
+___ Weapon balance
+___ More live events
+___ Better matchmaking
+___ New game modes
+
+KEY METRICS:
+- Season satisfaction score
+- Best/worst element distribution
+- Element importance ranking
+- Priority for next season
+- Season-over-season comparison
+
+
+================================================================================
+SUMMARY: TECHNIQUES BY COMPLEXITY
+================================================================================
+
+SIMPLE TECHNIQUES:
+- Likert scales (1-5, 1-7)
+- Single-select multiple choice
+- Multi-select (check all that apply)
+- Ranking questions
+- Open-ended text
+- Binary yes/no
+- NPS (0-10)
+- Frequency scales
+- Slider scales
+
+ADVANCED TECHNIQUES:
+- MaxDiff (Maximum Difference Scaling)
+- Choice-Based Conjoint (CBC)
+- Van Westendorp Price Sensitivity
+- TURF Analysis (Total Unduplicated Reach and Frequency)
+- Kano Model (for feature prioritization)
+- Brand mapping / Perceptual mapping
+- Latent class analysis (for segmentation)
+- Driver analysis (regression-based)
+- A/B message testing
+- Sentiment analysis (on open-text)
+
+
+================================================================================
+QUICK REFERENCE: WHEN TO USE EACH ADVANCED TECHNIQUE
+================================================================================
+
+MaxDiff:
+→ Use when: Prioritizing a list of 5+ items
+→ Output: Importance ranking with utility scores
+→ Example: "Which features matter most to players?"
+
+Choice-Based Conjoint:
+→ Use when: Optimizing multi-attribute decisions
+→ Output: Part-worth utilities, optimal configuration
+→ Example: "What combination of attributes creates best experience?"
+
+Van Westendorp:
+→ Use when: Finding optimal price point
+→ Output: Price range (too cheap to too expensive)
+→ Example: "What should we charge for this skin?"
+
+TURF:
+→ Use when: Selecting items that reach most people
+→ Output: Optimal bundle/combination for maximum reach
+→ Example: "Which 3 collaborations would appeal to most players?"
+
+Kano Model:
+→ Use when: Categorizing features by player expectation
+→ Output: Must-have vs nice-to-have vs delighters
+→ Example: "Which features are baseline expectations vs differentiators?"
+

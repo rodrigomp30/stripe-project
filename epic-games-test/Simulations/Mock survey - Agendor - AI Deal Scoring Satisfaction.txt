@@ -1,0 +1,656 @@
+Business Questions
+
+
+#
+	Business Question
+	BQ1
+	Are users satisfied with the AI Deal Scoring feature?
+	BQ2
+	Do users trust the AI's accuracy in predicting deal outcomes?
+	BQ3
+	Is the feature actually changing sales behavior (prioritization)?
+	BQ4
+	Which aspects of the feature drive satisfaction or dissatisfaction?
+	BQ5
+	Does satisfaction vary by user segment (role, experience, deal volume)?
+	BQ6
+	Does the feature improve perceived sales efficiency?
+	BQ7
+	What would users change to make the feature more useful?
+	
+
+Context & Background
+- Company: Agendor (Sales-focused CRM)
+- Feature: AI Deal Scoring
+  - Assigns probability scores to deals (0-100%)
+  - Classifies deals: High / Medium / Low close chance
+  - Purpose: Help salespeople prioritize high-potential deals
+- Users: Salespeople and Sales Managers
+- Feature is VISIBLE to users (they know it exists and see the scores)
+
+
+Research Design
+Type: Evaluative / Satisfaction Study (Descriptive + Diagnostic)
+
+Single population with internal segmentation:
+- All users who have access to and have used the AI Deal Scoring feature
+- Segment by: Role, Usage frequency, Experience, Deal volume
+
+Key difference from experimental design:
+- Not comparing groups with/without feature
+- Measuring satisfaction and adoption within users who have the feature
+
+
+Survey Questions
+Screening
+Purpose: Identify eligible respondents and capture segmentation variables.
+
+
+Question 1: What is your primary role? (single choice)
+* Sales Representative / Account Executive
+* Sales Manager / Team Lead
+* Sales Director / VP Sales
+* Other (please specify)
+
+
+Question 2: How long have you been using Agendor? (single choice)
+* Less than 3 months
+* 3-6 months
+* 6-12 months
+* More than 1 year
+
+
+Question 3: Approximately how many active deals do you manage at any time? (single choice)
+* 1-10 deals
+* 11-25 deals
+* 26-50 deals
+* More than 50 deals
+
+
+Question 4: How often do you use the AI Deal Scoring feature? (single choice)
+* Daily
+* A few times per week
+* Weekly
+* Rarely (once a month or less)
+* I've seen it but never really use it
+
+
+Follow-up (if "Rarely" or "Never use it"):
+Question 4b: Why don't you use the AI Deal Scoring feature more often? (multi-select)
+* I don't trust the scores
+* I prefer my own judgment
+* I don't understand how to use it
+* It doesn't fit my workflow
+* I didn't know it existed
+* Other (please specify)
+
+→ Route to abbreviated survey or exit
+
+
+________________
+
+
+
+
+BQ1: Are users satisfied with the AI Deal Scoring feature?
+Purpose: Establish baseline satisfaction level
+Focus: Overall sentiment
+
+
+Survey Question Purpose: Measure overall satisfaction with the feature.
+
+
+
+
+Question 5: How satisfied are you with the AI Deal Scoring feature? (single choice)
+* Very dissatisfied (1)
+* Dissatisfied (2)
+* Neutral (3)
+* Satisfied (4)
+* Very satisfied (5)
+
+
+
+
+Type of analysis:
+* Mean satisfaction score
+* T2B (Top 2 Box): % selecting 4 or 5
+* B2B (Bottom 2 Box): % selecting 1 or 2
+* Distribution analysis
+
+
+Metric: 
+* Mean Satisfaction Score
+* % Satisfied (T2B)
+* % Dissatisfied (B2B)
+
+
+Resolution:
+"AI Deal Scoring satisfaction is 3.6/5 with 58% positive (T2B) and 18% negative (B2B). Majority satisfied, but meaningful dissatisfaction exists."
+
+
+________________
+
+
+
+
+BQ2: Do users trust the AI's accuracy in predicting deal outcomes?
+Purpose: Trust is critical for AI feature adoption — low trust = low usage
+Focus: Trust / Credibility
+
+
+Survey Question Purpose: Measure perceived accuracy and trust in the AI scores.
+
+
+
+
+Question 6: How accurate do you find the AI Deal Scores in predicting which deals will close? (single choice)
+* Very inaccurate (1)
+* Somewhat inaccurate (2)
+* Neither accurate nor inaccurate (3)
+* Somewhat accurate (4)
+* Very accurate (5)
+
+
+
+
+Question 7: How much do you trust the AI Deal Scores when making prioritization decisions? (single choice)
+* Not at all (1)
+* Slightly (2)
+* Moderately (3)
+* Very much (4)
+* Completely (5)
+
+
+
+
+Type of analysis:
+* Mean scores for accuracy and trust
+* Correlation between accuracy perception and trust
+* Correlation between trust and satisfaction (Q5)
+* Segment comparison
+
+
+Metric: 
+* Perceived Accuracy Score
+* Trust Score
+* Accuracy-Trust correlation (r)
+* Trust-Satisfaction correlation (r)
+
+
+Resolution:
+"Perceived accuracy is 3.2/5 and trust is 2.9/5. Trust lags behind accuracy perception (gap: 0.3), suggesting users see some value but aren't confident enough to rely on it. Trust strongly correlates with satisfaction (r = 0.72)."
+
+
+________________
+
+
+
+
+BQ3: Is the feature actually changing sales behavior (prioritization)?
+Purpose: Determine if the feature achieves its intended purpose
+Focus: Behavioral impact
+
+
+Survey Question Purpose: Assess whether users actually change their behavior based on AI scores.
+
+
+
+
+Question 8: How has the AI Deal Scoring feature changed the way you prioritize your deals? (single choice)
+* I prioritize completely differently now (major change)
+* I've adjusted my prioritization somewhat (moderate change)
+* I occasionally consider the scores (minor change)
+* It hasn't changed how I prioritize at all (no change)
+
+
+
+
+Question 9: In the past month, how often did you use AI Deal Scores to decide which deals to focus on? (single choice)
+* Almost always (for most deals)
+* Often (for many deals)
+* Sometimes (for some deals)
+* Rarely (for few deals)
+* Never
+
+
+
+
+Question 10: When an AI Deal Score disagrees with your own judgment about a deal, what do you typically do? (single choice)
+* Trust the AI score and adjust my approach
+* Consider both, but lean toward the AI
+* Consider both equally
+* Consider both, but lean toward my judgment
+* Trust my own judgment and ignore the AI
+
+
+
+
+Type of analysis:
+* Distribution of behavior change (Q8)
+* Frequency distribution (Q9)
+* AI vs. Judgment preference distribution (Q10)
+* Correlation: Trust (Q7) → Behavior change (Q8)
+* Segment comparison
+
+
+Metric: 
+* % with meaningful behavior change (major + moderate)
+* % frequent users (almost always + often)
+* AI Deference Score (Q10 distribution)
+
+
+Resolution:
+"42% report meaningful behavior change (major + moderate), but only 28% use scores frequently. When AI disagrees with judgment, 67% lean toward their own judgment. Trust is the key barrier — high-trust users are 3x more likely to change behavior."
+
+
+________________
+
+
+
+
+BQ4: Which aspects of the feature drive satisfaction or dissatisfaction?
+Purpose: Identify specific areas for improvement
+Focus: Diagnostic / Attribution
+
+
+Survey Question Purpose: Understand which feature attributes matter most and how they perform.
+
+
+
+
+Question 11: Rate your satisfaction with each aspect of the AI Deal Scoring feature: (matrix - single choice per row)
+
+                                    Very Dissatisfied | Dissatisfied | Neutral | Satisfied | Very Satisfied
+Accuracy of the scores                     1                2            3          4             5
+Clarity of why a deal got its score        1                2            3          4             5
+How scores update as deals progress        1                2            3          4             5
+Ease of finding/seeing the scores          1                2            3          4             5
+Integration with my daily workflow         1                2            3          4             5
+
+
+
+
+Question 12: Which ONE aspect would most improve your experience with AI Deal Scoring if enhanced? (single choice)
+* More accurate predictions
+* Better explanation of why deals get their scores
+* Faster/more frequent score updates
+* Easier visibility of scores in my workflow
+* Actionable recommendations (not just scores)
+* Other (please specify)
+
+
+
+
+Type of analysis:
+* Mean satisfaction per attribute (Q11)
+* Gap analysis: Importance vs. Satisfaction
+* Priority ranking (Q12 distribution)
+* Derived importance via regression (attribute scores → overall satisfaction)
+
+
+Metric: 
+* Attribute satisfaction scores
+* #1 improvement priority (Q12 mode)
+* Derived importance weights
+
+
+Resolution:
+"Lowest-rated attribute: 'Clarity of why a deal got its score' (2.4/5). #1 improvement request: 'Better explanation of scores' (41%). This is the key pain point — users want transparency into the AI's reasoning."
+
+
+________________
+
+
+
+
+BQ5: Does satisfaction vary by user segment?
+Purpose: Identify if specific user groups need targeted attention
+Focus: Segmentation analysis
+
+
+Survey Question Purpose: Use screening questions (Q1-Q4) to segment analysis of all other questions.
+
+
+Analysis Approach:
+
+Segment all key metrics by:
+* Role (Sales Rep vs Manager)
+* Tenure (< 6 months vs > 6 months)
+* Deal volume (< 25 vs 25+)
+* Usage frequency (Daily/Weekly vs Rarely)
+
+
+Key Comparisons:
+
+Segment             | Satisfaction (Q5) | Trust (Q7) | Behavior Change (Q8) | Notes
+--------------------|-------------------|------------|----------------------|-------
+Sales Reps          | ?                 | ?          | ?                    | Primary users
+Sales Managers      | ?                 | ?          | ?                    | Different use case?
+New users (<6mo)    | ?                 | ?          | ?                    | Still learning?
+Tenured (>6mo)      | ?                 | ?          | ?                    | More experience with accuracy?
+High deal volume    | ?                 | ?          | ?                    | More need for prioritization?
+Low deal volume     | ?                 | ?          | ?                    | Less need for AI help?
+Heavy users         | ?                 | ?          | ?                    | Self-selected satisfied?
+Light users         | ?                 | ?          | ?                    | Why aren't they using it?
+
+
+Type of analysis:
+* Independent samples t-tests (2 groups)
+* One-way ANOVA (3+ groups)
+* Chi-square for categorical outcomes
+
+
+Resolution:
+"Sales Managers show higher satisfaction (4.1) than Sales Reps (3.3), likely because they use scores for pipeline review, not daily prioritization. Low deal volume users (<25) have lowest trust (2.4) — they may not see enough data to validate accuracy."
+
+
+________________
+
+
+
+
+BQ6: Does the feature improve perceived sales efficiency?
+Purpose: Assess if feature delivers on value proposition
+Focus: Perceived value / Outcomes
+
+
+Survey Question Purpose: Measure whether users believe the feature helps them be more effective.
+
+
+
+
+Question 13: Since using the AI Deal Scoring feature, do you feel you spend your time on the RIGHT deals? (single choice)
+* Much less effectively than before
+* Somewhat less effectively than before
+* About the same as before
+* Somewhat more effectively than before
+* Much more effectively than before
+
+
+
+
+Question 14: How much time do you estimate AI Deal Scoring saves you per week in prioritization decisions? (single choice)
+* No time saved (or time lost)
+* Less than 30 minutes
+* 30 minutes to 1 hour
+* 1-2 hours
+* More than 2 hours
+
+
+
+
+Type of analysis:
+* Distribution analysis
+* T2B (improved effectiveness)
+* Correlation with satisfaction and trust
+
+
+Metric: 
+* % reporting improved effectiveness (T2B)
+* Median time saved
+* Effectiveness-Satisfaction correlation
+
+
+Resolution:
+"54% feel they spend time more effectively on deals since using AI scoring. Median time saved is 30-60 minutes/week. However, 22% see no benefit — correlates strongly with low trust (r = 0.68)."
+
+
+________________
+
+
+
+
+BQ7: What would users change to make the feature more useful?
+Purpose: Capture qualitative feedback and unexpected insights
+Focus: Open discovery
+
+
+Survey Question Purpose: Get user-generated improvement ideas and surface themes.
+
+
+
+
+Question 15: What is the ONE thing that would make the AI Deal Scoring feature more useful to you? (open-ended)
+
+
+
+
+Question 16: Is there anything else you'd like to share about your experience with AI Deal Scoring? (open-ended, optional)
+
+
+
+
+Type of analysis:
+* Thematic coding
+* Frequency of themes
+* Sentiment analysis
+* Quote extraction for stakeholder reports
+
+
+Metric: 
+* Top 3 themes
+* Theme frequency %
+* Representative quotes
+
+
+Resolution:
+"Top themes: (1) 'Explain why' - 38% want transparency into scoring logic, (2) 'More factors' - 24% want AI to consider more deal attributes, (3) 'Integration' - 18% want scores visible in more places. Key quote: 'I'd trust it more if it told me WHY a deal scored low.'"
+
+
+________________
+
+
+
+
+Data Quality Ensurance
+Rules
+
+
+Quality Issue         | Detection Method              | Threshold        | Action
+----------------------|-------------------------------|------------------|--------
+Incomplete            | questions_answered / total    | < 50%            | Remove
+Speeder               | completion_time_seconds       | < 90 sec         | Remove
+Straight-liner        | variance in matrix (Q11)      | all same answer  | Flag/review
+Failed attention      | attention_check_response      | ≠ expected       | Remove
+Non-user              | Q4 = "Never use it"           | -                | Route to exit or abbreviated
+
+
+Sample Size
+* Target: 400 clean responses minimum
+* For segment analysis: 100+ per key segment
+
+Segment targets:
+* Sales Reps = 250+
+* Sales Managers = 100+
+* Heavy users (daily/weekly) = 200+
+* Light users (rarely) = 100+
+
+
+Considering:
+* Smaller B2B population than consumer surveys
+* Higher response rates typical for SaaS (10-15%)
+* Need sufficient n per segment
+* Cleaning loss: ~10%
+
+
+Calculation:
+
+Target: 400 clean responses
+
+Step 1: Add 10% cleaning buffer
+        400 ÷ 0.90 = 445 raw responses
+
+Step 2: At 12% response rate (B2B SaaS typical)
+        445 ÷ 0.12 = ~3,700 invitations
+
+Total: ~4,000 email invitations to users with AI Deal Scoring access
+
+
+________________
+
+
+
+
+Representativeness Ensurance
+
+
+1. Define eligible population
+   - Users with AI Deal Scoring feature enabled
+   - Have logged in within last 30 days (active users)
+   
+2. Check sample vs. population on:
+   - Role distribution
+   - Company size
+   - Account tenure
+   - Feature usage level (from product data)
+
+3. Set quotas if needed
+   - Ensure minimum responses from Sales Managers (often smaller %)
+   - Ensure minimum from light users (less likely to respond)
+
+4. Mid-survey monitoring
+   - Track response by segment
+   - Send reminders to underrepresented segments
+
+
+________________
+
+
+
+
+Statistical Analysis Summary
+
+
+Method                  | Purpose                                          | Used For
+------------------------|--------------------------------------------------|----------
+Mean + Std Dev          | Central tendency and spread                      | All Likert questions
+T2B / B2B               | Simplify Likert for communication                | Q5, Q6, Q7, Q13
+Distribution %          | Understand response patterns                     | Q8, Q9, Q10, Q12, Q14
+Independent t-test      | Compare 2 segments                               | Role, tenure splits
+One-way ANOVA           | Compare 3+ segments                              | Deal volume, usage freq
+Pearson correlation     | Relationship between variables                   | Trust-Satisfaction, etc.
+Multiple regression     | Identify drivers of satisfaction                 | Attributes → Overall sat
+Chi-square              | Compare distributions across segments            | Categorical outcomes
+Thematic coding         | Organize open-ended responses                    | Q15, Q16
+
+
+Key Relationships to Test:
+
+1. Trust → Satisfaction (expected strong positive)
+2. Trust → Behavior Change (expected strong positive)
+3. Accuracy perception → Trust (expected positive)
+4. Usage frequency → Satisfaction (expected positive, but check causality)
+5. Tenure → Trust (does trust build over time?)
+6. Deal volume → Perceived value (do high-volume users benefit more?)
+
+
+Regression Model for Drivers:
+
+Overall Satisfaction = β₀ + β₁(Accuracy) + β₂(Explanation clarity) + β₃(Score updates) 
+                       + β₄(Visibility) + β₅(Workflow integration) + ε
+
+→ β coefficients show which attributes drive overall satisfaction most
+
+
+________________
+
+
+
+
+Summary
+
+Decision Supported:
+"Should we invest more in the AI Deal Scoring feature? If so, where?"
+
+
+Key Findings Framework:
+
+1. ADOPTION STATUS
+   "X% of users actively use AI Deal Scoring for prioritization"
+   
+2. SATISFACTION LEVEL
+   "Satisfaction is X/5 with Y% positive"
+   
+3. TRUST GAP
+   "Trust (X/5) [does/does not] match perceived accuracy (Y/5)"
+   
+4. BEHAVIOR CHANGE
+   "X% have meaningfully changed how they prioritize deals"
+   
+5. KEY DRIVER
+   "The #1 factor driving satisfaction is [attribute]"
+   
+6. KEY BARRIER
+   "The #1 barrier to adoption/satisfaction is [attribute]"
+   
+7. SEGMENT DIFFERENCES
+   "[Segment] shows notably different patterns: [finding]"
+
+
+Recommendation Framework:
+
+IF satisfaction is high AND trust is high:
+→ "Feature is working. Invest in promotion and deeper integration."
+
+IF satisfaction is high BUT trust is low:
+→ "Users like the concept but don't rely on it. Improve accuracy or transparency."
+
+IF satisfaction is low AND 'explanation clarity' is the driver:
+→ "Add explainability — show WHY deals get their scores."
+
+IF satisfaction is low AND 'accuracy' is the driver:
+→ "Improve the model before investing in UX."
+
+IF segment differences exist (e.g., Managers vs Reps):
+→ "Consider role-specific features or onboarding."
+
+IF heavy users are satisfied but light users aren't:
+→ "Problem is onboarding/education, not the feature itself."
+
+
+________________
+
+
+
+
+Product Implications
+
+Finding                                  | Product Decision
+-----------------------------------------|------------------------------------------
+Low trust despite decent accuracy        | Add explainability (show score factors)
+"Explanation clarity" is top pain point  | Build "Why this score?" feature
+Scores don't update fast enough          | Increase score refresh frequency
+Low visibility in workflow               | Add scores to list views, dashboards
+Users want recommendations, not scores   | Add "Recommended actions" based on score
+Managers use differently than reps       | Consider role-specific views
+High-volume users benefit most           | Promote feature to power users first
+
+
+Marketing / Customer Success Implications
+
+Finding                                  | CS/Marketing Decision
+-----------------------------------------|------------------------------------------
+Low awareness among some users           | In-app education campaign
+Heavy users satisfied, light users not   | Onboarding flow for new feature users
+Trust builds with tenure                 | Set expectations: "Give it 30 days"
+High-volume users see most value         | Target feature promotion to high-deal users
+Sales Managers more satisfied            | Create manager-specific use cases
+Top request is explainability            | Communicate roadmap: "Coming soon"
+
+
+________________
+
+
+
+
+Stakeholder Communication
+
+For Product Manager:
+"Satisfaction is [X/5]. Trust is the key barrier — users question accuracy and want to know WHY deals get their scores. Top request: explainability. Recommendation: Build 'score factors' feature before expanding."
+
+For Customer Success:
+"[X]% of users aren't using the feature regularly. Main reasons: don't trust it, don't understand it. Recommendation: Proactive onboarding for new users, case studies showing accuracy over time."
+
+For Executive:
+"AI Deal Scoring shows promise but hasn't reached full adoption. [X]% use it regularly, [Y]% have changed behavior. Key blocker is trust. With explainability improvements, we estimate adoption could increase [Z]%. ROI: [time saved × user base]."

@@ -1,0 +1,620 @@
+Business Questions
+
+
+#
+	Business Question
+	BQ1
+	Does bot exposure affect players' overall match experience?
+	BQ2
+	Does bot exposure make matches feel too easy?
+	BQ3
+	Does bot exposure affect win satisfaction?
+	BQ4
+	Does the effect differ by skill level? (Control for confounding)
+	BQ5
+	Does bot exposure affect intent to continue playing?
+	
+
+Context & Constraints
+- Players do NOT know they are playing against bots
+- Cannot ask directly about bots
+- Must ask about match experience indirectly
+- Compare groups by bot exposure INTENSITY (not just binary)
+- Must control for skill level (confounding variable)
+- Bot insertion is variable — players may have mixed exposure
+
+
+Research Design
+Type: Comparison Study with Dose-Response Analysis
+
+Three groups from BEHAVIORAL DATA (not self-reported):
+- Group A1: HIGH bot exposure (>50% of matches had bots in last 7 days)
+- Group A2: LOW bot exposure (1-50% of matches had bots in last 7 days)
+- Group B:  NO bot exposure (0% of matches had bots in last 7 days)
+
+All groups receive the SAME questions about match experience.
+Difference in responses = Bot impact.
+Gradient across groups = Dose-response relationship.
+
+Why Three Groups (Dose-Response):
+- Bot exposure isn't binary — players have varying levels
+- Allows detection of whether MORE bots = WORSE experience
+- Stronger causal evidence than binary comparison
+- Identifies threshold where bot exposure becomes problematic
+
+
+Survey Questions
+Targeting / Screening
+Purpose: Identify and separate bot-exposed vs. non-bot-exposed players.
+Source: Behavioral data (telemetry), NOT survey questions.
+
+
+Minimum Activity Filter:
+- Threshold: 10+ matches played in last 7 days
+- Rationale: Ensures respondents have sufficient recent experience to evaluate
+- Excludes: Tourists, lapsed players, players with insufficient exposure
+- Note: ~1.4 matches/day minimum = regular player activity
+
+
+Group Assignment (from backend data):
+
+Group A1 (HIGH Bot Exposure):
+- Criteria: >50% of matches had bots in last 7 days
+- Minimum: 10+ total matches played
+- Source: telemetry.bot_match_pct > 0.50 AND telemetry.total_matches_7d >= 10
+
+Group A2 (LOW Bot Exposure):
+- Criteria: 1-50% of matches had bots in last 7 days
+- Minimum: 10+ total matches played
+- Source: telemetry.bot_match_pct > 0 AND telemetry.bot_match_pct <= 0.50 
+          AND telemetry.total_matches_7d >= 10
+
+Group B (NO Bot Exposure):
+- Criteria: 0% of matches had bots in last 7 days
+- Minimum: 10+ total matches played
+- Source: telemetry.bot_match_pct = 0 AND telemetry.total_matches_7d >= 10
+
+
+Embedded Data (passed via survey URL):
+- player_id
+- group (A1, A2, or B)
+- skill_tier (for controlling confound)
+- matches_played_7d
+- bot_match_percentage (exact %)
+
+
+________________
+
+
+
+
+Question 1: Skill Tier Confirmation (for segmentation)
+Purpose: Confirm skill level for controlling confounding variable
+
+"How would you describe your skill level in Fortnite?" (single choice)
+* New player (started in last 30 days)
+* Casual (play for fun, not focused on winning)
+* Regular (play frequently, want to improve)
+* Competitive (focused on winning, track stats)
+
+
+Note: Cross-reference with behavioral skill_tier for validation.
+
+
+________________
+
+
+
+
+BQ1: Does bot exposure affect players' overall match experience?
+Purpose: Determine if there's an overall experience difference between groups
+Focus: Sentiment comparison
+
+
+Survey Question Purpose: Compare overall match experience between bot-exposed and non-bot-exposed players.
+
+
+
+
+Question 2: In the past 7 days, how would you rate your overall match experience in Fortnite? (single choice)
+* Very negative (1)
+* Negative (2)
+* Neutral (3)
+* Positive (4)
+* Very positive (5)
+
+
+
+
+Type of analysis:
+* Three-group comparison (A1 vs A2 vs B)
+* One-way ANOVA (overall difference)
+* Post-hoc pairwise comparisons (Tukey HSD)
+* Trend analysis (dose-response)
+* Effect size (eta-squared for ANOVA, Cohen's d for pairwise)
+
+
+Metric: 
+* Mean per group
+* Overall F-test significance
+* Pairwise differences
+* Linear trend across groups
+
+
+Resolution:
+"Match experience shows clear dose-response pattern:
+  - Group B (no bots): 3.8
+  - Group A2 (low bots): 3.3
+  - Group A1 (high bots): 2.7
+
+ANOVA: F(2, 1197) = 42.3, p < 0.001, η² = 0.07 (medium effect)
+Trend: Each increase in bot exposure = -0.55 points (linear, p < 0.001)
+Conclusion: More bot exposure = worse experience, in a consistent gradient."
+
+
+________________
+
+
+
+
+BQ2: Does bot exposure make matches feel too easy?
+Purpose: Identify if "too easy" is a symptom of bot exposure
+Focus: Difficulty perception comparison
+
+
+Survey Question Purpose: Compare perceived difficulty between groups without mentioning bots.
+
+
+
+
+Question 3: In the past 7 days, how often did your matches feel too easy? (single choice)
+* Almost never (1)
+* Rarely (2)
+* Sometimes (3)
+* Often (4)
+* Almost always (5)
+
+
+
+
+Type of analysis:
+* Three-group comparison (A1 vs A2 vs B)
+* Chi-square test (for distribution across groups)
+* One-way ANOVA (for means)
+* Trend analysis
+
+
+Metric: 
+* % reporting "Often" or "Almost always" (Top-2-Box) per group
+* Mean per group
+* Linear trend
+
+
+Resolution:
+"'Too easy' perception shows strong dose-response:
+  - Group B (no bots): 18% say 'too easy'
+  - Group A2 (low bots): 41% say 'too easy'
+  - Group A1 (high bots): 67% say 'too easy'
+
+Chi-square: χ²(2) = 89.4, p < 0.001
+Trend: +24.5 percentage points per exposure level (linear, p < 0.001)
+Conclusion: Higher bot exposure = much more likely to perceive matches as too easy."
+
+
+________________
+
+
+
+
+BQ3: Does bot exposure affect win satisfaction?
+Purpose: Determine if wins against bots feel less earned
+Focus: Win satisfaction comparison
+
+
+Survey Question Purpose: Compare how satisfying wins feel between groups.
+
+
+
+
+Question 4: In the past 7 days, how satisfying were your wins? (single choice)
+* Very unsatisfying (1)
+* Unsatisfying (2)
+* Neutral (3)
+* Satisfying (4)
+* Very satisfying (5)
+
+
+
+
+Type of analysis:
+* Three-group comparison (A1 vs A2 vs B)
+* One-way ANOVA
+* Top-2-Box comparison per group
+* Trend analysis
+
+
+Metric: 
+* Mean satisfaction score per group
+* T2B (% Satisfying + Very Satisfying) per group
+* Effect size (eta-squared)
+
+
+Resolution:
+"Win satisfaction decreases with bot exposure:
+  - Group B (no bots): T2B = 71%, Mean = 4.0
+  - Group A2 (low bots): T2B = 54%, Mean = 3.5
+  - Group A1 (high bots): T2B = 38%, Mean = 2.9
+
+ANOVA: F(2, 1197) = 38.7, p < 0.001, η² = 0.06 (medium effect)
+Trend: -16.5 percentage points T2B per exposure level (linear, p < 0.001)
+Conclusion: Higher bot exposure = less satisfying wins. Even low exposure shows meaningful reduction."
+
+
+________________
+
+
+
+
+BQ4: Does the effect differ by skill level?
+Purpose: Control for confounding — skill correlates with bot exposure
+Focus: Segment comparison
+
+
+Survey Question Purpose: No additional question needed. Analyze BQ1-BQ3 BY skill tier.
+
+
+
+
+Analysis Approach:
+
+Within EACH skill tier, compare all three groups:
+* Group A1 (high bots) vs. Group A2 (low bots) vs. Group B (no bots)
+
+If dose-response persists within skill tiers → Effect is from bots, not skill
+Two-way ANOVA: Bot Exposure × Skill Tier (test for interaction)
+
+
+Skill Tier Analysis Table:
+
+Skill Tier      | A1 (High) | A2 (Low) | B (None) | Trend Sig? | Effect
+----------------|-----------|----------|----------|------------|--------
+New player      | 3.5       | 3.6      | 3.7      | No (p=0.31)| None
+Casual          | 2.9       | 3.3      | 3.7      | Yes (p<0.01)| Medium
+Regular         | 2.5       | 3.1      | 3.9      | Yes (p<0.001)| Large
+Competitive     | 2.1       | 2.8      | 4.1      | Yes (p<0.001)| Very Large
+
+
+Two-Way ANOVA Results:
+* Main effect (Bot Exposure): F(2, 1188) = 45.2, p < 0.001
+* Main effect (Skill Tier): F(3, 1188) = 12.8, p < 0.001
+* Interaction (Exposure × Skill): F(6, 1188) = 8.4, p < 0.001 ← SIGNIFICANT
+
+Resolution:
+"Bot exposure effect varies significantly by skill level (interaction p < 0.001):
+- New players: No meaningful difference across exposure levels
+- Casual/Regular: Moderate dose-response effect
+- Competitive: Strongest effect — high-bot players score 2.0 points lower than no-bot players
+
+Key insight: The dose-response pattern is strongest for skilled players. Even LOW bot exposure hurts competitive players (-1.3 vs no bots)."
+
+
+________________
+
+
+
+
+BQ5: Does bot exposure affect intent to continue playing?
+Purpose: Assess urgency — is this a retention risk?
+Focus: Intent comparison
+
+
+Survey Question Purpose: Compare churn risk between groups.
+
+
+
+
+Question 5: How likely are you to continue playing Fortnite in the next month? (single choice)
+* Definitely will not (1)
+* Probably will not (2)
+* Might or might not (3)
+* Probably will (4)
+* Definitely will (5)
+
+
+
+
+Type of analysis:
+* Three-group comparison (A1 vs A2 vs B)
+* One-way ANOVA and T2B comparison
+* Segment by skill tier
+* Trend analysis
+
+
+Metric: 
+* Continue intent T2B (% Probably + Definitely) per group
+* B2B (% at risk) per group
+* Trend significance
+
+
+Resolution:
+"Continue intent shows dose-response pattern:
+  - Group B (no bots): T2B = 84%, At-risk = 8%
+  - Group A2 (low bots): T2B = 77%, At-risk = 12%
+  - Group A1 (high bots): T2B = 68%, At-risk = 19%
+
+By skill tier (A1 high-bot vs B no-bot):
+  - New players: 82% vs 85% (minimal difference)
+  - Casual: 72% vs 83% (-11 points)
+  - Regular: 65% vs 84% (-19 points)
+  - Competitive: 54% vs 91% (-37 points) ← Significant churn risk
+
+Conclusion: High bot exposure creates meaningful churn risk, especially for competitive players where nearly half are at-risk."
+
+
+________________
+
+
+
+
+Question 6: Open-Ended Discovery (Optional)
+Purpose: Capture qualitative feedback for unexpected insights
+
+
+"What, if anything, would make your Fortnite matches more enjoyable?" (open-ended)
+
+
+
+
+Note: Do NOT mention bots. Code responses for themes. Look for:
+* "Too easy" mentions
+* "Not challenging" mentions
+* "Opponents feel fake/dumb" mentions (unprompted bot awareness)
+
+
+________________
+
+
+
+
+Data Quality Ensurance
+Rules
+
+
+Quality Issue
+	Detection Method
+	Threshold
+	Action
+	Incomplete
+	questions_answered / total
+	< 50%
+	Remove
+	Speeder
+	completion_time_seconds
+	< 45 sec
+	Remove
+	Failed attention
+	attention_check_response
+	≠ expected
+	Remove
+	Duplicate
+	COUNT(player_id)
+	> 1
+	Keep first
+	Group mismatch
+	survey_group ≠ behavioral_group
+	mismatch
+	Flag/review
+	
+
+Sample Size
+* Rule of thumb: 400 responses per group ensures statistical power to detect medium effects in ANOVA
+
+Minimum per group:
+* Group A1 (High bot exposure) = 400
+* Group A2 (Low bot exposure) = 400
+* Group B (No bots) = 400
+* Per skill tier per group = 100 (minimum for segment analysis)
+
+
+Considering:
+* Three-group ANOVA requires slightly less per group than two-group t-test
+* Need to detect effect size f ≥ 0.25 with 80% power
+* Must have sufficient n within each skill tier for interaction analysis
+* Cleaning loss: ~15%
+* Response rate: ~6% (email)
+
+
+Calculation:
+
+Target: 400 clean responses per group × 3 groups = 1,200 total
++ Per skill tier (4 tiers × 100 minimum) = 400 per group needed
+→ Target 400 per group minimum
+
+Step 1: Clean responses needed
+        400 × 3 groups = 1,200 clean total
+
+Step 2: Add 15% cleaning buffer
+        1,200 ÷ 0.85 = 1,412 raw responses
+
+Step 3: Email send volume (at 6% response rate)
+        1,412 ÷ 0.06 = ~24,000 emails
+
+Split by group:
+        Group A1: 8,000 emails → ~480 responses → ~400 clean
+        Group A2: 8,000 emails → ~480 responses → ~400 clean
+        Group B:  8,000 emails → ~480 responses → ~400 clean
+
+Total: ~24,000 emails sent, targeting 1,200 clean responses
+
+
+Population Size Consideration:
+- Group A2 (low exposure, 1-50%) is likely the LARGEST group
+- Group B (no bots, 0%) may be RARE for lower-skill players
+- Group A1 (high exposure, >50%) varies by skill tier
+
+May need to oversample Group B if population is small:
+- Check population distribution before sending
+- Adjust send volume per group based on availability
+
+
+
+
+Representativeness Ensurance
+
+
+1. Groups must be comparable
+   - Match on: region, platform, total play time
+   - Control for: skill tier (the known confound)
+
+2. Within-group representativeness
+   - Each group should mirror Fortnite population
+   - Check: platform, region, play frequency
+
+3. Sample balance check
+   - Compare Group A vs Group B on demographics
+   - If imbalanced → weight or note limitation
+
+4. Mid-Survey monitoring
+   - Track response rates by group
+   - Send reminders if one group lags
+
+
+Comparability Check Template:
+
+
+Attribute        | A1 (High) | A2 (Low) | B (None) | Balanced?
+-----------------|-----------|----------|----------|----------
+Platform: PC     | 40%       | 43%      | 45%      | ✓
+Platform: Console| 47%       | 44%      | 42%      | ✓
+Platform: Mobile | 13%       | 13%      | 13%      | ✓
+Region: NA       | 38%       | 39%      | 40%      | ✓
+Region: EU       | 34%       | 35%      | 33%      | ✓
+Avg matches/week | 14.2      | 12.1     | 11.3     | Note*
+
+*Note: Higher bot exposure may correlate with higher play frequency.
+Include matches/week as covariate if groups differ significantly.
+	
+
+
+
+Statistical Rigor Requirements
+
+
+For Three-Group Comparison Research:
+
+
+Metric              | Requirement           | Why
+--------------------|----------------------|--------------------------------
+Sample size/group   | n ≥ 400              | Power to detect medium effects
+Overall test        | One-way ANOVA        | Test if ANY group differs
+Post-hoc tests      | Tukey HSD            | Which pairs differ?
+Trend analysis      | Linear contrast      | Is there dose-response?
+Effect size         | Report eta-squared   | Overall effect magnitude
+Pairwise effect     | Report Cohen's d     | Specific comparison magnitude
+Power               | ≥ 80%                | Likely to detect effect if exists
+Confound control    | Two-way ANOVA        | Test Exposure × Skill interaction
+
+
+Key Statistical Tests:
+
+1. ANOVA (One-Way)
+   - Tests: Do the three groups differ overall?
+   - Report: F(df1, df2) = X, p = Y, η² = Z
+
+2. Linear Trend
+   - Tests: Is there a consistent gradient (more bots = worse)?
+   - Report: Linear contrast F = X, p = Y
+
+3. Post-Hoc Pairwise (Tukey HSD)
+   - Tests: Which specific pairs differ?
+   - Report: A1 vs B: diff = X, p = Y, d = Z
+
+4. Two-Way ANOVA (with Skill Tier)
+   - Tests: Does the effect vary by skill?
+   - Report: Interaction F = X, p = Y
+
+
+Report Format:
+"Three-group comparison: A1 = X, A2 = Y, B = Z
+ ANOVA: F(2, n) = [value], p = [value], η² = [value]
+ Linear trend: p = [value]
+ Post-hoc A1 vs B: diff = [value], p = [value], d = [value]"
+
+
+________________
+
+
+
+
+Summary
+
+Decision Supported:
+"Should we make bots more difficult?"
+
+
+Key Findings Framework:
+
+1. DOSE-RESPONSE PATTERN
+   "More bot exposure [does/does not] correlate with worse experience"
+   
+2. THRESHOLD IDENTIFICATION
+   "Negative impact starts at [low / high] exposure levels"
+   
+3. SPECIFIC SYMPTOMS
+   "Higher-exposure players report matches feel [too easy / less satisfying]"
+   
+4. SKILL MODERATION
+   "The dose-response effect is [consistent across / varies by] skill level"
+   
+5. URGENCY
+   "High bot exposure [does/does not] create meaningful churn risk"
+
+
+Recommendation Framework:
+
+IF clear dose-response exists (A1 < A2 < B):
+→ "Reduce overall bot frequency in matchmaking — each added bot hurts experience"
+
+IF threshold exists (A1 ≠ B but A2 ≈ B):
+→ "Low bot exposure is acceptable; focus on preventing high-exposure matches"
+
+IF effect is concentrated in high-skill players:
+→ "Reduce bot frequency for experienced players; maintain current for new players"
+
+IF no dose-response (A1 ≈ A2 ≈ B):
+→ "Bot exposure level doesn't matter — look at other factors"
+
+IF new players benefit but dose-response hurts experienced:
+→ "Implement skill-based bot frequency caps (fewer bots as skill increases)"
+
+
+________________
+
+
+
+
+Product Implications
+
+Finding                                 | Product Decision
+----------------------------------------|------------------------------------------
+Clear dose-response (more bots=worse)   | Reduce overall bot frequency in matches
+Threshold at >50% exposure              | Cap bot matches per session
+"Too easy" is main symptom              | Increase bot combat AI difficulty
+Effect strongest in high-skill          | Skill-based bot frequency scaling
+Low exposure acceptable, high is not    | Prevent consecutive bot-heavy matches
+Win satisfaction drops with exposure    | Reduce bots in late-game specifically
+Churn risk in competitive players       | Priority fix for ranked/competitive modes
+	
+
+Marketing Implications
+
+Finding                                 | Marketing Decision
+----------------------------------------|------------------------------------------
+Players unaware of bots                 | Maintain current communication (don't reveal)
+Dose-response confirms bot impact       | Don't highlight matchmaking quality
+New players unaffected                  | Can message "welcoming experience for beginners"
+Low exposure acceptable                 | Focus retention on light/casual players
+High exposure = negative sentiment      | Avoid competitive/skill messaging
+Competitive players frustrated          | Pause ranked promotion until fixed
+Churn concentrated in high-skill        | Retention campaigns for casual segment
+	

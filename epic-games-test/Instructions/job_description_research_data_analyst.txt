@@ -1,0 +1,86 @@
+RESEARCH AND INSIGHTS MANAGER - JOB DESCRIPTION
+Gaming Industry (Epic Games)
+===============================================
+
+REQUIRED SKILLS AND EXPERIENCE
+------------------------------
+
+• Bachelor's degree in a related field (e.g., social sciences, computer science, data science, games-focused degrees)
+
+• 3+ years of professional (post-graduation) experience creating large-scale (5,000+ respondents per study) surveys using tools such as Qualtrics, analyzing results/data, and reporting on actionable insights
+
+• 2+ years of professional (post-graduation) experience creating data visualizations (Tableau strongly preferred)
+
+• 2+ years of data querying experience with SQL (Databricks strongly preferred, Snowflake nice-to-have)
+
+• 2+ years of professional (post-graduation) experience writing research reports and presenting findings to stakeholders
+
+
+NICE TO HAVE SKILLS AND EXPERIENCE
+----------------------------------
+
+• Graduate degree in a related field (e.g., social sciences, computer science, data science, games-focused degrees)
+
+• Experience working within the games industry or a related industry (e.g., entertainment, tech, etc.)
+
+• A passion for video games or gaming (expect that we'll ask you what you play and why)
+
+
+JOB DESCRIPTION
+---------------
+
+Insight Global is hiring a Research and Insights Manager to support the Consumer Insights and User Experience Research teams at a leading company in the Gaming industry for one year (with the opportunity for renewal). The main functions of this role will be to create and send surveys and to visualize and analyze large-scale survey data to uncover meaningful insights about the player base and intended audiences of games and related products.
+
+
+JOB FUNCTIONS
+-------------
+
+Survey Design & Execution:
+• Create large-scale (5,000+ respondents per study) surveys and trackers to support products and initiatives across the organization
+• Design clear, unbiased questions to ensure valid, reliable responses
+• Develop survey questions that can be applied across distribution channels (e.g., email and in-game) and applied to relevant products
+• Ability to consider audience make-up when designing and interpreting research
+• Produce actionable, accurate, and representative data
+• Ensure that gameplay-related questions are aligned with what is currently being offered in the live game (e.g., maintaining up-to-date lists of map locations and items available in the game)
+
+Data Visualization:
+• Produce advanced data visualizations using Tableau
+• Demonstrate ability to clean and manipulate data using Excel or Google Sheets
+• Create user-friendly dashboards based on player survey data for a variety of stakeholders, including product, marketing, analytics, and design
+
+SQL & Data Querying:
+• Query data with SQL (Databricks preferred, Snowflake nice-to-have)
+• Query multiple types of databases to develop survey send audiences
+• Use custom SQL to build data queries in Tableau for survey data visualization
+• Connect survey data with in-game telemetry and behavioral analytics to solve business problems
+
+Reporting & Communication:
+• Write reports and present data
+• Craft detailed, easy-to-understand reports that effectively communicate insights to various stakeholders across the company
+• Present data in meetings with clear narratives and relevant context
+• Ability to quickly pivot with new data to ensure timely and relevant insights
+• Participate in peer review for research design and insights presentation and reporting
+• Contribute survey expertise to other teams across the company
+
+
+KEY SKILLS SUMMARY
+------------------
+
+Technical:
+- Qualtrics (survey design)
+- Tableau (data visualization)
+- SQL (Databricks, Snowflake)
+- Excel/Google Sheets (data cleaning)
+
+Research:
+- Large-scale survey design (5,000+ respondents)
+- Question design (unbiased, valid, reliable)
+- Multi-channel distribution (email, in-game)
+- Audience consideration and sampling
+
+Communication:
+- Report writing
+- Stakeholder presentations
+- Clear narratives with context
+- Cross-functional collaboration (product, marketing, analytics, design)
+

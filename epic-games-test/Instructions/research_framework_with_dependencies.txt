@@ -1,0 +1,1852 @@
+================================================================================
+SURVEY RESEARCH FRAMEWORK WITH DEPENDENCY IDENTIFICATION
+================================================================================
+
+This framework guides you through each stage of survey research, identifying
+what dependencies to uncover and what questions to ask at each step.
+
+================================================================================
+FRAMEWORK OVERVIEW
+================================================================================
+
+STAGE 1: REQUEST (Day 1)
+    └── Dependencies: Sample Size, Source
+
+STAGE 2: DESIGN (Day 2-3)
+    └── Dependencies: Targeting, Data Join, Representativeness, Data Cleaning
+
+STAGE 3: BUILD (Day 3-4)
+    └── Dependencies: Validate all technical dependencies
+
+STAGE 4: DISTRIBUTE (Day 5)
+    └── Dependencies: Execute targeting, confirm source access
+
+STAGE 5: COLLECT (Day 5-12)
+    └── Dependencies: Monitor sample size, representativeness
+
+STAGE 6: CLEAN (Day 13)
+    └── Dependencies: Execute data cleaning rules
+
+STAGE 7: ANALYZE (Day 14-15)
+    └── Dependencies: Execute data joins
+
+STAGE 8: DELIVER (Day 16-17)
+    └── Dependencies: None (execution of insights)
+
+
+================================================================================
+STAGE 1: REQUEST
+================================================================================
+
+PURPOSE: Understand the business need and define research scope
+
+ACTIVITIES:
+□ Intake meeting with stakeholder
+□ Define research questions
+□ Establish timeline
+□ Create research brief
+
+--------------------------------------------------------------------------------
+UNDERSTANDING REQUIREMENTS: INTAKE QUESTIONS
+--------------------------------------------------------------------------------
+
+These questions ensure you understand the business context before designing
+the survey. Ask these in your intake meeting with the stakeholder.
+
+............................................................................
+QUESTION 1: "What decision will this research inform?"
+............................................................................
+
+WHY ASK:
+Research without a clear decision is just data collection. This question
+ensures the survey produces actionable insights, not just interesting numbers.
+It also helps you prioritize what questions to include.
+
+EXAMPLE ANSWERS:
+
+    Good Answer:
+    "We need to decide whether to revert the shotgun nerf, adjust it, or 
+    keep it as is. The decision needs to be made by Friday for the hotfix."
+    
+    → This is actionable. You know exactly what the output needs to inform.
+    
+    Vague Answer:
+    "We just want to know how players feel about the update."
+    
+    → Follow up: "If the results show players are unhappy, what would you do 
+    differently than if they're happy?" Force them to articulate the decision.
+
+............................................................................
+QUESTION 2: "Who will use these results?"
+............................................................................
+
+WHY ASK:
+Different audiences need different deliverables. An executive needs a 1-page
+summary. A product manager needs segment breakdowns. A designer needs 
+specific feedback on UI elements. This shapes your output format.
+
+EXAMPLE ANSWERS:
+
+    Answer: "The Game Director will review at the leadership meeting."
+    → Prepare: Executive summary, 3-5 key findings, clear recommendation
+    
+    Answer: "The weapon balance team will use it for tuning."
+    → Prepare: Detailed segment breakdowns, open-text themes, specific metrics
+    
+    Answer: "Marketing wants to understand player sentiment for messaging."
+    → Prepare: Quotable findings, segment profiles, positive themes for campaigns
+
+............................................................................
+QUESTION 3: "What is the timeline? When do you need results?"
+............................................................................
+
+WHY ASK:
+Timeline determines methodology. A 2-day turnaround means a short pulse survey.
+A 3-week timeline allows for MaxDiff/Conjoint and deeper analysis. This also
+helps you push back if expectations are unrealistic.
+
+EXAMPLE ANSWERS:
+
+    Answer: "We need directional data by Monday (4 days)."
+    → Approach: Short survey (5-7 questions), in-game distribution, quick analysis
+    
+    Answer: "The planning meeting is in 3 weeks."
+    → Approach: Full methodology, email distribution, thorough analysis
+    
+    Answer: "As soon as possible."
+    → Follow up: "What's the actual deadline driving this? What happens if 
+    results come in a week vs two weeks?" Get a real date.
+
+............................................................................
+QUESTION 4: "What do you already know or believe about this topic?"
+............................................................................
+
+WHY ASK:
+Stakeholders often have hypotheses. Understanding them helps you design
+questions that either validate or challenge those beliefs. It also prevents
+you from reporting findings they already know.
+
+EXAMPLE ANSWERS:
+
+    Answer: "We think competitive players hate the nerf, but casuals don't care."
+    → Design: Include segment analysis (casual vs competitive) to test this
+    
+    Answer: "Social media says everyone hates it, but we're not sure if 
+    that's representative."
+    → Design: Focus on representativeness; include question to identify 
+    social media users vs non-users
+    
+    Answer: "We have no idea — that's why we need research."
+    → Design: Broader exploratory approach; include open-ended questions
+
+............................................................................
+QUESTION 5: "What segments or sub-groups need separate analysis?"
+............................................................................
+
+WHY ASK:
+This directly impacts sample size requirements. If you need to analyze
+casual vs competitive players separately, you need enough responses in each
+group. Identify segments upfront to plan properly.
+
+EXAMPLE ANSWERS:
+
+    Answer: "We need to see casual, core, and hardcore players separately."
+    → Sample planning: Need n≥300-500 per segment = target 1,500+ total
+    
+    Answer: "We need to compare across NA, EU, and Asia regions."
+    → Sample planning: Need n≥300 per region = target 1,000+ total
+    
+    Answer: "Just overall is fine."
+    → Sample planning: n≥1,000 total is sufficient
+
+CRITICAL FOLLOW-UP: SEGMENT CLARIFICATION (Always Document)
+─────────────────────────────────────────────────────────────────────────────
+
+Rule: Every segment mentioned MUST have a clear definition documented.
+Even if you think you know what it means, write it down. This prevents
+misalignment later and ensures targeting/analysis uses the right criteria.
+
+For each segment, document:
+
+    SEGMENT CLARIFICATION TEMPLATE
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Segment Name: [e.g., "Casual Player"]
+    
+    Definition (general):
+    [What does this mean in common understanding?]
+    
+    Definition (for this research):
+    [What specific criteria define this segment for THIS project?]
+    
+    Data source:
+    [Where does this classification come from? Self-reported? Behavioral?]
+    
+    Criteria/Thresholds:
+    [Exact rules: hours played, win rate, ranked participation, etc.]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+EXAMPLE: Clarifying "Casual vs Competitive" for Zero Build Research
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ SEGMENT: Casual Player                                                  │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Definition (general):                                                   │
+    │ Players who play for fun without focus on winning or improvement.       │
+    │                                                                         │
+    │ Definition (for this research):                                         │
+    │ Players who self-identify as casual OR play <10 hours/week.             │
+    │                                                                         │
+    │ Data source options:                                                    │
+    │ □ Self-reported in survey (Q3: playstyle question)                      │
+    │ □ Behavioral: hours_played_weekly < 10                                  │
+    │ □ Pre-existing segment in player_segments table                         │
+    │                                                                         │
+    │ Chosen approach: Use pre-existing segment from Analytics team           │
+    │ (player_segments.player_type = 'casual')                                │
+    │                                                                         │
+    │ Analytics team definition:                                              │
+    │ - Plays < 10 hours/week on average (rolling 30 days)                    │
+    │ - Has never played ranked mode                                          │
+    │ - Win rate not considered                                               │
+    └─────────────────────────────────────────────────────────────────────────┘
+    
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ SEGMENT: Competitive Player                                             │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Definition (general):                                                   │
+    │ Players who focus on winning, improving skills, and tracking stats.     │
+    │                                                                         │
+    │ Definition (for this research):                                         │
+    │ Players who self-identify as competitive OR play ranked regularly.      │
+    │                                                                         │
+    │ Data source options:                                                    │
+    │ □ Self-reported in survey (Q3: playstyle question)                      │
+    │ □ Behavioral: ranked_matches_last_30_days > 10                          │
+    │ □ Pre-existing segment in player_segments table                         │
+    │                                                                         │
+    │ Chosen approach: Use pre-existing segment from Analytics team           │
+    │ (player_segments.player_type = 'competitive')                           │
+    │                                                                         │
+    │ Analytics team definition:                                              │
+    │ - Plays 10+ hours/week on average (rolling 30 days), OR                 │
+    │ - Has played 5+ ranked matches in last 30 days                          │
+    │ - Note: Can be competitive with low hours if plays ranked               │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+CONTEXT-SPECIFIC SEGMENTS (For Zero Build specifically):
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ SEGMENT: Zero Build Main                                                │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Definition: Player who primarily plays Zero Build mode.                 │
+    │                                                                         │
+    │ Criteria:                                                               │
+    │ - ZB hours > 70% of total Fortnite hours (last 30 days), OR             │
+    │ - Build mode hours = 0                                                  │
+    │                                                                         │
+    │ Data source: telemetry_summary table                                    │
+    │ - zb_total_hours / (zb_total_hours + build_total_hours) > 0.7           │
+    └─────────────────────────────────────────────────────────────────────────┘
+    
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ SEGMENT: Plays Both Modes                                               │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Definition: Player who plays both Zero Build and Build modes.           │
+    │                                                                         │
+    │ Criteria:                                                               │
+    │ - ZB hours > 0 AND Build hours > 0 (last 30 days)                       │
+    │ - Neither mode is >70% of total hours                                   │
+    │                                                                         │
+    │ Data source: telemetry_summary table                                    │
+    │ - zb_total_hours > 0 AND build_total_hours > 0                          │
+    │ - zb_total_hours / total_hours BETWEEN 0.3 AND 0.7                      │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+WHY THIS MATTERS:
+
+    Without clarification:
+    ─────────────────────────────────────────────────────────────────────────
+    PM says: "Casual players"
+    You assume: Players who play <5 hours/week
+    Analytics team defines as: Players who never played ranked
+    Targeting uses: Self-reported casual in survey
+    
+    Result: Three different definitions → inconsistent analysis → confusion
+    
+    With clarification:
+    ─────────────────────────────────────────────────────────────────────────
+    PM says: "Casual players"
+    You ask: "How does Analytics define casual in the segmentation table?"
+    Document: player_type = 'casual' means <10 hrs/week OR no ranked
+    Targeting uses: Same definition
+    Survey validation: Q3 asks playstyle to cross-check
+    
+    Result: Everyone aligned → consistent analysis → trusted insights
+
+QUESTIONS TO ASK FOR EACH SEGMENT:
+
+    1. "Is there an existing definition for this segment in our data?"
+    2. "Should we use behavioral data (what they do) or self-reported (what 
+       they say they are)?"
+    3. "What's the exact threshold that separates this segment from others?"
+    4. "Does this definition change for the specific context of this research?"
+       (e.g., "casual" overall vs "casual Zero Build player" might differ)
+
+............................................................................
+QUESTION 6: "What have you already tried or learned about this?"
+............................................................................
+
+WHY ASK:
+Avoid duplicating past research. Understand what's already known so you can
+build on it rather than repeat it. Also identify if past research created
+expectations you need to address.
+
+EXAMPLE ANSWERS:
+
+    Answer: "We ran a survey 6 months ago on weapon balance. I can share results."
+    → Action: Review past survey; build on methodology; compare results
+    
+    Answer: "We've been monitoring social media and forums."
+    → Action: Use social themes to inform question design; validate if 
+    social sentiment matches broader player base
+    
+    Answer: "This is the first time we're researching this."
+    → Action: More exploratory approach; include open-ended discovery questions
+
+RULE: NOTE THE SOURCE, BUT REVIEW IT AFTER YOUR ANALYSIS
+─────────────────────────────────────────────────────────────────────────────
+
+To avoid confirmation bias, follow this protocol:
+
+    1. ASK where past research/data exists
+    2. DOCUMENT where to find it (file path, report name, who has it)
+    3. DO NOT review the details until AFTER you complete your own analysis
+    4. COMPARE your findings to past research only at the end
+
+Why this matters:
+- If you see "sentiment was 4.1 last time," you might unconsciously interpret 
+  ambiguous data to match that expectation
+- If you know "social media is negative," you might focus on negative signals
+- Fresh analysis without prior anchoring produces more objective findings
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ PAST RESEARCH LOG (Document now, review later)                          │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                         │
+    │ Source 1: _____________________________________________                  │
+    │ Location: _____________________________________________                  │
+    │ Contact:  _____________________________________________                  │
+    │ Review after: Stage 7 (Analysis complete)                               │
+    │                                                                         │
+    │ Source 2: _____________________________________________                  │
+    │ Location: _____________________________________________                  │
+    │ Contact:  _____________________________________________                  │
+    │ Review after: Stage 7 (Analysis complete)                               │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+EXCEPTION: When past research IS needed upfront:
+- Question wording from past surveys (if you need to track trends exactly)
+- Methodology details (to ensure comparability)
+- Population benchmarks (needed for representativeness planning)
+
+In these cases, review only the specific methodological elements, not the 
+findings/results.
+
+............................................................................
+QUESTION 7: "What would be a surprising result?"
+............................................................................
+
+WHY ASK:
+This reveals stakeholder assumptions and helps you understand what findings
+would actually change their thinking. If nothing would surprise them, the
+research may not be valuable.
+
+EXAMPLE ANSWERS:
+
+    Answer: "If casual players also hated the nerf — we assumed they'd be fine."
+    → Design: Ensure clean segment definition; probe casual players specifically
+    
+    Answer: "If the weapon ranked lower priority than matchmaking complaints."
+    → Design: Include MaxDiff with weapon balance vs other issues
+    
+    Answer: "Honestly, I don't know what would surprise me."
+    → Probe: "If results showed 80% positive sentiment, would that change 
+    your plans? What about 80% negative?" Understand the decision threshold
+
+RULE: DOCUMENT THE ANSWER, BUT SEAL IT UNTIL ANALYSIS IS COMPLETE
+─────────────────────────────────────────────────────────────────────────────
+
+Knowing what would "surprise" stakeholders can bias your analysis:
+- You might unconsciously look for evidence that confirms their expectations
+- You might over-interpret data that contradicts their beliefs
+- You might anchor on their assumptions rather than letting data speak
+
+Protocol:
+    1. ASK the question (valuable for survey design)
+    2. DOCUMENT their answer in a sealed note
+    3. USE for survey design only (ensure you're asking the right questions)
+    4. DO NOT review during analysis
+    5. COMPARE to your findings only AFTER analysis is complete
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ STAKEHOLDER ASSUMPTIONS LOG (Seal until Stage 8)                        │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                         │
+    │ What stakeholder believes/expects:                                      │
+    │ __________________________________________________________________      │
+    │ __________________________________________________________________      │
+    │                                                                         │
+    │ What would surprise them:                                               │
+    │ __________________________________________________________________      │
+    │ __________________________________________________________________      │
+    │                                                                         │
+    │ ⚠️ DO NOT REVIEW UNTIL ANALYSIS COMPLETE                                │
+    │ Review date: After Stage 7, before finalizing deliverable               │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+Why still ask this question:
+- Ensures your survey CAN detect surprising results (right questions asked)
+- Validates that research has potential to change thinking
+- After analysis: Helps frame findings ("This confirms/challenges assumptions")
+
+What to use during survey design (OK to use):
+- Topics to probe (if casual sentiment would be surprising, include that segment)
+- Questions to include (if priority ranking matters, add MaxDiff)
+
+What NOT to use during analysis (seal it):
+- Their expected direction ("they think casual is positive")
+- Their hypotheses ("they believe competitive wants ranked")
+- What would confirm vs. challenge their beliefs
+
+............................................................................
+QUESTION 8: "What actions are you considering, and what would tip the decision?"
+............................................................................
+
+WHY ASK:
+Understanding the decision options helps you design questions that
+differentiate between them. Knowing the tipping point helps you focus on
+metrics that matter.
+
+EXAMPLE ANSWERS:
+
+    Answer: "We're considering: (A) full revert, (B) partial adjustment, 
+    (C) keep as is. If >50% are negative, we'll probably revert."
+    → Design: Measure exact sentiment distribution; understand what 
+    "partial adjustment" means to probe for specific preferences
+    
+    Answer: "If players hate it, we'll change it. If they're fine, we'll 
+    keep it."
+    → Follow up: "What percentage of negative sentiment would trigger a 
+    change? 30%? 50%? 70%?" Get specific thresholds
+
+............................................................................
+QUESTION 9: "Are there any constraints I should know about?"
+............................................................................
+
+WHY ASK:
+Uncover limitations early: budget for incentives, restrictions on contacting
+players, technical limitations on distribution, political sensitivities
+about certain questions.
+
+EXAMPLE ANSWERS:
+
+    Answer: "We can't offer incentives for this survey — budget isn't approved."
+    → Impact: Expect lower response rate; plan for larger send volume
+    
+    Answer: "Don't ask about the Battle Pass — that's being researched separately."
+    → Impact: Exclude those questions; coordinate with other research
+    
+    Answer: "We can only use in-game distribution, not email."
+    → Impact: Shorter survey needed; different response rate expectations
+
+............................................................................
+QUESTION 10: "Who else should I talk to about this?"
+............................................................................
+
+WHY ASK:
+Identify other stakeholders who have input or will use the results. Avoid
+designing a survey that misses key perspectives. Build alignment early.
+
+EXAMPLE ANSWERS:
+
+    Answer: "Talk to the weapon balance lead — they have specific questions."
+    → Action: Schedule follow-up meeting; incorporate their questions
+    
+    Answer: "Marketing might want to add questions about messaging."
+    → Action: Coordinate; balance research scope to avoid survey bloat
+    
+    Answer: "Just me — I own this decision."
+    → Action: Proceed; confirm they have authority to act on results
+
+............................................................................
+QUESTION 11: "Is this a one-time snapshot or ongoing monitoring?"
+............................................................................
+
+WHY ASK:
+This question determines everything about how you build the deliverable:
+- One-time (static): Manual process, polished output, archived after delivery
+- Ongoing (live): Automated pipeline, self-service dashboard, maintenance plan
+
+Getting this wrong means either over-engineering a simple request or 
+under-building something that needs to scale.
+
+DELIVERABLE TYPE MATRIX:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                    ONE-TIME (STATIC)         ONGOING (LIVE)             │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Purpose           Answer specific question    Monitor health over time  │
+    │ Data refresh      Never (snapshot)            Daily/weekly/per patch    │
+    │ Format            PDF, PPT, one-time viz      Dashboard, automated viz  │
+    │ Access            Sent to stakeholders        Self-service portal       │
+    │ Maintenance       None after delivery         Ongoing updates needed    │
+    │ Build effort      Medium (manual OK)          High (automation needed)  │
+    │ Data connection   CSV export is fine          Live DB connection needed │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+FOLLOW-UP QUESTIONS BY TYPE:
+
+If ONE-TIME / STATIC:
+    - "Is this for a specific meeting or decision point?"
+    - "After the decision is made, will you need this data again?"
+    - "What format works best — slides, PDF report, or a simple chart?"
+
+If ONGOING / LIVE:
+    - "How often should data refresh?" (real-time, daily, weekly, per patch)
+    - "Who needs ongoing access?" (determines permissions/sharing)
+    - "What triggers someone to check the dashboard?" (alert thresholds?)
+    - "How long should we maintain this?" (1 quarter, 1 year, indefinitely)
+
+EXAMPLE ANSWERS:
+
+    Answer: "I need this for the March 22 leadership meeting, then we're done."
+    → Type: ONE-TIME / STATIC
+    → Build: PowerPoint deck + PDF summary
+    → Data: Manual CSV export from Qualtrics is fine
+    → Connection: No live connection needed
+    → Maintenance: None — archive after meeting
+    
+    Answer: "We want to track Zero Build sentiment every patch going forward."
+    → Type: ONGOING / LIVE (TRACKER)
+    → Build: Tableau dashboard with filters
+    → Data: Automated pipeline from Qualtrics to Databricks
+    → Connection: Live connection to data warehouse
+    → Maintenance: Update survey each patch, monitor data quality
+    → Refresh: After each patch (bi-weekly)
+    
+    Answer: "The team wants to check sentiment whenever they want."
+    → Type: ONGOING / LIVE (SELF-SERVICE)
+    → Build: Interactive Tableau dashboard
+    → Data: Live or daily refresh
+    → Connection: Direct to SQL warehouse
+    → Maintenance: Quarterly review, add new segments as needed
+    → Access: Publish to Tableau Server with team permissions
+
+    Answer: "Monthly report to leadership on player health metrics."
+    → Type: ONGOING / STATIC (RECURRING REPORT)
+    → Build: Templated report format, automated data pull
+    → Data: Monthly snapshot
+    → Connection: Scheduled extract
+    → Maintenance: Low — template stays same, data updates
+    → Delivery: Email PDF on 1st of each month
+
+HYBRID SITUATIONS:
+
+Sometimes stakeholders want both:
+    "I need a presentation for March 22, but we also want to track this ongoing."
+    
+→ Approach: 
+    1. Build the one-time deliverable first (meets immediate deadline)
+    2. Scope the ongoing dashboard as a separate phase
+    3. Reuse analysis/visualizations where possible
+
+IMPACT ON PROJECT PLANNING:
+
+    Aspect              One-Time                Ongoing
+    ──────────────────────────────────────────────────────────────────────────
+    Timeline            Fixed end date          Initial build + maintenance
+    Data pipeline       Manual acceptable       Automation required
+    Tech stack          Local files OK          Need DB connections, server
+    Stakeholder input   Once at start           Ongoing feedback loops
+    Documentation       Project archive         Runbook for maintenance
+    Handoff             Deliver and done        Train stakeholders on use
+
+............................................................................
+QUESTION 12: "What does success look like for this deliverable?"
+............................................................................
+
+WHY ASK:
+Aligns expectations on what "done" means. Prevents scope creep and ensures
+you're building what they actually need, not what you assume they need.
+
+EXAMPLE ANSWERS:
+
+    Answer: "Success is the Game Director saying 'I have enough to decide.'"
+    → Focus: Clear recommendation with supporting data, not exhaustive analysis
+    
+    Answer: "Success is the team checking the dashboard weekly without asking me."
+    → Focus: Self-service, intuitive design, documentation
+    
+    Answer: "Success is if this changes how we make balance decisions."
+    → Focus: Actionable insights, integration into existing workflow
+
+............................................................................
+QUESTION 13: "How should we reach players? What channel and timing?"
+............................................................................
+
+WHY ASK:
+Distribution method affects response rate, response quality, and who responds.
+The wrong channel can tank your research or introduce bias.
+
+WHEN TO EVALUATE:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ STAGE 1 (Request):  Initial discussion — understand constraints & options   │
+│ STAGE 2 (Design):   Final decision — once survey length and targeting known │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Why wait until Stage 2 to finalize:
+- Survey length affects channel (long survey = email, short = in-game OK)
+- Targeting criteria affect channel (behavioral trigger vs. batch send)
+- Segment needs affect timing (casual players online at different times)
+
+CHANNEL OPTIONS AND TRADE-OFFS:
+
+    Channel          Response Rate   Quality    Best For
+    ─────────────────────────────────────────────────────────────────────────
+    In-game pop-up   High (30-50%)   Lower      Quick pulse, 1-3 questions
+    Email            Low (8-15%)     Higher     Detailed surveys, 5+ questions
+    Post-match       Medium (20-30%) Medium     Immediate feedback on experience
+    Triggered        Medium          Higher     Specific feature feedback
+    Opt-in menu      Very Low (1-3%) Variable   Bug reports, passionate feedback
+
+TIMING CONSIDERATIONS:
+
+    Timing Factor           Question to Ask
+    ─────────────────────────────────────────────────────────────────────────
+    Recency of experience   "Should they have just used the feature?"
+    Time of day             "When is the target audience most active?"
+    Day of week             "Weekday vs weekend players — different people?"
+    Relative to action      "Immediately after, or with time to reflect?"
+    Patch timing            "Before/after upcoming changes?"
+    Survey fatigue          "When were they last surveyed?"
+
+EXAMPLE ANSWERS:
+
+    Answer: "We need quick feedback — in-game is fine."
+    → Constraint: Survey must be SHORT (3-5 questions max)
+    → Timing: Post-match or lobby
+    → Expect: Higher response rate, more impulsive answers
+    
+    Answer: "Players need time to think — use email."
+    → Constraint: Expect 10-15% response rate
+    → Timing: 24-48 hours after session for fresh but reflective responses
+    → Survey: Can be longer (10-15 questions, MaxDiff/Conjoint OK)
+    
+    Answer: "Only ask players who actually used the weapon."
+    → Channel: Triggered survey after X uses
+    → Timing: After 3+ uses (enough experience to have opinion)
+    → Requires: Behavioral trigger setup
+    
+    Answer: "We've never done in-game surveys — email only."
+    → Constraint: Technical/organizational limitation
+    → Plan: Work with what's available; note limitation in findings
+
+DECISION FRAMEWORK:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                                                                         │
+    │   Survey Length?                                                        │
+    │        │                                                                │
+    │   ┌────┴────┐                                                           │
+    │   │         │                                                           │
+    │ SHORT     LONG                                                          │
+    │ (1-5 Q)   (6+ Q)                                                        │
+    │   │         │                                                           │
+    │   ▼         ▼                                                           │
+    │ In-game   Email                                                         │
+    │   OK      Required                                                      │
+    │   │         │                                                           │
+    │   │         │                                                           │
+    │   Need specific experience?                                             │
+    │        │                                                                │
+    │   ┌────┴────┐                                                           │
+    │   │         │                                                           │
+    │  YES       NO                                                           │
+    │   │         │                                                           │
+    │   ▼         ▼                                                           │
+    │ Triggered  Batch                                                        │
+    │ Survey     Send                                                         │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+DEPENDENCIES THAT AFFECT CHANNEL CHOICE:
+
+    Dependency              Impact on Channel Decision
+    ─────────────────────────────────────────────────────────────────────────
+    Survey length           Long surveys → Email (players abandon in-game)
+    Question complexity     MaxDiff/Conjoint → Email (need focus)
+    Targeting specificity   Behavioral trigger → In-game or triggered email
+    Response rate needs     Need high volume → In-game or incentivized
+    Response quality needs  Need thoughtful answers → Email with delay
+    Available infrastructure What channels can we actually use?
+    Stakeholder timeline    Urgent → In-game (faster collection)
+
+QUESTIONS TO ASK STAKEHOLDER:
+
+    1. "What channels have we used before for surveys?"
+    2. "Are there any channel restrictions or preferences?"
+    3. "How quickly do we need responses?"
+    4. "Do players need recent experience with the feature to answer well?"
+    5. "Is there budget for incentives?" (affects response rate expectations)
+
+DOCUMENT IN STAGE 1, FINALIZE IN STAGE 2:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ DISTRIBUTION METHOD (Initial Assessment)                                │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                         │
+    │ Available channels:      □ Email  □ In-game  □ Triggered  □ Other      │
+    │                                                                         │
+    │ Stakeholder preference:  _________________________________________      │
+    │                                                                         │
+    │ Constraints:             _________________________________________      │
+    │                                                                         │
+    │ Initial recommendation:  _________________________________________      │
+    │                                                                         │
+    │ Final decision (Stage 2): _________________________________________     │
+    │ (After survey length and targeting are known)                           │
+    │                                                                         │
+    │ Timing:                                                                 │
+    │   □ Immediate (post-action)                                             │
+    │   □ Delayed (24-48 hrs after session)                                   │
+    │   □ Triggered (after X uses of feature)                                 │
+    │   □ Batch (send to list at scheduled time)                              │
+    │                                                                         │
+    │ Best send time:          _________________________________________      │
+    │ (Day of week, time of day for target audience)                          │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+--------------------------------------------------------------------------------
+DELIVERABLE PLANNING TEMPLATE
+--------------------------------------------------------------------------------
+
+Based on intake questions, document:
+
+    DELIVERABLE SPECIFICATION
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    TYPE:               □ One-Time (Static)    □ Ongoing (Live)
+    
+    IF ONE-TIME:
+    Format:             □ Presentation (PPT)
+                        □ Report (PDF)
+                        □ Single visualization
+                        □ Executive summary
+    
+    Delivery date:      [Date]
+    Meeting/context:    [What it's for]
+    Archive after:      □ Yes  □ Keep for reference
+    
+    IF ONGOING:
+    Format:             □ Dashboard (Tableau)
+                        □ Recurring report
+                        □ Automated alert
+                        □ Self-service tool
+    
+    Refresh frequency:  □ Real-time  □ Daily  □ Weekly  □ Per patch  □ Monthly
+    Access:             [Who needs it]
+    Platform:           [Tableau Server / Email / Slack integration]
+    Maintenance owner:  [Who updates it]
+    Review cadence:     [How often to review if still needed]
+    Sunset criteria:    [When to retire]
+    
+    SUCCESS CRITERIA:
+    [What does "done" or "working" look like?]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+--------------------------------------------------------------------------------
+REQUIREMENTS SUMMARY TEMPLATE
+--------------------------------------------------------------------------------
+
+After intake meeting, document:
+
+    RESEARCH BRIEF: [Project Name]
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Requestor:              [Name, Role]
+    Date:                   [Date]
+    Timeline:               Results needed by [Date]
+    
+    BUSINESS DECISION:
+    [What specific decision will this inform?]
+    
+    DECISION OPTIONS:
+    □ Option A: [e.g., Revert the nerf]
+    □ Option B: [e.g., Partial adjustment]
+    □ Option C: [e.g., Keep as is]
+    
+    DECISION THRESHOLD:
+    [What result would tip toward each option?]
+    
+    STAKEHOLDER HYPOTHESIS:
+    [What do they believe? What would surprise them?]
+    
+    RESEARCH QUESTIONS:
+    1. [Primary question]
+    2. [Secondary question]
+    3. [Secondary question]
+    
+    SEGMENTS NEEDED:
+    □ [Segment 1] — minimum n = [X]
+    □ [Segment 2] — minimum n = [X]
+    
+    AUDIENCE:
+    Primary: [Who will make decision based on this?]
+    Secondary: [Who else will see results?]
+    
+    DELIVERABLES:
+    □ Dashboard
+    □ Executive summary
+    □ Presentation
+    □ Other: [specify]
+    
+    CONSTRAINTS:
+    [Any limitations on methodology, budget, timing, topics?]
+    
+    RELATED RESEARCH:
+    [Past studies to review or coordinate with]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+--------------------------------------------------------------------------------
+DEPENDENCY: SAMPLE SIZE
+--------------------------------------------------------------------------------
+
+WHAT: Minimum responses needed for reliable analysis
+
+QUESTIONS TO ASK:
+
+To Stakeholder:
+1. "What segments do you need to analyze separately?"
+   → Determines how many sub-groups need sufficient sample
+   
+2. "How precise do the results need to be?"
+   → Higher precision = larger sample needed
+   
+3. "Are there any small but important sub-populations?"
+   → May need to oversample certain groups
+
+To Yourself:
+4. "What is the expected response rate for this channel?"
+   → Email: 10-15%, In-game: 30-50%
+   
+5. "How much cleaning loss should I expect?"
+   → Typically 10-20% removed for quality issues
+   
+6. "What's my minimum cell size for cross-tabs?"
+   → Rule of thumb: n ≥ 100 per cell, absolute minimum n ≥ 30
+
+CALCULATION:
+
+    Target responses = (# of segments × min per segment) / (1 - cleaning loss rate)
+    Send volume = Target responses / Expected response rate
+
+EXAMPLE:
+    - Need 2 segments (casual, competitive) × 500 each = 1,000
+    - Add 15% buffer for cleaning: 1,000 / 0.85 = 1,176
+    - With 15% response rate: 1,176 / 0.15 = 7,840 sends needed
+    - Round up with buffer: Target 10,000-15,000 sends
+
+OUTPUT: Sample size requirement documented in research brief
+
+................................................................................
+SIMPLIFIED SAMPLE SIZE CALCULATION (500-PER-SEGMENT RULE)
+................................................................................
+
+DEFAULT RULE: 500 clean responses per segment you need to analyze separately.
+
+Why 500 works as a standard:
+- Margin of error: ±4.4% at 95% confidence (very precise)
+- Statistical power: >95% for medium effect sizes
+- Covers most tests: t-test, ANOVA, chi-square, MaxDiff all comfortable
+- Buffer for cleaning: Even with 20% loss, you have 400 remaining
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ QUICK SAMPLE SIZE CALCULATION                                           │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                         │
+    │ Step 1: List segments you need to analyze separately                    │
+    │         Example: Casual, Competitive → 2 segments                       │
+    │                                                                         │
+    │ Step 2: Find the smallest segment's % of population (run query below)   │
+    │         Example: Competitive = 25%                                      │
+    │                                                                         │
+    │ Step 3: Calculate total clean responses needed                          │
+    │         Formula: 500 / (smallest segment %)                             │
+    │         Example: 500 / 0.25 = 2,000 responses                           │
+    │                                                                         │
+    │ Step 4: Add cleaning buffer (20%)                                       │
+    │         Formula: Step 3 result / 0.80                                   │
+    │         Example: 2,000 / 0.80 = 2,500 target responses                  │
+    │                                                                         │
+    │ Step 5: Calculate send volume                                           │
+    │         Formula: Step 4 result / response rate                          │
+    │         Example: 2,500 / 0.12 = 20,833 → round to 21,000 sends          │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+CHECK POPULATION DISTRIBUTION BEFORE SENDING:
+
+    -- Run this query to verify segment sizes
+    SELECT 
+        player_type,
+        COUNT(*) as count,
+        ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 1) as pct_of_total
+    FROM survey_target_list
+    GROUP BY player_type
+    ORDER BY count DESC;
+
+WHEN TO ADJUST THE 500 RULE:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ SITUATION                  │ ADJUST TO     │ WHY                        │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Exploratory / low stakes   │ 200-300       │ Directional insights only  │
+    │ High stakes decision       │ 750-1,000     │ Need extra confidence      │
+    │ Detecting small effects    │ 1,000+        │ Small differences harder   │
+    │ Budget constrained         │ 300 minimum   │ Document the limitation    │
+    │ Descriptive only (no comp) │ 400 total     │ No subgroup analysis       │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+IF MINORITY SEGMENT IS TOO SMALL:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ OPTION                    │ WHEN TO USE               │ TRADE-OFF       │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Increase total send       │ Minority ≥15%             │ Cost            │
+    │ Oversample minority       │ Minority 5-15%            │ Weight results  │
+    │ Targeted reminder         │ Low minority response     │ Bias risk       │
+    │ Accept lower power        │ Can't oversample          │ Less certainty  │
+    │ Remove that analysis      │ Not critical              │ Lose insight    │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+DOCUMENT IN RESEARCH BRIEF:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ SAMPLE SIZE SUMMARY                                                     │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                         │
+    │ Segments to analyze: _______________________________________________    │
+    │                                                                         │
+    │ Smallest segment: _____________ at ____% of population                  │
+    │                                                                         │
+    │ Calculation:                                                            │
+    │   500 / ____% = _______ clean responses needed                          │
+    │   + 20% buffer = _______ target responses                               │
+    │   ÷ ____% response rate = _______ sends                                 │
+    │                                                                         │
+    │ Sampling strategy: [ ] Natural  [ ] Oversample minority  [ ] Stratified │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+EXAMPLE — Zero Build Study:
+
+    Segments: Casual vs Competitive (need both for RQ4 comparison)
+    Smallest segment: Competitive at 25%
+    
+    Calculation:
+      500 / 0.25 = 2,000 clean responses needed
+      2,000 / 0.80 = 2,500 target responses (with cleaning buffer)
+      2,500 / 0.12 = 20,833 → 21,000 sends
+    
+    Result: Send 21,000 invites to get ~500 competitive + ~1,500 casual
+
+--------------------------------------------------------------------------------
+DEPENDENCY: SOURCE
+--------------------------------------------------------------------------------
+
+WHAT: Systems and databases that hold required data
+
+QUESTIONS TO ASK:
+
+To Stakeholder:
+1. "Where does player contact information live?"
+   → CRM, Player database, Marketing platform
+   
+2. "Who owns access to this data?"
+   → Identify gatekeepers early
+
+To Data Team:
+3. "What databases contain the behavioral data I need?"
+   → Telemetry, Analytics warehouse, Game servers
+   
+4. "What is the data refresh frequency?"
+   → Real-time, daily, weekly batches
+   
+5. "Are there any access restrictions or approval processes?"
+   → Some data may require additional permissions
+
+To Yourself:
+6. "What format will survey responses be in?"
+   → Qualtrics export, direct database connection
+   
+7. "Where will the final joined dataset live?"
+   → My local analysis, shared dashboard, data warehouse
+
+SOURCE INVENTORY TEMPLATE:
+
+    Data Need              Source              Owner           Access Status
+    ──────────────────────────────────────────────────────────────────────────
+    Player emails          [System]            [Team]          [ ] Have / [ ] Need
+    Player IDs             [System]            [Team]          [ ] Have / [ ] Need
+    Behavioral data        [System]            [Team]          [ ] Have / [ ] Need
+    Survey responses       [System]            [Team]          [ ] Have / [ ] Need
+
+OUTPUT: Source inventory with access status and timeline risks
+
+
+================================================================================
+STAGE 2: DESIGN
+================================================================================
+
+PURPOSE: Create survey instrument and analysis plan
+
+ACTIVITIES:
+□ Draft survey questions
+□ Design survey flow and logic
+□ Plan analysis approach
+□ Get stakeholder review
+□ Get peer methodology review
+
+--------------------------------------------------------------------------------
+DEPENDENCY: TARGETING
+--------------------------------------------------------------------------------
+
+WHAT: Criteria to identify who receives the survey
+
+QUESTIONS TO ASK:
+
+To Stakeholder:
+1. "Who is the target population for this research?"
+   → All players? Active players? Players who used feature X?
+   
+2. "Are there any groups to exclude?"
+   → New accounts, banned players, recent survey recipients
+   
+3. "Do we need behavioral pre-qualification?"
+   → Only those who played since patch, used specific weapon, etc.
+
+To Data Team:
+4. "What fields are available for targeting?"
+   → List available fields: last_active, hours_played, weapon_usage, etc.
+   
+5. "Can I query this myself or do I need to submit a request?"
+   → Understand turnaround time for audience pulls
+   
+6. "Are there existing audience segments I can use?"
+   → Pre-built segments: casual, competitive, whales, etc.
+
+To Yourself:
+7. "What is the minimum behavioral threshold for relevance?"
+   → e.g., Must have used weapon 3+ times to give informed feedback
+   
+8. "How will I balance reach vs. relevance?"
+   → Stricter targeting = more relevant but smaller pool
+
+TARGETING CRITERIA TEMPLATE:
+
+    Criterion                  Field                Source          Logic
+    ──────────────────────────────────────────────────────────────────────────
+    Played recently            last_active_date     Player DB       >= [date]
+    Sufficient playtime        hours_played         Telemetry       >= X hours
+    Used target feature        feature_usage        Telemetry       >= Y times
+    Has email opt-in           email_opt_in         CRM             = TRUE
+    Not recently surveyed      last_survey_date     Survey tracker  < [date - 30]
+    Account in good standing   account_status       Player DB       = 'active'
+
+OUTPUT: Targeting criteria document with SQL-ready logic
+
+--------------------------------------------------------------------------------
+DEPENDENCY: DATA JOIN
+--------------------------------------------------------------------------------
+
+WHAT: How survey responses connect to other data
+
+QUESTIONS TO ASK:
+
+To Data Team:
+1. "What unique identifier can link survey responses to player data?"
+   → player_id, account_id, email hash
+   
+2. "What format is the identifier in each system?"
+   → UUID, integer, string; lowercase vs uppercase
+   
+3. "Are there any known data quality issues with the join key?"
+   → Missing IDs, duplicates, format inconsistencies
+
+To Survey Platform Team:
+4. "Can I embed player_id in the survey URL as a parameter?"
+   → Most survey tools support URL parameters
+   
+5. "Will the embedded data be captured in responses?"
+   → Must configure survey tool to save embedded fields
+
+To Yourself:
+6. "What tables need to be joined for my analysis?"
+   → Map the full join path from survey to all needed data
+   
+7. "What join type is appropriate?"
+   → LEFT JOIN (keep all survey responses) vs INNER JOIN (only matches)
+   
+8. "What happens if join fails?"
+   → Have fallback plan if % of responses don't match
+
+DATA JOIN MAP TEMPLATE:
+
+    survey_responses
+         │
+         │ JOIN KEY: player_id (embedded in survey URL)
+         │ JOIN TYPE: LEFT
+         ▼
+    player_base
+         │
+         │ JOIN KEY: player_id
+         │ JOIN TYPE: LEFT
+         ▼
+    behavioral_data
+         │
+         │ JOIN KEY: player_id + date_range
+         │ JOIN TYPE: LEFT
+         ▼
+    feature_usage
+
+    Expected match rate: 95%+ (allow for test/invalid responses)
+
+OUTPUT: Data join map with keys, types, and expected match rates
+
+--------------------------------------------------------------------------------
+DEPENDENCY: REPRESENTATIVENESS
+--------------------------------------------------------------------------------
+
+WHAT: Ensuring sample mirrors the player population
+
+QUESTIONS TO ASK:
+
+To Analytics Team:
+1. "What is the current distribution of key player attributes?"
+   → Region, platform, play time, tenure, spending tier
+   
+2. "Which segments are typically under/over-represented in surveys?"
+   → Casual players often under-respond; engaged over-respond
+   
+3. "Do you have benchmark distributions I can compare against?"
+   → Get actual population percentages for validation
+
+To Yourself:
+4. "Which attributes are most important to match?"
+   → Prioritize attributes that affect the research questions
+   
+5. "What threshold defines 'representative enough'?"
+   → Common rule: within 5 percentage points of population
+   
+6. "Will I apply weighting if sample is skewed?"
+   → Decide approach in advance: weight or note limitation
+
+7. "Should I use stratified sampling or quotas?"
+   → Stratified: send proportionally to segments
+   → Quotas: close survey for segment when quota met
+
+REPRESENTATIVENESS PLANNING TEMPLATE:
+
+    Attribute           Population %    Sample Target %    Tolerance
+    ──────────────────────────────────────────────────────────────────
+    Region: NA          40%             38-42%             ±2%
+    Region: EU          30%             28-32%             ±2%
+    Region: Asia        20%             18-22%             ±2%
+    
+    Player Type: Casual 65%             60-70%             ±5%
+    Player Type: Core   25%             22-28%             ±3%
+    Player Type: Hard   10%             8-12%              ±2%
+
+    Weighting strategy: Post-stratification if off by >5%
+
+PREVENTION STRATEGIES (Avoid Weighting When Possible)
+─────────────────────────────────────────────────────────────────────────────
+
+It's better to get a representative sample upfront than to fix with weighting.
+
+STRATEGY 1: STRATIFIED SAMPLING (Send Proportionally)
+─────────────────────────────────────────────────────────────────────────────
+
+What: Send invitations in the same proportions as your population.
+
+    POPULATION                    SEND INVITATIONS
+    ─────────────────────────     ─────────────────────────
+    Casual:      72%              Send to 72% casual
+    Competitive: 28%              Send to 28% competitive
+
+SQL Example:
+    
+    WITH segment_targets AS (
+        SELECT 'casual' as segment, 0.72 as target_prop, 25000 * 0.72 as target_n
+        UNION ALL
+        SELECT 'competitive', 0.28, 25000 * 0.28
+    ),
+    sampled AS (
+        SELECT p.*, 
+               ROW_NUMBER() OVER (PARTITION BY p.player_type ORDER BY RANDOM()) as rn
+        FROM player_base p
+        WHERE p.email_opt_in = TRUE
+    )
+    SELECT s.* FROM sampled s
+    JOIN segment_targets t ON s.player_type = t.segment
+    WHERE s.rn <= t.target_n;
+
+Limitation: Doesn't guarantee responses will be proportional (response rates differ)
+
+STRATEGY 2: QUOTA SAMPLING (Stop When Full)
+─────────────────────────────────────────────────────────────────────────────
+
+What: Set quotas for each segment, close collection when quotas are met.
+
+    TARGET QUOTAS
+    ─────────────────────────────────────
+    Casual:      Target 720 responses (72%)
+    Competitive: Target 280 responses (28%)
+    Total:       1,000 responses
+
+Qualtrics Setup:
+    1. Survey Flow → Add Quota element
+    2. Set quotas by segment
+    3. Action when full: End survey with thank you message
+
+Result: Exact proportions guaranteed
+Limitation: May take longer to fill underrepresented quotas
+
+STRATEGY 3: OVERSAMPLE LOW-RESPONSE SEGMENTS
+─────────────────────────────────────────────────────────────────────────────
+
+What: Send MORE invitations to groups with lower expected response rates.
+
+Calculation:
+    
+    Sends needed per segment = Target responses / Expected response rate
+    
+    Example:
+    ─────────────────────────────────────────────────────────────────────────
+    Segment        Target     Response Rate    Sends Needed
+    Casual         720        12%              720 / 0.12 = 6,000
+    Competitive    280        8%               280 / 0.08 = 3,500
+    
+    Without oversampling (population-proportional 72/28):
+      Total: 9,500 sends
+      Casual: 6,840 sends → 821 responses (more than needed)
+      Competitive: 2,660 sends → 213 responses (NOT ENOUGH!)
+    
+    With oversampling:
+      Casual: 6,000 sends → 720 responses ✓
+      Competitive: 3,500 sends → 280 responses ✓
+
+STRATEGY 4: TARGETED REMINDERS
+─────────────────────────────────────────────────────────────────────────────
+
+What: Send reminder emails only to underrepresented segments.
+
+Process:
+    Day 1: Send to all
+    Day 3: Check segment balance
+           → If competitive behind target → Reminder to competitive only
+    Day 5: Check again
+           → If still unbalanced → Second reminder to competitive
+    Day 7: Final check, close survey
+
+STRATEGY 5: TIMING OPTIMIZATION BY SEGMENT
+─────────────────────────────────────────────────────────────────────────────
+
+What: Send at different times optimized for each segment's behavior.
+
+    Segment        Best Send Time          Why
+    ─────────────────────────────────────────────────────────────────────────
+    Casual         Weekend afternoon       Play for leisure
+    Competitive    Weekday evening         Grind after work/school
+    Mobile         Morning commute         Check phone during travel
+
+DECISION TREE: WHICH STRATEGY?
+─────────────────────────────────────────────────────────────────────────────
+
+    Do you know segment response rates from past surveys?
+            │
+       ┌────┴────┐
+       │         │
+      YES        NO
+       │         │
+       ▼         ▼
+    Oversample   Use stratified
+    low-response sampling +
+    segments     monitor closely
+       │         │
+       └────┬────┘
+            │
+            ▼
+    Can you set up quotas in survey tool?
+            │
+       ┌────┴────┐
+       │         │
+      YES        NO
+       │         │
+       ▼         ▼
+    Hard quotas  Soft targets with
+    (auto-close) targeted reminders
+
+PREVENTION CHECKLIST:
+─────────────────────────────────────────────────────────────────────────────
+
+    BEFORE DISTRIBUTION:
+    □ Know population proportions for key segments
+    □ Know (or estimate) response rates by segment
+    □ Calculate sends needed per segment
+    □ Decide: Stratified sampling, quota sampling, or oversampling?
+    □ Set up quotas in survey tool (if using quotas)
+
+    DURING COLLECTION:
+    □ Monitor segment balance daily
+    □ If segment is behind → Send targeted reminder
+    □ If segment fills quota → Stop collecting for that segment
+
+    AFTER COLLECTION:
+    □ Compare final sample to population benchmarks
+    □ If within ±5% → No weighting needed
+    □ If off by 5-15% → Apply weighting, document
+    □ If off by >15% → Weight + flag as significant limitation
+
+COMPARISON: PREVENTION VS. WEIGHTING
+─────────────────────────────────────────────────────────────────────────────
+
+    Aspect             Prevention             Weighting
+    ─────────────────────────────────────────────────────────────────────────
+    Sample quality     Better (real data)     Same data, adjusted
+    Complexity         Higher setup           Easy calculation
+    Cell sizes         Guaranteed minimums    May have small cells
+    Stakeholder trust  "Right people"         "Math adjustment"
+    Subgroup analysis  Full responses         Weighted estimates
+
+    Best practice: Always try prevention first. Use weighting as backup.
+
+SAMPLING STRATEGY TEMPLATE:
+─────────────────────────────────────────────────────────────────────────────
+
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │ SAMPLING PLAN                                                       │
+    ├─────────────────────────────────────────────────────────────────────┤
+    │                                                                     │
+    │ Strategy chosen:   □ Stratified  □ Quota  □ Oversample  □ Hybrid   │
+    │                                                                     │
+    │ Segment        Population%   Target n   Exp. Rate   Sends Needed   │
+    │ ──────────────────────────────────────────────────────────────────  │
+    │ ____________   __________%   ________   ________%   ____________   │
+    │ ____________   __________%   ________   ________%   ____________   │
+    │ ____________   __________%   ________   ________%   ____________   │
+    │                                                                     │
+    │ Total sends: ______________                                         │
+    │                                                                     │
+    │ Quotas set up in survey tool?  □ Yes  □ No                          │
+    │                                                                     │
+    │ Reminder strategy:                                                  │
+    │ Day ___: Check balance, remind ______________ if behind             │
+    │ Day ___: Second reminder if needed                                  │
+    │                                                                     │
+    │ Fallback if unbalanced: □ Weight  □ Document limitation             │
+    │                                                                     │
+    └─────────────────────────────────────────────────────────────────────┘
+
+OUTPUT: Population benchmarks and representativeness validation plan
+
+--------------------------------------------------------------------------------
+DEPENDENCY: DATA CLEANING
+--------------------------------------------------------------------------------
+
+WHAT: Rules to identify and remove low-quality responses
+
+QUESTIONS TO ASK:
+
+To Yourself:
+1. "What attention check will I include?"
+   → Instructed response, impossible question, consistency check
+   
+2. "What is the minimum realistic completion time?"
+   → Calculate: (# questions × avg seconds per question)
+   → For 15 questions: minimum ~90 seconds
+   
+3. "How will I detect straight-lining?"
+   → Zero variance across Likert battery questions
+   
+4. "How will I handle partial completions?"
+   → <50% = remove; 50-80% = case-by-case; >80% = keep
+   
+5. "How will I detect duplicate submissions?"
+   → Same player_id, same IP + similar responses
+   
+6. "Should I cross-reference with behavioral data?"
+   → Flag responses from players with no recent activity
+
+To Past Research:
+7. "What was the cleaning loss rate in similar studies?"
+   → Typically 10-20%; higher for incentivized surveys
+   
+8. "What issues have appeared in past surveys?"
+   → Learn from previous quality problems
+
+CLEANING RULES TEMPLATE:
+
+    Quality Issue       Detection Method              Threshold       Action
+    ──────────────────────────────────────────────────────────────────────────
+    Incomplete          questions_answered / total    < 50%           Remove
+    Speeder             completion_time_seconds       < 90 sec        Remove
+    Straight-liner      std(Likert questions)         = 0             Remove
+    Failed attention    attention_check_response      ≠ expected      Remove
+    Duplicate           COUNT(player_id)              > 1             Keep first
+    Bot/fraud           days_since_last_play          > 30            Flag/review
+
+OUTPUT: Cleaning rules document with thresholds and actions
+
+
+================================================================================
+STAGE 3: BUILD
+================================================================================
+
+PURPOSE: Program survey in survey tool and test
+
+ACTIVITIES:
+□ Build survey in Qualtrics/survey tool
+□ Configure question logic and skip patterns
+□ Set up embedded data capture
+□ Configure completion redirects
+□ Test on desktop and mobile
+□ Peer review programmed survey
+□ Generate distribution links
+
+--------------------------------------------------------------------------------
+DEPENDENCY VALIDATION: TECHNICAL CHECKS
+--------------------------------------------------------------------------------
+
+QUESTIONS TO ASK (AS CHECKLIST):
+
+Survey Configuration:
+□ "Is the attention check correctly programmed?"
+□ "Is embedded data (player_id) being captured?"
+□ "Are skip patterns working correctly?"
+□ "Is the survey mobile-friendly?"
+□ "Is completion time being recorded?"
+
+Data Flow:
+□ "Can I export test responses and see all fields?"
+□ "Does player_id appear in the export?"
+□ "Can I successfully join a test response to player data?"
+
+Distribution:
+□ "Are survey links generated with embedded parameters?"
+□ "Does clicking test link correctly populate player_id?"
+
+OUTPUT: Tested survey with validation checklist complete
+
+
+================================================================================
+STAGE 4: DISTRIBUTE
+================================================================================
+
+PURPOSE: Send survey to target audience
+
+ACTIVITIES:
+□ Pull final audience list
+□ Validate audience meets targeting criteria
+□ Coordinate with CRM/email team
+□ Schedule or send survey
+□ Confirm successful delivery
+
+--------------------------------------------------------------------------------
+DEPENDENCY EXECUTION: TARGETING + SOURCE
+--------------------------------------------------------------------------------
+
+QUESTIONS TO ASK:
+
+Pre-Send Validation:
+1. "Does the audience size match my calculation?"
+   → If significantly different, investigate why
+   
+2. "Does the audience distribution look right?"
+   → Quick check: region/platform split reasonable?
+   
+3. "Have I excluded recently surveyed players?"
+   → Verify no overlap with last 30 days
+   
+4. "Is the send scheduled for optimal time?"
+   → Consider time zones, avoid weekends/holidays
+
+Post-Send Confirmation:
+5. "What was the successful delivery rate?"
+   → Bounced emails reduce effective sample
+   
+6. "Are responses starting to come in?"
+   → Early check that links work correctly
+
+OUTPUT: Audience confirmation and delivery report
+
+
+================================================================================
+STAGE 5: COLLECT
+================================================================================
+
+PURPOSE: Monitor response volume and quality during field period
+
+ACTIVITIES:
+□ Monitor daily response counts
+□ Check quality metrics
+□ Validate representativeness early
+□ Decide when to close survey
+
+--------------------------------------------------------------------------------
+DEPENDENCY MONITORING: SAMPLE SIZE + REPRESENTATIVENESS
+--------------------------------------------------------------------------------
+
+QUESTIONS TO ASK:
+
+Daily Monitoring:
+1. "Am I on track to hit my sample target?"
+   → Project: current responses × (field days remaining / days elapsed)
+   
+2. "Is response rate meeting expectations?"
+   → If lower than expected, consider reminder email
+   
+3. "What is the completion rate?"
+   → Low completion may indicate survey too long or confusing
+   
+4. "What is the attention check pass rate?"
+   → If <85%, consider data quality issues
+
+Mid-Field Validation (Day 7):
+5. "How does my current sample compare to population benchmarks?"
+   → Check key attributes: region, player type, platform
+   
+6. "Are any segments severely under-represented?"
+   → May need targeted reminder or extend field period
+   
+7. "Is data quality acceptable so far?"
+   → Speeder rate, straight-liner rate, attention fail rate
+
+Close Decision:
+8. "Have I hit target sample size (including cleaning buffer)?"
+   → Target = needed responses / (1 - expected cleaning loss)
+   
+9. "Is representativeness acceptable?"
+   → If skewed, either boost or plan to weight
+   
+10. "Has response rate plateaued?"
+    → Diminishing returns suggest time to close
+
+MONITORING DASHBOARD TEMPLATE:
+
+    DAY    RESPONSES    CUMULATIVE    RATE    COMPLETION %    ATTENTION PASS %
+    ──────────────────────────────────────────────────────────────────────────
+    1      1,247        1,247         12.5%   84%             92%
+    2      1,644        2,891         14.5%   86%             91%
+    3      1,211        4,102         14.2%   85%             93%
+    ...
+    7      [Mid-field validation checkpoint]
+    ...
+    Close  [Final count]
+
+OUTPUT: Daily monitoring log and close decision
+
+
+================================================================================
+STAGE 6: CLEAN
+================================================================================
+
+PURPOSE: Apply cleaning rules and validate final sample
+
+ACTIVITIES:
+□ Export raw data
+□ Apply cleaning rules sequentially
+□ Document removal at each step
+□ Validate representativeness of clean sample
+□ Decide on weighting (if needed)
+
+--------------------------------------------------------------------------------
+DEPENDENCY EXECUTION: DATA CLEANING + REPRESENTATIVENESS
+--------------------------------------------------------------------------------
+
+QUESTIONS TO ASK:
+
+Cleaning Execution:
+1. "How many responses were removed at each step?"
+   → Document to show transparent process
+   
+2. "Is total cleaning loss within expected range?"
+   → Typical: 10-20%; if higher, investigate why
+   
+3. "Did cleaning disproportionately remove certain segments?"
+   → Check if cleaning introduced bias
+
+Post-Cleaning Validation:
+4. "How does clean sample compare to population?"
+   → Re-run representativeness check
+   
+5. "Do I need to apply weighting?"
+   → If off by >5%, consider weighting
+   
+6. "Does cleaning change the results significantly?"
+   → Compare pre/post cleaning distributions
+
+CLEANING LOG TEMPLATE:
+
+    CLEANING LOG
+    ═══════════════════════════════════════════════════════════════
+    
+    Raw responses:                          7,891
+    
+    Step 1: Remove incomplete (<50%)
+            Removed: 412 (5.2%)
+            Remaining: 7,479
+    
+    Step 2: Remove speeders (<90 sec)
+            Removed: 198 (2.5%)
+            Remaining: 7,281
+    
+    Step 3: Remove failed attention check
+            Removed: 156 (2.1%)
+            Remaining: 7,125
+    
+    Step 4: Remove straight-liners
+            Removed: 89 (1.3%)
+            Remaining: 7,036
+    
+    Step 5: Remove duplicates
+            Removed: 23 (0.3%)
+            Remaining: 7,013
+    
+    ───────────────────────────────────────────────────────────────
+    FINAL CLEAN SAMPLE: 7,013 (88.9% retention)
+    ═══════════════════════════════════════════════════════════════
+    
+    Representativeness Check:
+                        Population    Clean Sample    Difference
+    Region: NA          40%           42%             +2% ✓
+    Region: EU          30%           28%             -2% ✓
+    Player Type: Casual 65%           58%             -7% ⚠
+    Player Type: Comp   35%           42%             +7% ⚠
+    
+    Decision: Apply weighting for player type
+
+OUTPUT: Cleaning log with final sample characteristics
+
+
+================================================================================
+STAGE 7: ANALYZE
+================================================================================
+
+PURPOSE: Run analysis to answer research questions
+
+ACTIVITIES:
+□ Execute data joins
+□ Run descriptive statistics
+□ Run segment comparisons with significance tests
+□ Analyze MaxDiff/Conjoint if applicable
+□ Code and analyze open-ended responses
+□ Generate key findings
+
+--------------------------------------------------------------------------------
+DEPENDENCY EXECUTION: DATA JOIN
+--------------------------------------------------------------------------------
+
+QUESTIONS TO ASK:
+
+Join Execution:
+1. "What is the match rate for my join?"
+   → Target: 95%+; investigate if lower
+   
+2. "Are there any unexpected null values?"
+   → Missing behavioral data for some respondents?
+   
+3. "Does the joined data look correct?"
+   → Spot check: do values make sense?
+
+Analysis Execution:
+4. "Am I answering each research question?"
+   → Map analysis to original research questions
+   
+5. "Are segment differences statistically significant?"
+   → Run t-tests, chi-square as appropriate
+   
+6. "What is the effect size, not just significance?"
+   → A difference can be significant but small
+
+ANALYSIS CHECKLIST TEMPLATE:
+
+    Research Question                          Analysis              Complete
+    ──────────────────────────────────────────────────────────────────────────
+    RQ1: Overall sentiment                     Frequency dist        □
+    RQ2: Casual vs competitive difference      Cross-tab + t-test    □
+    RQ3: Feature users vs non-users            Cross-tab + t-test    □
+    RQ4: Which changes had most impact         MaxDiff utility       □
+    RQ5: What do players want changed          Open-text coding      □
+
+OUTPUT: Analysis complete with findings documented
+
+
+================================================================================
+STAGE 8: DELIVER
+================================================================================
+
+PURPOSE: Communicate findings to stakeholders
+
+ACTIVITIES:
+□ Build Tableau dashboard
+□ Create executive summary
+□ Prepare presentation
+□ Present to stakeholders
+□ Document for future reference
+
+--------------------------------------------------------------------------------
+DELIVERABLE CHECKLIST
+--------------------------------------------------------------------------------
+
+QUESTIONS TO ASK:
+
+Dashboard:
+1. "Does the dashboard answer the key questions at a glance?"
+   → Lead with the answer, not the methodology
+   
+2. "Can stakeholders filter and explore on their own?"
+   → Include appropriate filters and interactivity
+   
+3. "Is sample size visible for credibility?"
+   → Show n for all key metrics
+
+Executive Summary:
+4. "Can someone understand the key finding in 30 seconds?"
+   → One-page max, clear recommendation
+   
+5. "Is the recommendation actionable?"
+   → Not just "players are unhappy" but "reduce nerf by X%"
+
+Presentation:
+6. "Am I leading with insight, not process?"
+   → Stakeholders care about what to do, not how you did it
+   
+7. "Do I have backup slides for detailed questions?"
+   → Methodology, full data tables, statistical details
+
+DELIVERABLE TEMPLATES:
+
+    1. TABLEAU DASHBOARD
+       ├── Summary KPIs (top)
+       ├── Trend/comparison charts (middle)
+       ├── Detail/distribution charts (bottom)
+       └── Filters (sidebar/top)
+    
+    2. EXECUTIVE SUMMARY (1-page)
+       ├── The Question
+       ├── The Answer (recommendation)
+       ├── Key Findings (3-4 bullets)
+       ├── Supporting Data (1-2 key charts)
+       └── Next Steps
+    
+    3. PRESENTATION (30 min)
+       ├── Context (2 min)
+       ├── Bottom Line (3 min)
+       ├── Supporting Findings (10 min)
+       ├── Recommendation (5 min)
+       └── Discussion (10 min)
+
+OUTPUT: Dashboard + summary + presentation delivered to stakeholders
+
+
+================================================================================
+QUICK REFERENCE: DEPENDENCY BY STAGE
+================================================================================
+
+STAGE               DEPENDENCIES TO IDENTIFY/VALIDATE
+────────────────────────────────────────────────────────────────────────────────
+1. REQUEST          Sample Size:        How many responses do I need?
+                    Source:             Where does the data live?
+
+2. DESIGN           Targeting:          Who should receive the survey?
+                    Data Join:          How do I connect survey to other data?
+                    Representativeness: How do I ensure sample mirrors population?
+                    Data Cleaning:      How do I identify bad responses?
+
+3. BUILD            [Validate all technical dependencies]
+
+4. DISTRIBUTE       [Execute targeting and source access]
+
+5. COLLECT          Sample Size:        Am I on track?
+                    Representativeness: Is my sample balanced?
+
+6. CLEAN            Data Cleaning:      Execute cleaning rules
+                    Representativeness: Validate clean sample
+
+7. ANALYZE          Data Join:          Execute joins for analysis
+
+8. DELIVER          [No new dependencies — execution of insights]
+
+
+================================================================================
+MASTER QUESTION CHECKLIST
+================================================================================
+
+Print this page and check off as you progress through research:
+
+STAGE 1: REQUEST
+□ What decision will this inform?
+□ What segments need separate analysis?
+□ Where does player contact data live?
+□ Where does behavioral data live?
+□ What is the timeline?
+
+STAGE 2: DESIGN
+□ Who is the target population?
+□ What criteria define the audience?
+□ What join key links survey to player data?
+□ What are the population benchmarks?
+□ What cleaning rules will I apply?
+□ What attention check will I include?
+
+STAGE 3: BUILD
+□ Is embedded data capture configured?
+□ Is the attention check working?
+□ Have I tested on mobile?
+□ Can I join test data successfully?
+
+STAGE 4: DISTRIBUTE
+□ Does audience size match expectations?
+□ Is audience distribution reasonable?
+□ Was delivery successful?
+
+STAGE 5: COLLECT
+□ Am I on track for target sample?
+□ Is completion rate acceptable?
+□ Is attention check pass rate acceptable?
+□ Are segments balanced (mid-field)?
+
+STAGE 6: CLEAN
+□ Is cleaning loss within expected range?
+□ Did cleaning introduce bias?
+□ Is clean sample representative?
+□ Do I need to weight?
+
+STAGE 7: ANALYZE
+□ What is my join match rate?
+□ Am I answering all research questions?
+□ Are differences statistically significant?
+
+STAGE 8: DELIVER
+□ Is the key finding clear in 30 seconds?
+□ Is the recommendation actionable?
+□ Is sample size visible?
+

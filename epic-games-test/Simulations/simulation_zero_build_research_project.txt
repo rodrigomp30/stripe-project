@@ -1,0 +1,1294 @@
+================================================================================
+RESEARCH PROJECT SIMULATION: ZERO BUILD MODE SENTIMENT
+================================================================================
+
+This document simulates a complete research project at Epic Games, walking 
+through each stage using our framework files as guides.
+
+Files Referenced:
+- research_framework_with_dependencies.txt (process & dependencies)
+- survey_research_guide_by_stakeholder.txt (survey types & methods)
+- tech_stack_reference.txt (tools & capabilities)
+
+================================================================================
+THE REQUEST (Simulated Slack Message)
+================================================================================
+
+From: Sarah Chen, Senior Product Manager - Game Modes
+To: You (Research & Insights Analyst)
+Date: Monday, March 4, 2024, 9:15 AM
+Channel: #research-requests
+
+───────────────────────────────────────────────────────────────────────────────
+Hey! 👋
+
+We're coming up on the 6-month anniversary of Zero Build mode and leadership 
+wants to do a comprehensive review. I need research support to understand  
+where we stand with players.
+
+Quick context:
+- Zero Build launched in September 2023
+- Initial reception was very positive
+- We've made several tweaks since launch (mobility, healing, etc.)
+- Some competitive players are vocal on social media about wanting changes
+- We're considering whether to add a ranked version of Zero Build
+
+Main questions I need answered:
+1. What is overall player sentiment toward Zero Build now?
+2. How has sentiment changed since launch?
+3. Are there differences between casual and competitive players?
+4. If we added ranked Zero Build, who would play it?
+5. What specific improvements do players want?
+
+The Game Director review meeting is March 22 (18 days from now).
+
+Can we meet today or tomorrow to scope this out?
+
+Sarah
+───────────────────────────────────────────────────────────────────────────────
+
+
+================================================================================
+STAGE 1: REQUEST
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 37-310
+
+--------------------------------------------------------------------------------
+STEP 1.1: SCHEDULE INTAKE MEETING
+--------------------------------------------------------------------------------
+
+Action: Respond to Sarah and schedule 30-minute intake meeting
+
+    Reply: "Hi Sarah! Happy to help with this. Let's meet today at 2 PM 
+    to scope it properly. I'll come with some questions to make sure we 
+    design research that answers your key questions. Send me any 
+    additional context you have before the meeting!"
+
+--------------------------------------------------------------------------------
+STEP 1.2: CONDUCT INTAKE MEETING
+--------------------------------------------------------------------------------
+
+Reference: "Understanding Requirements: Intake Questions" section
+
+Questions to ask Sarah (with expected answers):
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 1: "What decision will this research inform?"                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "Two decisions: (1) Whether to invest in Ranked Zero Build for next        │
+│ season, and (2) What QoL improvements to prioritize for Zero Build."        │
+│                                                                             │
+│ → This is actionable. Research needs to inform go/no-go on ranked +        │
+│   prioritized improvement list.                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 2: "Who will use these results?"                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "Game Director for the leadership review. Then my team and the game        │
+│ design team for roadmap planning."                                          │
+│                                                                             │
+│ → Need executive summary for Game Director + detailed findings for         │
+│   product/design teams.                                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 3: "What is the timeline?"                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "Results needed by March 20 (before March 22 meeting). I need 2 days       │
+│ to prep the presentation."                                                  │
+│                                                                             │
+│ → 16 working days. Enough for full methodology including MaxDiff.           │
+│                                                                             │
+│ Timeline working backward:                                                  │
+│ March 20: Deliver results to Sarah                                          │
+│ March 18-19: Build dashboard, create summary (2 days)                       │
+│ March 15-17: Analyze (3 days)                                               │
+│ March 14: Clean data (1 day)                                                │
+│ March 7-13: Collect responses (7 days)                                      │
+│ March 6: Distribute (1 day)                                                 │
+│ March 5: Build survey (1 day)                                               │
+│ March 4-5: Design survey (1-2 days)                                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 4: "What do you already know or believe?"                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "We believe casual players love Zero Build, but competitive players        │
+│ want more from it — specifically ranked. Social media has been asking      │
+│ for ranked Zero Build for months. But we don't know if that's 1% of        │
+│ players or 30%."                                                            │
+│                                                                             │
+│ → Key hypothesis to test: Casual vs competitive sentiment difference.       │
+│ → Need to quantify ranked demand (not just "social media says").            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 5: "What segments need separate analysis?"                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "Definitely casual vs competitive. Also helpful: Zero Build mains vs       │
+│ players who play both modes."                                               │
+│                                                                             │
+│ → Need 4 segments: Casual ZB-only, Casual Both, Competitive ZB-only,        │
+│   Competitive Both. Minimum n=300 per segment = 1,200 minimum.              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 6: "What have you already tried or learned?"                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "We ran a survey at 3-month mark. I can share results. Sentiment was       │
+│ 4.1/5 then. We also have social listening reports from Community team."     │
+│                                                                             │
+│ → Review 3-month survey to enable trend comparison.                         │
+│ → Get social listening reports for qualitative context.                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 7: "What would be a surprising result?"                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "If casual players ALSO wanted ranked — we assumed they don't care.        │
+│ Or if sentiment dropped significantly from 3-month mark."                   │
+│                                                                             │
+│ → Test casual interest in ranked. Compare to 3-month baseline.              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 8: "What actions are you considering?"                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "Options for ranked: (A) Launch ranked Zero Build next season,              │
+│ (B) Launch limited-time ranked test first, (C) Don't do ranked yet.        │
+│ If >40% of competitive players want ranked, we'll likely do option A.       │
+│ If 20-40%, we'll do B. If <20%, we'll do C."                                │
+│                                                                             │
+│ → Decision threshold: Need to measure exact % wanting ranked by segment.    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 9: "Any constraints?"                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "No budget for incentives this round. Also, we can only survey players     │
+│ who've played Zero Build at least once."                                    │
+│                                                                             │
+│ → Lower response rate expected (no incentive). Target larger send.          │
+│ → Targeting: Must have Zero Build playtime > 0.                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUESTION 10: "Who else should I talk to?"                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Sarah's Answer:                                                             │
+│ "Chat with Marcus on game design — he has specific questions about         │
+│ mobility and healing balance in Zero Build."                                │
+│                                                                             │
+│ → Schedule 15-min call with Marcus to capture his questions.                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+--------------------------------------------------------------------------------
+STEP 1.3: IDENTIFY SAMPLE SIZE DEPENDENCY
+--------------------------------------------------------------------------------
+
+Reference: research_framework_with_dependencies.txt, Lines 318-356
+
+Segments needed:
+- Casual + Zero Build Only
+- Casual + Plays Both Modes
+- Competitive + Zero Build Only
+- Competitive + Plays Both Modes
+
+Calculation:
+    Minimum per segment:           300
+    Number of segments:            4
+    Subtotal:                      1,200
+    Buffer for cleaning (15%):     1,200 / 0.85 = 1,412
+    Response rate (email, no incentive): 8%
+    Send volume needed:            1,412 / 0.08 = 17,650
+    Target send (with buffer):     25,000
+
+--------------------------------------------------------------------------------
+STEP 1.4: IDENTIFY SOURCE DEPENDENCY
+--------------------------------------------------------------------------------
+
+Reference: research_framework_with_dependencies.txt, Lines 358-399
+
+    Data Need              Source              Owner           Access
+    ─────────────────────────────────────────────────────────────────────────
+    Player emails          CRM (Salesforce)    CRM Team        ✓ Have
+    Player IDs             Player DB           Data Eng        ✓ Have
+    Zero Build playtime    Telemetry           Analytics       ✓ Have
+    Game mode split        Telemetry           Analytics       ✓ Have
+    Player type (casual/   Segmentation        Analytics       ✓ Have
+      competitive)         table
+    Last survey date       Survey tracker      Research        ✓ Have
+
+No access issues identified. Can proceed.
+
+--------------------------------------------------------------------------------
+STEP 1.5: CREATE RESEARCH BRIEF
+--------------------------------------------------------------------------------
+
+OUTPUT:
+
+    RESEARCH BRIEF: Zero Build Mode 6-Month Sentiment Study
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Requestor:              Sarah Chen, Senior PM - Game Modes
+    Date:                   March 4, 2024
+    Timeline:               Results by March 20, 2024 (16 days)
+    
+    BUSINESS DECISIONS:
+    1. Whether to launch Ranked Zero Build (and in what form)
+    2. What QoL improvements to prioritize for Zero Build
+    
+    DECISION OPTIONS (Ranked):
+    □ Option A: Full launch next season (if >40% competitive want it)
+    □ Option B: Limited-time test (if 20-40% competitive want it)
+    □ Option C: Don't pursue yet (if <20% want it)
+    
+    STAKEHOLDER HYPOTHESIS:
+    "Casual players love ZB. Competitive players want more (ranked)."
+    Surprise: If casuals also want ranked, or if sentiment dropped.
+    
+    RESEARCH QUESTIONS:
+    1. What is current overall sentiment toward Zero Build?
+    2. How has sentiment changed since 3-month mark?
+    3. How does sentiment differ: casual vs competitive?
+    4. What % want ranked Zero Build (by segment)?
+    5. What improvements do players prioritize?
+    
+    SEGMENTS NEEDED:
+    □ Casual + ZB Only — min n = 300
+    □ Casual + Both Modes — min n = 300
+    □ Competitive + ZB Only — min n = 300
+    □ Competitive + Both Modes — min n = 300
+    
+    AUDIENCE:
+    Primary: Game Director (executive summary)
+    Secondary: Product team, Game Design team (detailed findings)
+    
+    DELIVERABLES:
+    □ Tableau Dashboard
+    □ Executive summary (1-page)
+    □ Presentation (for Sarah to use in review meeting)
+    
+    CONSTRAINTS:
+    - No incentive budget
+    - Only players with ZB playtime
+    
+    RELATED RESEARCH:
+    - 3-month ZB survey (get from archive)
+    - Social listening reports (get from Community team)
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+
+================================================================================
+STAGE 2: DESIGN
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 402-615
+
+--------------------------------------------------------------------------------
+STEP 2.1: IDENTIFY TARGETING DEPENDENCY
+--------------------------------------------------------------------------------
+
+Reference: Framework, Lines 415-461
+
+Target Population: Players who have played Zero Build mode at least once
+
+    Criterion                  Field                Source          Logic
+    ──────────────────────────────────────────────────────────────────────────
+    Has ZB playtime            zb_total_hours       Telemetry       > 0
+    Active in last 30 days     last_active_date     Player DB       >= 30 days ago
+    Has email opt-in           email_opt_in         CRM             = TRUE
+    Not surveyed recently      last_survey_date     Survey tracker  >= 30 days ago
+    Account active             account_status       Player DB       = 'active'
+
+Targeting SQL (for Databricks):
+
+    SELECT 
+        p.player_id,
+        p.email,
+        p.region,
+        p.platform,
+        s.player_type,
+        t.zb_total_hours,
+        t.build_total_hours,
+        CASE 
+            WHEN t.build_total_hours = 0 THEN 'ZB Only'
+            ELSE 'Plays Both'
+        END as mode_preference
+    FROM player_base p
+    JOIN player_segments s ON p.player_id = s.player_id
+    JOIN telemetry_summary t ON p.player_id = t.player_id
+    WHERE 
+        t.zb_total_hours > 0
+        AND p.last_active_date >= CURRENT_DATE - INTERVAL 30 DAYS
+        AND p.email_opt_in = TRUE
+        AND p.account_status = 'active'
+        AND (p.last_survey_date IS NULL OR p.last_survey_date < CURRENT_DATE - INTERVAL 30 DAYS)
+    ORDER BY RANDOM()
+    LIMIT 25000;
+
+--------------------------------------------------------------------------------
+STEP 2.2: IDENTIFY DATA JOIN DEPENDENCY
+--------------------------------------------------------------------------------
+
+Reference: Framework, Lines 463-519
+
+Join Key: player_id (embedded in survey URL)
+
+    survey_responses (Qualtrics)
+         │
+         │ player_id (from embedded URL parameter)
+         │
+         ▼
+    player_base
+         │
+         │ player_id
+         │
+         ▼
+    player_segments (casual/competitive classification)
+         │
+         │ player_id
+         │
+         ▼
+    telemetry_summary (ZB hours, build hours, etc.)
+
+Expected match rate: 95%+
+
+Qualtrics embedded data setup:
+    - player_id: from URL parameter
+    - region: from URL parameter
+    - platform: from URL parameter
+    - player_type: from URL parameter
+    - mode_preference: from URL parameter
+
+--------------------------------------------------------------------------------
+STEP 2.3: IDENTIFY REPRESENTATIVENESS DEPENDENCY
+--------------------------------------------------------------------------------
+
+Reference: Framework, Lines 521-567
+
+Population benchmarks needed (request from Analytics):
+
+    Attribute               ZB Player Population    Target    Tolerance
+    ──────────────────────────────────────────────────────────────────────
+    Region: NA              42%                     40-44%    ±2%
+    Region: EU              28%                     26-30%    ±2%
+    Region: Asia            20%                     18-22%    ±2%
+    Region: Other           10%                     8-12%     ±2%
+    
+    Player Type: Casual     72%                     68-76%    ±4%
+    Player Type: Competitive 28%                   24-32%    ±4%
+    
+    Mode: ZB Only           35%                     32-38%    ±3%
+    Mode: Plays Both        65%                     62-68%    ±3%
+    
+    Platform: PC            38%                     35-41%    ±3%
+    Platform: Console       47%                     44-50%    ±3%
+    Platform: Mobile        15%                     12-18%    ±3%
+
+Weighting strategy: Apply post-stratification if off by >5%
+
+--------------------------------------------------------------------------------
+STEP 2.4: IDENTIFY DATA CLEANING DEPENDENCY
+--------------------------------------------------------------------------------
+
+Reference: Framework, Lines 569-615
+
+    Quality Issue       Detection Method              Threshold       Action
+    ──────────────────────────────────────────────────────────────────────────
+    Incomplete          questions_answered / total    < 50%           Remove
+    Speeder             completion_time_seconds       < 90 sec        Remove
+    Straight-liner      std(Likert battery)           = 0             Remove
+    Failed attention    Q_attention ≠ 'Agree'         Wrong           Remove
+    Duplicate           COUNT(player_id) > 1          > 1             Keep first
+    No recent play      days_since_last_active        > 60            Flag
+
+Expected cleaning loss: 12-15%
+
+--------------------------------------------------------------------------------
+STEP 2.5: DESIGN SURVEY QUESTIONS
+--------------------------------------------------------------------------------
+
+Reference: survey_research_guide_by_stakeholder.txt
+
+Survey Type: Feature/Content Feedback Survey (Lines 66-150)
+             + Concept Testing (Lines 234-290) for ranked mode question
+
+Estimated survey length: 15 questions, 5-6 minutes
+
+SURVEY STRUCTURE:
+
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 1: SCREENER (1 question)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q1. Have you played Zero Build mode in the past 30 days?
+        ○ Yes → Continue
+        ○ No → End survey (thank you message)
+    
+    Purpose: Ensure recency of experience
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 2: BEHAVIORAL CONTEXT (3 questions)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q2. How often do you play Zero Build mode?
+        ○ It's my only mode (I never play Build mode)
+        ○ Mostly Zero Build, sometimes Build mode
+        ○ About equal between Zero Build and Build mode
+        ○ Mostly Build mode, sometimes Zero Build
+        ○ Rarely play Zero Build
+    
+    Q3. How would you describe your playstyle?
+        ○ Casual — I play for fun and don't focus on winning
+        ○ Moderate — I try to win but it's not my main focus
+        ○ Competitive — Winning is important to me
+        ○ Very competitive — I want to be the best and track my stats
+    
+    Q4. How many hours per week do you typically play Fortnite?
+        ○ Less than 2 hours
+        ○ 2-5 hours
+        ○ 5-10 hours
+        ○ 10-20 hours
+        ○ More than 20 hours
+    
+    Purpose: Verify/supplement embedded data, enable segmentation
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 3: OVERALL SENTIMENT (3 questions)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q5. Overall, how satisfied are you with Zero Build mode?
+        ○ Very Dissatisfied (1)
+        ○ Dissatisfied (2)
+        ○ Neutral (3)
+        ○ Satisfied (4)
+        ○ Very Satisfied (5)
+    
+    Q6. Compared to when Zero Build first launched, the mode has...
+        ○ Gotten much worse
+        ○ Gotten somewhat worse
+        ○ Stayed about the same
+        ○ Gotten somewhat better
+        ○ Gotten much better
+    
+    Q7. How likely are you to recommend Zero Build to a friend?
+        0 ─────────────────────────────────────── 10
+        Not at all likely          Extremely likely
+    
+    Purpose: Core sentiment metrics + NPS + trend perception
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 4: ATTRIBUTE SATISFACTION (Matrix - 1 question)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q8. How satisfied are you with each aspect of Zero Build?
+        
+        [Matrix: 1-5 scale from Very Dissatisfied to Very Satisfied]
+        
+        Rows:
+        - Pace/speed of gameplay
+        - Healing mechanics
+        - Movement/mobility options
+        - Weapon balance
+        - Map design for Zero Build
+        - Fairness of fights
+        - Skill expression (ability to outplay opponents)
+    
+    Purpose: Identify specific improvement areas (for game design team)
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 5: ATTENTION CHECK (Hidden in Block 4)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q9. [Attention Check] Please select "Satisfied" for this question.
+        ○ Very Dissatisfied
+        ○ Dissatisfied
+        ○ Neutral
+        ○ Satisfied ← Correct
+        ○ Very Satisfied
+    
+    Purpose: Filter inattentive responses
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 6: IMPROVEMENT PRIORITIES (MaxDiff - 1 question set)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q10. [MaxDiff Block - 5 sets shown, pick MOST and LEAST important]
+    
+    Items to rotate (8 items, 5 sets of 4):
+    - Add ranked/competitive mode
+    - More mobility options (vehicles, movement items)
+    - Better healing mechanics
+    - More weapon variety
+    - Smaller storm circles (faster games)
+    - Larger storm circles (more strategic games)
+    - Better matchmaking (play against similar skill)
+    - More Zero Build-specific map areas
+    
+    Example set:
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ Which improvement is MOST and LEAST important to you?                   │
+    │                                                                         │
+    │                    LEAST                              MOST              │
+    │                    Important                          Important         │
+    │                        ○    Add ranked mode               ○             │
+    │                        ○    Better healing                ○             │
+    │                        ○    Better matchmaking            ○             │
+    │                        ○    More weapon variety           ○             │
+    └─────────────────────────────────────────────────────────────────────────┘
+    
+    Purpose: Priority ranking for roadmap (avoids "everything is important")
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 7: RANKED MODE CONCEPT (3 questions)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q11. How interested would you be in a Ranked Zero Build mode?
+         (Competitive mode with skill-based rankings and rewards)
+         
+         ○ Not at all interested (1)
+         ○ Slightly interested (2)
+         ○ Moderately interested (3)
+         ○ Very interested (4)
+         ○ Extremely interested (5)
+    
+    Q12. If Ranked Zero Build was available, how often would you play it?
+         ○ Never — I don't want ranked
+         ○ Rarely — I'd try it occasionally
+         ○ Sometimes — A few times a month
+         ○ Often — Weekly or more
+         ○ Always — It would be my main mode
+    
+    Q13. What would make Ranked Zero Build appealing to you? (Select all)
+         □ Visible rank/tier progression
+         □ Exclusive cosmetic rewards
+         □ Leaderboards
+         □ Playing against similar skill levels
+         □ More serious/competitive matches
+         □ Nothing — I'm not interested in ranked
+         □ Other: ___________
+    
+    Purpose: Quantify demand for ranked + understand what features matter
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 8: OPEN-ENDED (2 questions)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q14. What do you enjoy MOST about Zero Build mode?
+         [Text box]
+    
+    Q15. If you could change ONE thing about Zero Build, what would it be?
+         [Text box]
+    
+    Purpose: Qualitative insight for themes
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    BLOCK 9: DEMOGRAPHICS (Verification - 2 questions)
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Q16. Which region do you primarily play from?
+         [Pre-filled from embedded data, but allow correction]
+         ○ North America
+         ○ Europe
+         ○ Asia
+         ○ South America
+         ○ Other
+    
+    Q17. What platform do you primarily play on?
+         [Pre-filled from embedded data, but allow correction]
+         ○ PC
+         ○ PlayStation
+         ○ Xbox
+         ○ Nintendo Switch
+         ○ Mobile
+    
+    Purpose: Verify embedded data, allow correction
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+
+================================================================================
+STAGE 3: BUILD
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 618-655
+
+--------------------------------------------------------------------------------
+STEP 3.1: BUILD IN QUALTRICS
+--------------------------------------------------------------------------------
+
+Reference: tech_stack_reference.txt, Qualtrics section
+
+Checklist:
+□ Create new survey project
+□ Add all question blocks in order
+□ Configure MaxDiff block (5 sets, 4 items per set, randomized)
+□ Add display logic: Q1 = No → End of Survey
+□ Add embedded data fields:
+    - player_id
+    - region
+    - platform
+    - player_type
+    - mode_preference
+□ Configure attention check (Q9)
+□ Set pre-fill for Q16 and Q17 from embedded data
+□ Enable progress bar
+□ Disable back button
+□ Set mobile-friendly format
+
+--------------------------------------------------------------------------------
+STEP 3.2: TEST SURVEY
+--------------------------------------------------------------------------------
+
+Checklist:
+□ Preview on desktop — check all questions display
+□ Preview on mobile — check formatting
+□ Take test survey — verify completion time (target: 5-6 min)
+□ Test with URL parameters — verify embedded data captures:
+    ?player_id=test123&region=NA&platform=PC&player_type=casual&mode_preference=ZB_Only
+□ Export test response — verify all fields appear in export
+□ Test join — can test response join to player data?
+
+--------------------------------------------------------------------------------
+STEP 3.3: PEER REVIEW
+--------------------------------------------------------------------------------
+
+□ Send survey link to colleague for methodology review
+□ Incorporate feedback
+□ Get sign-off
+
+--------------------------------------------------------------------------------
+STEP 3.4: GENERATE DISTRIBUTION LINKS
+--------------------------------------------------------------------------------
+
+□ Generate anonymous link with embedded data capability
+□ Create email template with piped player_id link
+□ Test final distribution link
+
+
+================================================================================
+STAGE 4: DISTRIBUTE
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 658-697
+
+--------------------------------------------------------------------------------
+STEP 4.1: PULL AUDIENCE
+--------------------------------------------------------------------------------
+
+Execute targeting query in Databricks (from Step 2.1)
+Export audience list with embedded data fields
+
+Expected output: ~25,000 player records with:
+    player_id, email, region, platform, player_type, mode_preference
+
+--------------------------------------------------------------------------------
+STEP 4.2: VALIDATE AUDIENCE
+--------------------------------------------------------------------------------
+
+Checklist:
+□ Count matches expected target (25,000)?
+□ Distribution looks right?
+    - Region split: ~42% NA, ~28% EU, ~20% Asia, ~10% Other
+    - Player type: ~72% casual, ~28% competitive
+    - Mode: ~35% ZB Only, ~65% Plays Both
+□ No recently surveyed players included?
+□ All have email addresses?
+
+--------------------------------------------------------------------------------
+STEP 4.3: COORDINATE DISTRIBUTION
+--------------------------------------------------------------------------------
+
+□ Upload audience to Qualtrics or CRM
+□ Configure personalized links with embedded data
+□ Schedule send: Tuesday 10 AM ET (optimal email open time)
+□ Set reminder: Thursday 10 AM ET (if <50% target responses)
+
+Email content:
+    Subject: Tell us what you think about Zero Build (5 min survey)
+    
+    Hi [First Name],
+    
+    As a Zero Build player, we want to hear from you! Take this 5-minute 
+    survey to help shape the future of the mode.
+    
+    [Take the Survey →]
+    
+    Thanks for playing,
+    The Fortnite Team
+
+--------------------------------------------------------------------------------
+STEP 4.4: CONFIRM SEND
+--------------------------------------------------------------------------------
+
+□ Verify successful delivery (check bounce rate)
+□ Monitor first-hour responses (verify links work)
+
+
+================================================================================
+STAGE 5: COLLECT
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 700-763
+
+--------------------------------------------------------------------------------
+STEP 5.1: DAILY MONITORING
+--------------------------------------------------------------------------------
+
+Track daily in spreadsheet:
+
+    DAY    DATE       NEW      CUMULATIVE   RATE    COMPLETION%   ATT.CHECK%
+    ──────────────────────────────────────────────────────────────────────────
+    1      Mar 6      856      856          3.4%    82%           91%
+    2      Mar 7      642      1,498        6.0%    84%           92%
+    3      Mar 8      412      1,910        7.6%    83%           90%
+    4      Mar 9      234      2,144        8.6%    85%           93%
+    5      Mar 10     178      2,322        9.3%    84%           91%
+    ...
+    
+    Target: 1,412 (with cleaning buffer) → Actually 1,700+ to be safe
+
+--------------------------------------------------------------------------------
+STEP 5.2: MID-FIELD VALIDATION (Day 4: March 10)
+--------------------------------------------------------------------------------
+
+□ Check segment distribution:
+    - Casual: __% (target: 68-76%)
+    - Competitive: __% (target: 24-32%)
+    - ZB Only: __% (target: 32-38%)
+    
+□ Check quality metrics:
+    - Completion rate: __% (target: >80%)
+    - Attention check pass: __% (target: >90%)
+    - Speeders (<90 sec): __% (target: <5%)
+
+□ If segments unbalanced → Send targeted reminder to underrepresented group
+□ If response rate low → Send general reminder email (Day 4-5)
+
+--------------------------------------------------------------------------------
+STEP 5.3: CLOSE DECISION (Day 7: March 13)
+--------------------------------------------------------------------------------
+
+□ Have I hit 1,700+ responses (with buffer)?
+□ Is each segment at 300+ responses?
+□ Is representativeness acceptable?
+□ Has response rate plateaued?
+
+If yes to all → Close survey
+If no → Extend 1-2 days or send additional reminder
+
+
+================================================================================
+STAGE 6: CLEAN
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 766-845
+
+--------------------------------------------------------------------------------
+STEP 6.1: EXPORT DATA
+--------------------------------------------------------------------------------
+
+Reference: tech_stack_reference.txt, Qualtrics export section
+
+□ Export from Qualtrics as CSV
+□ Include embedded data fields
+□ Include response metadata (start time, end time, duration)
+□ Upload to Databricks
+
+--------------------------------------------------------------------------------
+STEP 6.2: APPLY CLEANING RULES
+--------------------------------------------------------------------------------
+
+Databricks Python notebook:
+
+    # Load data
+    df = spark.read.csv("/path/to/survey_export.csv", header=True)
+    
+    print(f"Raw responses: {df.count()}")
+    
+    # Step 1: Remove incomplete (<50%)
+    total_questions = 17
+    df = df.filter(col("Progress") >= 50)
+    print(f"After incomplete removal: {df.count()}")
+    
+    # Step 2: Remove speeders (<90 seconds)
+    df = df.filter(col("Duration__in_seconds_") >= 90)
+    print(f"After speeder removal: {df.count()}")
+    
+    # Step 3: Remove failed attention check
+    df = df.filter(col("Q9") == "Satisfied")
+    print(f"After attention check: {df.count()}")
+    
+    # Step 4: Remove straight-liners (zero variance on Q8 matrix)
+    # Calculate std dev across Q8 columns
+    from pyspark.sql.functions import stddev
+    q8_cols = ["Q8_1", "Q8_2", "Q8_3", "Q8_4", "Q8_5", "Q8_6", "Q8_7"]
+    # ... [variance calculation logic]
+    
+    # Step 5: Remove duplicates
+    df = df.dropDuplicates(["player_id"])
+    print(f"After duplicate removal: {df.count()}")
+    
+    # Final count
+    print(f"Final clean sample: {df.count()}")
+
+--------------------------------------------------------------------------------
+STEP 6.3: DOCUMENT CLEANING
+--------------------------------------------------------------------------------
+
+    CLEANING LOG
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Raw responses:                          2,156
+    
+    Step 1: Remove incomplete (<50%)
+            Removed: 187 (8.7%)
+            Remaining: 1,969
+    
+    Step 2: Remove speeders (<90 sec)
+            Removed: 98 (5.0%)
+            Remaining: 1,871
+    
+    Step 3: Remove failed attention check
+            Removed: 112 (6.0%)
+            Remaining: 1,759
+    
+    Step 4: Remove straight-liners
+            Removed: 34 (1.9%)
+            Remaining: 1,725
+    
+    Step 5: Remove duplicates
+            Removed: 8 (0.5%)
+            Remaining: 1,717
+    
+    ───────────────────────────────────────────────────────────────────────────
+    FINAL CLEAN SAMPLE: 1,717 (79.6% retention)
+    ═══════════════════════════════════════════════════════════════════════════
+
+--------------------------------------------------------------------------------
+STEP 6.4: VALIDATE REPRESENTATIVENESS
+--------------------------------------------------------------------------------
+
+    Attribute               Population    Sample      Difference    Status
+    ──────────────────────────────────────────────────────────────────────────
+    Region: NA              42%           44%         +2%           ✓
+    Region: EU              28%           27%         -1%           ✓
+    Region: Asia            20%           18%         -2%           ✓
+    
+    Player Type: Casual     72%           68%         -4%           ✓
+    Player Type: Competitive 28%          32%         +4%           ✓
+    
+    Mode: ZB Only           35%           38%         +3%           ✓
+    Mode: Plays Both        65%           62%         -3%           ✓
+
+    Decision: Within tolerance, no weighting needed.
+
+--------------------------------------------------------------------------------
+STEP 6.5: JOIN WITH BEHAVIORAL DATA
+--------------------------------------------------------------------------------
+
+    df_joined = df.join(player_segments, on="player_id", how="left")
+    df_joined = df_joined.join(telemetry_summary, on="player_id", how="left")
+    
+    # Check match rate
+    match_rate = df_joined.filter(col("zb_total_hours").isNotNull()).count() / df_joined.count()
+    print(f"Join match rate: {match_rate:.1%}")  # Target: 95%+
+
+
+================================================================================
+STAGE 7: ANALYZE
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 848-898
+
+--------------------------------------------------------------------------------
+STEP 7.1: RESEARCH QUESTION ANALYSIS
+--------------------------------------------------------------------------------
+
+    Research Question                              Analysis                Status
+    ──────────────────────────────────────────────────────────────────────────────
+    RQ1: Overall sentiment                         Frequency + mean          □
+    RQ2: Change from 3-month                       Compare to baseline       □
+    RQ3: Casual vs competitive difference          Cross-tab + t-test        □
+    RQ4: Ranked interest (by segment)              Cross-tab + chi-square    □
+    RQ5: Improvement priorities                    MaxDiff utility           □
+    RQ6: Specific improvement themes               Open-text coding          □
+
+--------------------------------------------------------------------------------
+STEP 7.2: RUN ANALYSIS (Databricks)
+--------------------------------------------------------------------------------
+
+RQ1: Overall Sentiment
+
+    # Frequency distribution
+    df.groupBy("Q5").count().orderBy("Q5").show()
+    
+    # Mean sentiment
+    mean_sentiment = df.agg({"Q5": "mean"}).collect()[0][0]
+    print(f"Mean satisfaction: {mean_sentiment:.2f}")
+
+RQ3: Segment Comparison
+
+    from scipy import stats
+    
+    pdf = df.toPandas()
+    casual = pdf[pdf['player_type'] == 'casual']['Q5'].astype(float)
+    competitive = pdf[pdf['player_type'] == 'competitive']['Q5'].astype(float)
+    
+    print(f"Casual mean: {casual.mean():.2f}")
+    print(f"Competitive mean: {competitive.mean():.2f}")
+    
+    t_stat, p_value = stats.ttest_ind(casual, competitive)
+    print(f"T-statistic: {t_stat:.2f}")
+    print(f"P-value: {p_value:.6f}")
+    
+    if p_value < 0.05:
+        print("Statistically significant difference ✓")
+
+RQ4: Ranked Interest
+
+    # Cross-tab: Player type × Ranked interest
+    pd.crosstab(pdf['player_type'], pdf['Q11'], normalize='index') * 100
+    
+    # Chi-square test
+    contingency = pd.crosstab(pdf['player_type'], pdf['Q11'])
+    chi2, p_value, dof, expected = stats.chi2_contingency(contingency)
+    print(f"Chi-square: {chi2:.2f}, P-value: {p_value:.6f}")
+
+RQ5: MaxDiff Priorities
+
+    # MaxDiff utility scores (from Qualtrics export or calculated)
+    # Higher score = more important
+    
+    Priority                        Utility Score
+    ─────────────────────────────────────────────
+    Add ranked mode                 42.3
+    Better matchmaking              38.7
+    More mobility options           31.2
+    Better healing                  28.5
+    More weapon variety             22.1
+    Smaller storm circles           18.4
+    ZB-specific map areas           15.2
+    Larger storm circles            3.6
+
+--------------------------------------------------------------------------------
+STEP 7.3: COMPILE KEY FINDINGS
+--------------------------------------------------------------------------------
+
+    KEY FINDINGS
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    FINDING 1: Overall sentiment remains strong but has slightly declined
+    - Current: 3.9/5 satisfaction (78% positive)
+    - 3-month mark: 4.1/5 (82% positive)
+    - Change: -0.2 points (statistically significant, p<0.01)
+    
+    FINDING 2: Casual and competitive players have different needs
+    - Casual satisfaction: 4.1/5 (83% positive)
+    - Competitive satisfaction: 3.4/5 (61% positive)
+    - Gap of 0.7 points (statistically significant, p<0.001)
+    
+    FINDING 3: Strong demand for ranked among competitive players
+    - Competitive: 67% "Very" or "Extremely" interested in ranked
+    - Casual: 28% "Very" or "Extremely" interested in ranked
+    - Competitive interest exceeds 40% threshold → Supports Option A (full launch)
+    
+    FINDING 4: Ranked is the #1 priority improvement
+    - MaxDiff ranking:
+      1. Add ranked mode (42.3)
+      2. Better matchmaking (38.7)
+      3. More mobility (31.2)
+    
+    FINDING 5: Key themes from open-ended
+    - Top positive: "Pure gunplay," "No sweaty builders," "More fair"
+    - Top negative: "Gets stale," "Needs more depth," "Want to prove skill"
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+
+================================================================================
+STAGE 8: DELIVER
+================================================================================
+Reference: research_framework_with_dependencies.txt, Lines 901-966
+
+--------------------------------------------------------------------------------
+STEP 8.1: BUILD TABLEAU DASHBOARD
+--------------------------------------------------------------------------------
+
+Reference: tech_stack_reference.txt, Tableau section
+
+Dashboard structure:
+
+    ┌────────────────────────────────────────────────────────────────────────┐
+    │  ZERO BUILD 6-MONTH SENTIMENT DASHBOARD                     [Filters] │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐                               │
+    │  │Region ▼  │ │Platform ▼│ │Segment ▼ │                               │
+    ├────────────────────────────────────────────────────────────────────────┤
+    │  ┌──────────────────────────────────────────────────────────────────┐ │
+    │  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐               │ │
+    │  │  │ Satisfaction│  │  NPS        │  │ vs 3-Month  │               │ │
+    │  │  │    3.9/5    │  │    +42      │  │   -0.2 ↓    │               │ │
+    │  │  │ n=1,717     │  │             │  │             │               │ │
+    │  │  └─────────────┘  └─────────────┘  └─────────────┘               │ │
+    │  └──────────────────────────────────────────────────────────────────┘ │
+    ├────────────────────────────────────────────────────────────────────────┤
+    │  ┌──────────────────────────────────────────────────────────────────┐ │
+    │  │           SEGMENT COMPARISON (Diverging Bar)                     │ │
+    │  │                                                                  │ │
+    │  │  Casual      ████████████████|████████████████████████████████  │ │
+    │  │              (17% neg)       (83% pos) → 4.1/5                  │ │
+    │  │                                                                  │ │
+    │  │  Competitive ████████████████████████|████████████████          │ │
+    │  │              (39% neg)               (61% pos) → 3.4/5          │ │
+    │  │                                                                  │ │
+    │  └──────────────────────────────────────────────────────────────────┘ │
+    ├────────────────────────────────────────────────────────────────────────┤
+    │  ┌────────────────────────────┐  ┌────────────────────────────────┐   │
+    │  │  RANKED INTEREST           │  │  IMPROVEMENT PRIORITIES        │   │
+    │  │  (By Segment)              │  │  (MaxDiff)                      │   │
+    │  │                            │  │                                │   │
+    │  │  Competitive: 67% ███████  │  │  Ranked     █████████████ 42   │   │
+    │  │  Casual:      28% ███      │  │  Matchmaking█████████    39   │   │
+    │  │                            │  │  Mobility   ███████      31   │   │
+    │  │  Threshold: 40%       ↑    │  │  Healing    ██████       29   │   │
+    │  │                            │  │                                │   │
+    │  └────────────────────────────┘  └────────────────────────────────┘   │
+    └────────────────────────────────────────────────────────────────────────┘
+
+--------------------------------------------------------------------------------
+STEP 8.2: CREATE EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+
+    ZERO BUILD 6-MONTH REVIEW — EXECUTIVE SUMMARY
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    THE QUESTION
+    Should we launch Ranked Zero Build, and what improvements should we prioritize?
+    
+    THE ANSWER
+    YES — Launch Ranked Zero Build next season.
+    Competitive players show strong demand (67% interested), well above the
+    40% threshold. This addresses the main gap in competitive player satisfaction.
+    
+    KEY FINDINGS
+    
+    1. OVERALL HEALTH: Strong but slightly declining
+       • Current satisfaction: 3.9/5 (vs 4.1 at 3-month mark)
+       • 78% positive, 15% negative
+    
+    2. SEGMENT GAP: Competitive players less satisfied
+       • Casual: 4.1/5 (83% positive) ✓
+       • Competitive: 3.4/5 (61% positive) ⚠️
+       • Gap is statistically significant
+    
+    3. RANKED DEMAND: Strong among competitive players
+       • 67% of competitive players interested in ranked
+       • Only 28% of casual players interested
+       • Exceeds 40% threshold → Supports full launch
+    
+    4. PRIORITY RANKING (MaxDiff):
+       1. Add ranked mode (42.3)
+       2. Better matchmaking (38.7)
+       3. More mobility options (31.2)
+    
+    RECOMMENDATION
+    • Launch Ranked Zero Build as full mode next season
+    • Invest in matchmaking improvements (benefits both casual and competitive)
+    • Consider mobility additions for mid-season update
+    
+    SUPPORTING DATA
+    Sample: 1,717 responses (79.6% clean rate)
+    Segments: Casual (n=1,168), Competitive (n=549)
+    Confidence: High — statistically significant differences
+    
+    ═══════════════════════════════════════════════════════════════════════════
+
+--------------------------------------------------------------------------------
+STEP 8.3: PREPARE PRESENTATION FOR SARAH
+--------------------------------------------------------------------------------
+
+Deck structure (for Sarah's March 22 meeting):
+
+    Slide 1: Title
+    Slide 2: Executive Summary (recommendation upfront)
+    Slide 3: Overall Sentiment (KPI + trend)
+    Slide 4: Segment Comparison (diverging bar)
+    Slide 5: Ranked Demand (by segment with threshold line)
+    Slide 6: Priority Ranking (MaxDiff horizontal bars)
+    Slide 7: Open-Ended Highlights (key quotes)
+    Slide 8: Recommendation & Next Steps
+    
+    Backup slides:
+    - Methodology
+    - Sample composition
+    - Full data tables
+    - Statistical test results
+
+--------------------------------------------------------------------------------
+STEP 8.4: DELIVER TO STAKEHOLDERS
+--------------------------------------------------------------------------------
+
+□ Send dashboard link to Sarah (March 18)
+□ Send executive summary PDF
+□ Send presentation deck
+□ Schedule 30-min walkthrough with Sarah (March 19)
+□ Be available for Game Director meeting if questions (March 22)
+
+
+================================================================================
+CONSOLIDATED TO-DO CHECKLIST
+================================================================================
+
+Use this as your master checklist for executing the project:
+
+STAGE 1: REQUEST (March 4)
+─────────────────────────────────────────────────────────────────────────────
+□ Respond to Sarah, schedule intake meeting
+□ Conduct intake meeting (10 questions)
+□ Get 3-month survey results from archive
+□ Get social listening report from Community team
+□ Meet with Marcus (game design) for additional questions
+□ Calculate sample size requirements
+□ Verify source access (all ✓)
+□ Create and send research brief to Sarah for approval
+
+STAGE 2: DESIGN (March 4-5)
+─────────────────────────────────────────────────────────────────────────────
+□ Write targeting SQL query
+□ Map data join (survey → player_base → segments → telemetry)
+□ Request population benchmarks from Analytics team
+□ Define cleaning rules and thresholds
+□ Draft all survey questions
+□ Design MaxDiff block (8 items, 5 sets)
+□ Get peer review of survey design
+□ Get Sarah approval on questions
+
+STAGE 3: BUILD (March 5)
+─────────────────────────────────────────────────────────────────────────────
+□ Create survey in Qualtrics
+□ Configure all question logic
+□ Set up embedded data fields
+□ Add attention check (Q9)
+□ Configure MaxDiff
+□ Test on desktop
+□ Test on mobile
+□ Export test response and verify all fields
+□ Test join with player data
+□ Get peer review of programmed survey
+□ Generate distribution link
+
+STAGE 4: DISTRIBUTE (March 6)
+─────────────────────────────────────────────────────────────────────────────
+□ Run targeting query in Databricks
+□ Export 25,000 player audience
+□ Validate audience distribution
+□ Upload to Qualtrics/CRM
+□ Create email with personalized links
+□ Schedule send (Tuesday 10 AM ET)
+□ Confirm successful delivery
+□ Verify first responses coming in
+
+STAGE 5: COLLECT (March 6-13)
+─────────────────────────────────────────────────────────────────────────────
+□ Daily: Monitor response count
+□ Daily: Check completion rate (target: >80%)
+□ Daily: Check attention check pass rate (target: >90%)
+□ Day 4: Mid-field representativeness check
+□ Day 4-5: Send reminder email if needed
+□ Day 7: Evaluate close decision
+□ Close survey when targets met
+
+STAGE 6: CLEAN (March 14)
+─────────────────────────────────────────────────────────────────────────────
+□ Export raw data from Qualtrics
+□ Upload to Databricks
+□ Apply cleaning Step 1: Remove incomplete
+□ Apply cleaning Step 2: Remove speeders
+□ Apply cleaning Step 3: Remove failed attention
+□ Apply cleaning Step 4: Remove straight-liners
+□ Apply cleaning Step 5: Remove duplicates
+□ Document cleaning log
+□ Check representativeness of clean sample
+□ Decide on weighting (if needed)
+□ Execute join with behavioral data
+□ Verify join match rate (target: 95%+)
+
+STAGE 7: ANALYZE (March 15-17)
+─────────────────────────────────────────────────────────────────────────────
+□ RQ1: Calculate overall sentiment distribution
+□ RQ2: Compare to 3-month baseline
+□ RQ3: Run segment comparison (casual vs competitive)
+□ RQ3: Run t-test for significance
+□ RQ4: Cross-tab ranked interest by segment
+□ RQ4: Calculate % exceeding threshold
+□ RQ5: Calculate MaxDiff utility scores
+□ RQ6: Code open-ended responses (top themes)
+□ Compile key findings document
+
+STAGE 8: DELIVER (March 18-20)
+─────────────────────────────────────────────────────────────────────────────
+□ Build Tableau dashboard
+    □ KPI cards
+    □ Segment comparison (diverging bar)
+    □ Ranked interest chart
+    □ MaxDiff priority bars
+    □ Add filters
+    □ Add cross-filtering actions
+□ Create executive summary (1-page)
+□ Create presentation deck
+□ Review with colleague
+□ Send to Sarah (March 18)
+□ Walkthrough with Sarah (March 19)
+□ Available for Game Director meeting (March 22)
+□ Archive all project files
+
+================================================================================
+FRAMEWORK VALIDATION: DO WE HAVE ENOUGH CONTEXT?
+================================================================================
+
+ASSESSMENT: ✓ YES — The reference files provide comprehensive coverage.
+
+Coverage by file:
+
+research_framework_with_dependencies.txt:
+✓ Intake questions with examples
+✓ Sample size calculation
+✓ Source identification
+✓ Targeting criteria
+✓ Data join mapping
+✓ Representativeness planning
+✓ Cleaning rules
+✓ Monitoring checklist
+✓ Analysis checklist
+✓ Deliverable templates
+
+survey_research_guide_by_stakeholder.txt:
+✓ Survey types appropriate for this request
+✓ Question examples (Likert, MaxDiff, open-ended)
+✓ Metrics to track
+
+tech_stack_reference.txt:
+✓ SQL queries for targeting
+✓ Databricks for processing and analysis
+✓ Qualtrics configuration
+✓ Tableau dashboard structure
+✓ Integration patterns
+
+GAPS IDENTIFIED:
+
+Minor gaps that could be added in future:
+1. MaxDiff analysis specifics (how to calculate utility scores)
+2. Open-text coding methodology (manual vs automated)
+3. Weighting calculation specifics
+4. Email template best practices
+
+These are advanced topics but don't block execution of the framework.
+
+================================================================================
+

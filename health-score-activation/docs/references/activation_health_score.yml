@@ -1,0 +1,71 @@
+version: 1
+
+metric: activation_health_score
+
+description: >
+  Composite health score focused on early user activation for Suflex.
+  Designed to prioritize CSM outreach and monitor onboarding quality.
+
+grain: user  # or "account" if you aggregate at account level
+
+scale:
+  type: numeric
+  min: 0
+  max: 100
+
+# Milestone point design (total 100 pts)
+milestones:
+  setup:  # 10 pts
+    - name: login_gestor
+      points: 1
+      rule: "≥ 1 login gestor (restaurant_admin)"
+    - name: login_colaborador
+      points: 1
+      rule: "≥ 1 login colaborador (restaurant_employee)"
+    - name: listas_contagem_controlados
+      points: 3
+      rule: "≥ 2 listas de contagem com ≥ 1 produto controlado cada"
+    - name: produtos_controlados_peso
+      points: 5
+      rule: "≥ 5 produtos controlados cadastrados com peso"
+  effort:  # 30 pts
+    - name: impressoes_50
+      points: 3
+      rule: "50 impressões realizadas"
+    - name: impressoes_controladas_30
+      points: 7
+      rule: "30 impressões de produtos controlados"
+    - name: baixas_10
+      points: 15
+      rule: "10 baixas realizadas"
+    - name: contagens_5
+      points: 5
+      rule: "5 contagens"
+  value_capture:  # 60 pts
+    - name: impressoes_peso_20
+      points: 15
+      rule: "20 impressões com peso"
+    - name: impressoes_controladas_peso_30
+      points: 10
+      rule: "30 impressões de produtos controlados com peso"
+    - name: baixas_controladas_peso_5
+      points: 25
+      rule: "5 baixas de etiquetas de produtos controlados com peso"
+    - name: contagens_controladas_peso_2
+      points: 10
+      rule: "2 contagens com ≥ 1 produto controlado cada, com peso"
+
+thresholds:
+  - label: high
+    min_inclusive: 70
+    description: "Strongly activated and healthy users/accounts."
+  - label: medium
+    min_inclusive: 40
+    description: "Partially activated; monitor and potentially nudge."
+  - label: low
+    min_inclusive: 0
+    description: "Not activated or at risk; prioritize for intervention."
+
+model:
+  final_model: mart_activation_health_score
+  path: models/marts/activation/mart_activation_health_score.sql

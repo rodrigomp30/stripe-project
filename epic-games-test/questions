@@ -1,0 +1,56 @@
+Screening - Can classify (More experienced in Master Yi | Less experienced | No experience)
+- Do you play as master Yi?
+    - (If Yes) Did you play the champion in the patch 15.24?
+        - How many hours per week do you play as Master Yi?
+
+BQ1 - Focus on sentiment
+- How satisfied are you with Master Yi after the Patch 15.24? (Very satisfied -  Very unsatisfied)
+- Compared to BEFORE patch 15.24, playing Master Yi feels... (Somewhat better - Much worse)
+
+BQ2 - Focus on segmentation
+- What mode do you primarily play Master Yi in?
+    ○ Ranked (Solo/Duo or Flex)
+    ○ Normal / Quick Play
+    ○ ARAM / Other modes
+
+    - (If ranked) What is your current rank?
+        ○ Iron – Silver
+        ○ Gold – Platinum
+        ○ Emerald – Diamond
+        ○ Master+
+
+BQ3 - Focus direction and specification - MaxDiff
+- What impacts your satisfaction the MOST and LEAST when playing Master Yi after the changes: (After patch 15.24)
+    - choices:
+        - Base damage in early game            
+        - Damage scaling into late game        
+        - Clear speed in jungle                
+        - Dueling power (1v1)                  
+        - Teamfight effectiveness (need to think in more aspects that make sense) 
+
+BQ4 - Focus on intent
+- How likely are you to continue playing Master Yi in the current patch?
+    ○ Definitely will not
+    ○ Probably will not
+    ○ Might or might not
+    ○ Probably will
+    ○ Definitely will
+
+    - (If not) If Master Yi stays as is, how likely are you to continue playing League of Legends?
+        ○ Definitely will not
+        ○ Probably will not
+        ○ Might or might not
+        ○ Probably will
+        ○ Definitely will
+
+BQ5 - Focus on qualitative answers (themes, insights)
+- What, if anything, would you change about Master Yi to improve your experience?
+
+BQ6 - Focus on the overall sentiment of a segment
+- (If No on Screening) - How has Master Yi nerf affected matches when playing against him?
+    ○ Matches feel much less fair
+    ○ Matches feel somewhat less fair
+    ○ No change
+    ○ Matches feel somewhat more fair
+    ○ Matches feel much more fair
+    ○ I don't play against Master Yi often (N/A)

@@ -1,0 +1,101 @@
+OrderID,CustomerName,Product,Price,Quantity,SaleDate,Region
+1001,Joao Silva,Phone,932,4,08/17/2023,TX
+1002,Robert,camera,300,10,2023-03-30,NY
+1003,Carlos Souza,Printer,thirty,7,09/04/2023,NY
+1004,Maria,Laptop,1037,6,2023-10-10,SP
+1005,Emma,Keyboard,1474,8,2023-03-25,Texas
+1006,Robert,Phone,ten,1,2023/08/01,Rio
+1007,Joao Silva,Keyboard,411,,2023-04-09,SP
+1008,Luces,Laptop,126,7,05/05/2023,California
+1009,julia,Charger,452,,2023/04/15,Rio
+1010,Robert,Phone,ten,9,11/06/2023,New York
+1011,Carlos Souza,Mouse,815,-1,04/07/2023,Sao Paulo
+1012,Emma,Mouse,691,263,2023/10/11,California
+1013,julia,Charger,hundred,7,2023/07/11,TX
+1014,Emma,Monitor,788,3,2023/04/25,RJ
+1015,Maria,,185,9,02/08/2023,RJ
+1016,Fernenda,headphones,716,3,06/11/2023,Celifornia
+1017,Maria,Keyboard,680,2,10/13/2023,Celifornia
+1018,Fernanda,Monitor,1426,10,2023/10/30,SP
+1019,Robert,Phone,793,,06/16/2023,SP
+1020,Maria,Keyboard,766,,01/08/2023,NY
+1021,Joeo Silva,Charger,1125,10,12/19/2023,SP
+1022,Emma,Phone,327,3,12/14/2023,Texas
+1023,Carlos Souza,Keyboard,thirty,,2023-07-08,California
+1024,Robert,Charger,659,1,01/25/2023,California
+1025,Robert,Keyboard,1100,5,2023/03/02,Rio
+1026,Joao Silva,Laptop,934,6,01/02/2023,SP
+1027,Luces,Laptop,1089,,2023/09/28,RJ
+1028,pedro,Camera,357,10,2023/01/15,California
+1029,ana costa,Camera,398,9,2023/03/22,Rio
+1030,Lucas,Phone,ten,,2023-05-10,New York
+1031,Maria,Headphones,541,1,12/28/2023,RJ
+1032,Pedro,Monitor,hundred,9,2023-13-01,Sao Paulo
+1033,Pedro,Monitor,638,10,2023/05/15,Texas
+1034,Fernanda,,1493,,01/21/2023,RJ
+1035,Lucas,Mouse,1287,4,2023-06-10,Texas
+1036,Lucas,Printer,120,,2023-01-02,Sao Paulo
+1037,Lucas,charger,293,10,11/25/2023,California
+1038,Fernanda,Keyboard,1315,9,2023-11-05,Texas
+1039,Luces,Tablet,896,6,2023/08/30,New York
+1040,Julia,Keyboard,1078,10,2023/06/27,CA
+1041,Julie,Charger,1029,2,08/03/2023,RJ
+1042,Julia,Camera,896,3,2023-02-23,NY
+1043,Emma,Phone,1226,-6,2023/07/06,Texas
+1044,Robert,Keyboard,233,2,09/22/2023,RJ
+1045,Ana Costa,,384,8,2023-08-11,Texas
+1046,Lucas,Monitor,1460,8,2023-12-11,California
+1047,Joao Silva,Laptop,148,4,12/27/2023,CA
+1048,robert,Monitor,1243,,07/25/2023,California
+1049,carlos souza,Headphones,153,5,10/02/2023,California
+1050,Carlos Souza,Phone,993,1,2023/09/02,CA
+1051,Fernanda,printer,304,10,2023-06-22,NY
+1052,Pedro,,408,2,2023/06/01,Sao Paulo
+1053,Julia,Charger,1347,7,08/24/2023,SP
+1054,robert,Monitor,554,9,2023/10/04,Texas
+1055,Carlos Souza,Mouse,801,6,2023-11-16,Rio
+1056,Pedro,Charger,430,8,2023/02/21,New York
+1057,julia,Keyboard,1203,,2023-04-09,TX
+1058,Lucas,Charger,559,2,2023-10-27,Rio
+1059,Ana Costa,Keyboard,768,2,2023-05-31,Sao Paulo
+1060,Emma,Keyboard,291,,05/10/2023,Sao Paulo
+1061,Maria,Phone,36,,04/06/2023,Texas
+1062,Pedro,Charger,315,2,2023-11-01,SP
+1063,Luces,Printer,631,5,10/02/2023,Sao Paulo
+1064,Fernanda,Camera,1500,4,08/27/2023,RJ
+1065,robert,Keyboard,199,6,2023/06/24,NY
+1066,Julia,printer,736,9,2023/09/02,SP
+1067,Maria,Monitor,196,2,2023/03/06,Rio
+1068,Fernanda,Camera,73,10,11/16/2023,Rio
+1069,Lucas,Printer,260,5,2023-12-09,SP
+1070,Joao Silva,mouse,1384,2,2023/06/04,CA
+1071,Emma,Phone,358,2,2023/12/07,Sao Paulo
+1072,ana costa,Charger,638,-6,2023/01/28,Rio
+1073,emma,Laptop,889,410,2023/04/01,CA
+1074,Emma,monitor,638,5,2023-02-27,SP
+1075,Ana Costa,Laptop,774,,08/17/2023,CA
+1076,Maria,Headphones,120,1,2023/04/14,RJ
+1077,Lucas,Laptop,899,6,2023-13-01,Sao Paulo
+1078,Carlos Souza,mouse,1127,10,01/07/2023,New York
+1079,Pedro,Monitor,668,10,2023/01/28,RJ
+1080,Pedro,,182,1,2023/05/16,CA
+1081,ana costa,Laptop,53,10,2023/02/21,TX
+1082,Ana Costa,Laptop,190,4,2023-01-13,RJ
+1083,Robert,Tablet,230,9,2023/11/27,CA
+1084,Joao Silva,Tablet,1200,3,2023-07-20,RJ
+1085,Maria,Tablet,592,4,2023/07/03,California
+1086,Fernanda,Keyboard,471,5,07/14/2023,RJ
+1087,Ana Costa,Tablet,ten,6,2023-03-17,Sao Paulo
+1088,Maria,Tablet,-50,7,2023-11-21,Sao Paulo
+1089,Joao Silva,Tablet,960,5,2023/11/15,Rio
+1090,julia,Printer,676,2,2023-13-01,Rio
+1091,Carlos Souza,Charger,123,8,2023-03-05,NY
+1092,Robert,Laptop,919,9,2023/05/26,TX
+1093,Maria,phone,243,711,05/22/2023,California
+1094,Carlos Souza,Mouse,750,,2023-05-12,Sao Paulo
+1095,maria,Printer,215,6,05/12/2023,Sao Paulo
+1096,Carlos Souza,Monitor,412,5,2023/05/22,SP
+1097,Emma,Camera,231,4,2023/04/06,New York
+1098,Robert,Printer,195,4,03/17/2023,RJ
+1099,Robert,Printer,1401,9,2023/10/12,New York
+1100,Ana Costa,Monitor,1102,6,2023/07/03,California

@@ -1,0 +1,801 @@
+================================================================================
+EPIC GAMES RESEARCH TECH STACK REFERENCE
+================================================================================
+
+Use this document as a control for available tools and features when simulating
+research scenarios. All tools are assumed to be enterprise-tier with full
+feature access.
+
+Last Updated: December 2024
+
+================================================================================
+OVERVIEW: TOOL ECOSYSTEM
+================================================================================
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                         RESEARCH WORKFLOW                               │
+    │                                                                         │
+    │  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐              │
+    │  │   QUALTRICS  │    │  DATABRICKS  │    │   TABLEAU    │              │
+    │  │              │    │              │    │              │              │
+    │  │  Survey      │───▶│  Data        │───▶│  Visualize   │              │
+    │  │  Design &    │    │  Processing  │    │  & Dashboard │              │
+    │  │  Collection  │    │  & Analysis  │    │              │              │
+    │  └──────────────┘    └──────────────┘    └──────────────┘              │
+    │         │                   │                   │                      │
+    │         │                   │                   │                      │
+    │         ▼                   ▼                   ▼                      │
+    │  ┌─────────────────────────────────────────────────────────────────┐   │
+    │  │                      POSTGRESQL                                  │   │
+    │  │                 (Data Warehouse / Source)                        │   │
+    │  └─────────────────────────────────────────────────────────────────┘   │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+1. POSTGRESQL (Version 16)
+================================================================================
+
+ASSUMED VERSION: PostgreSQL 16 (Released September 2023)
+
+PURPOSE IN WORKFLOW:
+- Player database storage
+- Behavioral telemetry data
+- Survey response storage (after Qualtrics export)
+- Data warehouse for analysis
+
+--------------------------------------------------------------------------------
+KEY FEATURES AVAILABLE
+--------------------------------------------------------------------------------
+
+DATA TYPES:
+- Standard: INTEGER, BIGINT, NUMERIC, TEXT, VARCHAR, BOOLEAN, DATE, TIMESTAMP
+- JSON/JSONB: For semi-structured data (player preferences, game configs)
+- ARRAY: For list data (weapons owned, achievements)
+- UUID: For player identifiers
+
+QUERY CAPABILITIES:
+
+    Window Functions:
+    - ROW_NUMBER(), RANK(), DENSE_RANK()
+    - LAG(), LEAD() for time-series analysis
+    - SUM() OVER, AVG() OVER for running totals
+    - PARTITION BY for segment-level calculations
+    
+    Common Table Expressions (CTEs):
+    - WITH clause for readable complex queries
+    - Recursive CTEs for hierarchical data
+    
+    Aggregate Functions:
+    - COUNT, SUM, AVG, MIN, MAX
+    - PERCENTILE_CONT, PERCENTILE_DISC for median/percentiles
+    - STRING_AGG for concatenation
+    - ARRAY_AGG for collecting into arrays
+    
+    JSON Functions:
+    - jsonb_extract_path, jsonb_array_elements
+    - JSON querying with -> and ->> operators
+    
+    Date/Time Functions:
+    - DATE_TRUNC for grouping by period
+    - EXTRACT for getting date parts
+    - AGE for calculating duration
+    - generate_series for date ranges
+
+PERFORMANCE FEATURES:
+- Indexes (B-tree, Hash, GIN for JSON, GiST for geo)
+- Table partitioning for large tables
+- Parallel query execution
+- Query plan analysis with EXPLAIN ANALYZE
+
+--------------------------------------------------------------------------------
+COMMON QUERY PATTERNS FOR RESEARCH
+--------------------------------------------------------------------------------
+
+-- Audience targeting query
+SELECT 
+    player_id,
+    email,
+    region,
+    platform,
+    hours_played_weekly
+FROM player_base
+WHERE 
+    last_active_date >= CURRENT_DATE - INTERVAL '30 days'
+    AND account_status = 'active'
+    AND email_opt_in = TRUE
+    AND last_survey_date < CURRENT_DATE - INTERVAL '30 days'
+ORDER BY RANDOM()
+LIMIT 50000;
+
+-- Segment distribution check
+SELECT 
+    player_type,
+    COUNT(*) as player_count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) as percentage
+FROM player_base
+WHERE last_active_date >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY player_type
+ORDER BY player_count DESC;
+
+-- Join survey to behavioral data
+SELECT 
+    s.response_id,
+    s.player_id,
+    s.sentiment_score,
+    p.region,
+    p.platform,
+    b.hours_played_weekly,
+    b.thunder_shotgun_kills,
+    b.thunder_shotgun_deaths
+FROM survey_responses s
+LEFT JOIN player_base p ON s.player_id = p.player_id
+LEFT JOIN behavioral_data b ON s.player_id = b.player_id
+    AND b.date_range = 'last_30_days';
+
+-- Cross-tab for analysis
+SELECT 
+    player_type,
+    sentiment_label,
+    COUNT(*) as response_count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY player_type), 1) as pct
+FROM survey_responses s
+JOIN player_base p ON s.player_id = p.player_id
+GROUP BY player_type, sentiment_label
+ORDER BY player_type, sentiment_label;
+
+-- Calculate statistics for significance testing
+SELECT 
+    player_type,
+    COUNT(*) as n,
+    AVG(sentiment_score) as mean,
+    STDDEV(sentiment_score) as std_dev,
+    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY sentiment_score) as median
+FROM survey_responses s
+JOIN player_base p ON s.player_id = p.player_id
+GROUP BY player_type;
+
+--------------------------------------------------------------------------------
+LIMITATIONS / CONSIDERATIONS
+--------------------------------------------------------------------------------
+
+- No built-in statistical tests (t-test, chi-square) — export to Python/R
+- Large exports may need pagination or streaming
+- Complex joins on big tables need optimization
+- Time zone handling requires explicit conversion
+
+
+================================================================================
+2. DATABRICKS (Enterprise Edition)
+================================================================================
+
+ASSUMED PLAN: Databricks Enterprise (Unity Catalog, SQL Warehouses)
+
+PURPOSE IN WORKFLOW:
+- Large-scale data processing
+- ETL pipelines for survey data
+- Advanced analytics and ML
+- Connecting multiple data sources
+- Scheduled jobs and automation
+
+--------------------------------------------------------------------------------
+KEY FEATURES AVAILABLE
+--------------------------------------------------------------------------------
+
+SQL CAPABILITIES:
+- Full ANSI SQL support
+- Delta Lake tables (ACID transactions, versioning)
+- Unity Catalog for data governance
+- SQL Warehouses for BI workloads
+
+PYTHON/PYSPARK:
+- Native Python notebooks
+- PySpark for distributed processing
+- Pandas API on Spark for familiar syntax
+- MLlib for machine learning
+
+DATA CONNECTIVITY:
+- Native PostgreSQL connector
+- Qualtrics API integration
+- Tableau connector
+- File imports (CSV, JSON, Parquet)
+
+COLLABORATION:
+- Shared notebooks
+- Version control (Git integration)
+- Comments and mentions
+- Scheduled jobs with alerts
+
+--------------------------------------------------------------------------------
+COMMON PATTERNS FOR RESEARCH
+--------------------------------------------------------------------------------
+
+-- SQL in Databricks (similar to PostgreSQL with some Delta Lake features)
+
+-- Create survey response table with Delta Lake
+CREATE TABLE IF NOT EXISTS survey_responses (
+    response_id STRING,
+    player_id STRING,
+    survey_date DATE,
+    sentiment_score INT,
+    sentiment_label STRING,
+    completion_time_seconds INT,
+    attention_check_passed BOOLEAN
+)
+USING DELTA
+PARTITIONED BY (survey_date);
+
+-- Merge new survey responses (upsert)
+MERGE INTO survey_responses target
+USING new_responses source
+ON target.response_id = source.response_id
+WHEN MATCHED THEN UPDATE SET *
+WHEN NOT MATCHED THEN INSERT *;
+
+-- Time travel (view historical data)
+SELECT * FROM survey_responses VERSION AS OF 5;  -- version number
+SELECT * FROM survey_responses TIMESTAMP AS OF '2024-01-01';  -- point in time
+
+# Python in Databricks
+
+# Read survey data
+df = spark.read.format("csv").option("header", "true").load("/path/to/survey.csv")
+
+# Clean data with PySpark
+from pyspark.sql.functions import col, when, avg, stddev
+
+df_clean = df.filter(
+    (col("completion_time_seconds") >= 90) &  # Remove speeders
+    (col("attention_check_passed") == True)    # Remove failed attention
+)
+
+# Calculate statistics by segment
+stats = df_clean.groupBy("player_type").agg(
+    avg("sentiment_score").alias("mean"),
+    stddev("sentiment_score").alias("std_dev"),
+    count("*").alias("n")
+)
+stats.display()
+
+# Run statistical test with Python
+from scipy import stats
+import pandas as pd
+
+pdf = df_clean.toPandas()
+casual = pdf[pdf['player_type'] == 'casual']['sentiment_score']
+competitive = pdf[pdf['player_type'] == 'competitive']['sentiment_score']
+
+t_stat, p_value = stats.ttest_ind(casual, competitive)
+print(f"T-statistic: {t_stat:.3f}, P-value: {p_value:.6f}")
+
+--------------------------------------------------------------------------------
+INTEGRATION WITH OTHER TOOLS
+--------------------------------------------------------------------------------
+
+Qualtrics → Databricks:
+- API pull with Python (requests library)
+- Scheduled notebook to fetch new responses
+- Store in Delta Lake table
+
+Databricks → Tableau:
+- Databricks SQL Warehouse as data source
+- Live connection or extract
+- Use Unity Catalog for governed access
+
+Databricks → PostgreSQL:
+- JDBC connector for read/write
+- Can push processed data back to PostgreSQL
+
+--------------------------------------------------------------------------------
+LIMITATIONS / CONSIDERATIONS
+--------------------------------------------------------------------------------
+
+- Cluster startup time (1-3 minutes for serverless SQL)
+- Cost scales with compute usage
+- Learning curve for PySpark syntax
+- Need to manage cluster configurations
+
+
+================================================================================
+3. QUALTRICS (Research Core / DesignXM)
+================================================================================
+
+ASSUMED PLAN: Qualtrics Research Core (Enterprise features)
+
+PURPOSE IN WORKFLOW:
+- Survey design and programming
+- Survey distribution (email, link, embedded)
+- Response collection
+- Basic analysis and reporting
+- Data export
+
+--------------------------------------------------------------------------------
+KEY FEATURES AVAILABLE
+--------------------------------------------------------------------------------
+
+SURVEY DESIGN:
+
+    Question Types:
+    - Multiple choice (single, multi-select)
+    - Matrix/Likert scale
+    - Rank order
+    - Slider
+    - Text entry (short, long)
+    - Constant sum
+    - Heat map
+    - Drill down
+    - Net Promoter Score (NPS)
+    - MaxDiff (requires add-on but assumed available)
+    - Conjoint (requires add-on but assumed available)
+    
+    Logic Features:
+    - Display logic (show/hide questions)
+    - Skip logic (jump to question)
+    - Branch logic (different paths)
+    - Loop & merge (repeat question set)
+    - Quotas (stop collecting for segment)
+    - Randomization (question order, answer order)
+    - Carry forward (use previous answers)
+    
+    Validation:
+    - Required responses
+    - Content validation (number range, email format)
+    - Custom validation with JavaScript
+    
+    Embedded Data:
+    - URL parameters (player_id, region, etc.)
+    - Contact list fields
+    - Calculated fields
+    - Piped text (insert previous answers)
+
+DISTRIBUTION:
+
+    Methods:
+    - Anonymous link
+    - Individual links (tracked)
+    - Email distribution (built-in)
+    - QR code
+    - Social media
+    - Website embed
+    - Mobile app SDK
+    
+    Contact Management:
+    - Contact lists
+    - Mailing lists
+    - Transaction triggers
+    - Reminder emails
+    - Thank you emails
+    
+    Tracking:
+    - Response status
+    - Email opens/clicks
+    - Partial responses
+    - Duplicate prevention
+
+ANALYSIS (Built-in):
+
+    Reports:
+    - Summary statistics
+    - Cross-tabulation
+    - Trend analysis
+    - Word clouds
+    - Basic charts
+    
+    Exports:
+    - CSV
+    - SPSS
+    - Excel
+    - PDF reports
+    - API access
+
+--------------------------------------------------------------------------------
+COMMON CONFIGURATIONS FOR RESEARCH
+--------------------------------------------------------------------------------
+
+EMBEDDED DATA SETUP:
+    Field Name          Source              Example Value
+    ─────────────────────────────────────────────────────
+    player_id           URL parameter       ?player_id=abc123
+    region              URL parameter       ?region=NA
+    platform            URL parameter       ?platform=PC
+    survey_wave         Static value        wave_1
+    distribution_date   Static value        2024-03-01
+
+ATTENTION CHECK EXAMPLES:
+
+    Type 1: Instructed Response
+    "For quality purposes, please select 'Strongly Agree' for this question."
+    ○ Strongly Disagree
+    ○ Disagree
+    ○ Neutral
+    ○ Agree
+    ○ Strongly Agree ← Correct
+    
+    Type 2: Reverse Logic
+    "I have never played a video game in my entire life."
+    (For a survey targeting active gamers, 'Strongly Agree' = fail)
+    
+    Type 3: Obvious Answer
+    "What is 2 + 2?"
+    ○ 3
+    ○ 4 ← Correct
+    ○ 5
+    ○ 6
+
+SURVEY FLOW STRUCTURE:
+
+    Block 1: Screener
+    └── Q1: Played since patch? [If No → End Survey]
+    └── Q2: Aware of changes? [Informational]
+    
+    Block 2: Behavioral Context
+    └── Q3: Hours played weekly
+    └── Q4: Primary game mode
+    └── Q5: Weapon usage frequency
+    
+    Block 3: Sentiment
+    └── Q6: Overall patch satisfaction
+    └── Q7: Weapon-specific sentiment
+    └── Q8: Balance perception
+    └── Q9: MaxDiff block
+    
+    Block 4: Open-Ended
+    └── Q10: What do you like?
+    └── Q11: What would you change?
+    
+    Block 5: Quality Check
+    └── Q12: Attention check [Hidden in middle of Block 3]
+    
+    Block 6: Demographics
+    └── Q13: Region (pre-filled from embedded, but verify)
+    └── Q14: Platform (pre-filled from embedded)
+    └── Q15: Account age
+
+--------------------------------------------------------------------------------
+EXPORT FORMAT (EXPECTED FIELDS)
+--------------------------------------------------------------------------------
+
+Standard export includes:
+
+    Field                   Description                 Example
+    ─────────────────────────────────────────────────────────────────────────
+    ResponseId              Qualtrics unique ID         R_3abc123def456
+    StartDate               Survey start timestamp      2024-03-15 14:32:01
+    EndDate                 Survey end timestamp        2024-03-15 14:36:45
+    Status                  IP Address/Complete/Partial 0 (complete)
+    Progress                % complete                  100
+    Duration (in seconds)   Time to complete            284
+    Finished                1 = complete                1
+    RecordedDate            When response recorded      2024-03-15 14:36:45
+    player_id               Embedded data               abc123
+    region                  Embedded data               NA
+    Q1                      Response to Q1              1 (numeric code)
+    Q1_TEXT                 Text of response            Yes
+    ...
+
+--------------------------------------------------------------------------------
+LIMITATIONS / CONSIDERATIONS
+--------------------------------------------------------------------------------
+
+- MaxDiff/Conjoint require specific add-ons (assumed available)
+- Complex JavaScript customizations may need IT support
+- Large matrix questions can be slow on mobile
+- Export timestamps are in account time zone (confirm settings)
+- API rate limits for automated data pulls
+
+
+================================================================================
+4. TABLEAU (Creator License)
+================================================================================
+
+ASSUMED PLAN: Tableau Creator (Desktop + Prep + Server/Cloud access)
+
+PURPOSE IN WORKFLOW:
+- Data visualization
+- Dashboard creation
+- Interactive exploration
+- Sharing with stakeholders
+- Scheduled refreshes
+
+--------------------------------------------------------------------------------
+KEY FEATURES AVAILABLE
+--------------------------------------------------------------------------------
+
+TABLEAU DESKTOP:
+
+    Connections:
+    - Direct to PostgreSQL
+    - Direct to Databricks SQL
+    - CSV/Excel files
+    - Qualtrics connector (via Web Data Connector)
+    - Custom SQL queries
+    - Extracts (for performance)
+    
+    Visualization Types:
+    - Bar charts (horizontal, vertical, stacked, grouped)
+    - Line charts
+    - Area charts (stacked, 100% stacked)
+    - Scatter plots
+    - Maps (filled, symbol, density)
+    - Pie/donut charts
+    - Treemaps
+    - Heat maps
+    - Histograms
+    - Box plots
+    - Bullet graphs
+    - Gantt charts
+    - Text tables
+    - Highlight tables
+    - Dual-axis charts
+    - Combined charts
+    
+    Calculations:
+    - Basic arithmetic
+    - Aggregations (SUM, AVG, COUNT, etc.)
+    - Table calculations (running total, % of total, rank)
+    - Level of Detail (LOD) expressions
+    - Date calculations
+    - String functions
+    - Logical functions (IF, CASE, IIF)
+    - Statistical functions (limited)
+    
+    Interactivity:
+    - Filters (dimension, measure, date, top N)
+    - Parameters
+    - Filter actions
+    - Highlight actions
+    - URL actions
+    - Set actions
+    - Tooltips (custom, viz in tooltip)
+    - Dashboard device layouts
+
+TABLEAU PREP:
+
+    Data Preparation:
+    - Pivot (columns to rows)
+    - Union (stack tables)
+    - Join (combine tables)
+    - Clean (rename, split, merge columns)
+    - Group & replace values
+    - Calculated fields
+    - Filter rows
+    - Aggregate
+    - Output to multiple formats
+
+TABLEAU SERVER/CLOUD:
+
+    Sharing:
+    - Publish workbooks
+    - Publish data sources
+    - Set permissions
+    - Schedule refreshes
+    - Embed in web pages
+    - Email subscriptions
+    - Mobile app access
+
+--------------------------------------------------------------------------------
+COMMON VISUALIZATIONS FOR SURVEY RESEARCH
+--------------------------------------------------------------------------------
+
+1. SENTIMENT DISTRIBUTION (Horizontal Bar)
+    Rows: Sentiment_Label
+    Columns: COUNT(Response_ID)
+    Color: Sentiment_Label (diverging palette)
+    Sort: By sentiment order (not count)
+
+2. DIVERGING BAR CHART
+    Calculated Field: Diverging Value
+        CASE [Sentiment_Label]
+            WHEN 'Strongly Dislike' THEN -1
+            WHEN 'Dislike' THEN -1
+            WHEN 'Neutral' THEN 0
+            WHEN 'Like' THEN 1
+            WHEN 'Strongly Like' THEN 1
+        END
+    
+    Rows: Weapon_Name
+    Columns: SUM(Diverging Value)
+    Color: Sentiment_Label
+
+3. SENTIMENT OVER TIME (Line Chart)
+    Columns: MONTH(Survey_Date)
+    Rows: AVG(Sentiment_Score)
+    Color: Weapon_Name (for comparison)
+    Reference Line: Category average
+
+4. SEGMENT COMPARISON (Side-by-Side Bars)
+    Columns: Player_Type, Sentiment_Label
+    Rows: COUNT(Response_ID)
+    Color: Sentiment_Label
+
+5. KPI CARD
+    Text: AVG(Sentiment_Score)
+    Formatted: 1 decimal place
+    Color: Conditional (red if <3, green if >3)
+    Compared to: Previous period with △ indicator
+
+6. STACKED AREA (Composition Over Time)
+    Columns: MONTH(Survey_Date)
+    Rows: COUNT(Response_ID)
+    Color: Sentiment_Label
+    Mark Type: Area
+    Stack: Normal
+
+--------------------------------------------------------------------------------
+KEY CALCULATED FIELDS FOR RESEARCH
+--------------------------------------------------------------------------------
+
+-- Sentiment Score from Label
+CASE [Sentiment_Label]
+    WHEN 'Strongly Dislike' THEN 1
+    WHEN 'Dislike' THEN 2
+    WHEN 'Neutral' THEN 3
+    WHEN 'Like' THEN 4
+    WHEN 'Strongly Like' THEN 5
+END
+
+-- Positive/Negative Flag
+IF [Sentiment_Score] >= 4 THEN 'Positive'
+ELSEIF [Sentiment_Score] <= 2 THEN 'Negative'
+ELSE 'Neutral'
+END
+
+-- NPS Category
+IF [NPS_Score] >= 9 THEN 'Promoter'
+ELSEIF [NPS_Score] <= 6 THEN 'Detractor'
+ELSE 'Passive'
+END
+
+-- NPS Score (LOD calculation)
+{ FIXED : 
+    SUM(IF [NPS_Category] = 'Promoter' THEN 1 ELSE 0 END) / COUNT([Response_ID])
+    - SUM(IF [NPS_Category] = 'Detractor' THEN 1 ELSE 0 END) / COUNT([Response_ID])
+} * 100
+
+-- Response Count with Minimum Threshold (for confidence)
+IF COUNT([Response_ID]) >= 30 THEN COUNT([Response_ID])
+ELSE NULL  // Don't show unreliable data
+END
+
+-- Week-over-Week Change
+AVG([Sentiment_Score]) - LOOKUP(AVG([Sentiment_Score]), -1)
+
+-- Percentage of Total
+SUM([Response_Count]) / TOTAL(SUM([Response_Count]))
+
+--------------------------------------------------------------------------------
+DASHBOARD LAYOUT TEMPLATE
+--------------------------------------------------------------------------------
+
+    ┌────────────────────────────────────────────────────────────────────────┐
+    │  TITLE BAR: "Weapon Sentiment Dashboard"                    [Filters] │
+    │  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
+    │  │ Weapon ▼   │ │ Date ▼     │ │ Region ▼   │ │ Platform ▼ │         │
+    │  └────────────┘ └────────────┘ └────────────┘ └────────────┘         │
+    ├────────────────────────────────────────────────────────────────────────┤
+    │  ┌──────────────────────────────────────────────────────────────────┐ │
+    │  │                        KPI ROW                                   │ │
+    │  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │ │
+    │  │  │ Sentiment   │  │ Response    │  │ vs. Last    │              │ │
+    │  │  │    3.8      │  │   7,013     │  │   +0.4 ↑    │              │ │
+    │  │  │             │  │             │  │             │              │ │
+    │  │  └─────────────┘  └─────────────┘  └─────────────┘              │ │
+    │  └──────────────────────────────────────────────────────────────────┘ │
+    ├────────────────────────────────────────────────────────────────────────┤
+    │  ┌──────────────────────────────────────────────────────────────────┐ │
+    │  │                     MAIN TREND CHART                             │ │
+    │  │                                                                  │ │
+    │  │  [Line chart: Sentiment over time with patch markers]            │ │
+    │  │                                                                  │ │
+    │  └──────────────────────────────────────────────────────────────────┘ │
+    ├────────────────────────────────────────────────────────────────────────┤
+    │  ┌────────────────────────────┐  ┌────────────────────────────────┐   │
+    │  │    SEGMENT COMPARISON      │  │     RESPONSE DISTRIBUTION      │   │
+    │  │                            │  │                                │   │
+    │  │  [Diverging bar by type]   │  │  [Horizontal bar by label]     │   │
+    │  │                            │  │                                │   │
+    │  └────────────────────────────┘  └────────────────────────────────┘   │
+    └────────────────────────────────────────────────────────────────────────┘
+
+DASHBOARD ACTIONS:
+
+    Action 1: Filter on Selection
+        Source: Trend Chart
+        Target: All other sheets
+        Run on: Select
+        
+    Action 2: Highlight on Hover
+        Source: Segment Comparison
+        Target: Distribution Chart
+        Run on: Hover
+
+--------------------------------------------------------------------------------
+LIMITATIONS / CONSIDERATIONS
+--------------------------------------------------------------------------------
+
+- No built-in statistical significance tests
+- Complex statistical analysis better done in Python/R first
+- Large datasets may need extracts for performance
+- Custom charts may require workarounds (no native diverging bar)
+- Color palette should be colorblind-accessible
+- Mobile layout needs separate design
+
+
+================================================================================
+INTEGRATION PATTERNS
+================================================================================
+
+--------------------------------------------------------------------------------
+PATTERN 1: Survey → Analysis → Dashboard
+--------------------------------------------------------------------------------
+
+    Qualtrics                 Databricks                 Tableau
+        │                         │                         │
+        │ 1. Collect              │                         │
+        │ responses               │                         │
+        │                         │                         │
+        ├──── CSV/API ──────────▶ │ 2. Clean &              │
+        │     export              │ process data            │
+        │                         │                         │
+        │                         │ 3. Join with            │
+        │                         │ behavioral data         │
+        │                         │                         │
+        │                         ├──── SQL Warehouse ─────▶│ 4. Visualize
+        │                         │     connection          │ & dashboard
+        │                         │                         │
+
+--------------------------------------------------------------------------------
+PATTERN 2: Automated Pipeline
+--------------------------------------------------------------------------------
+
+    Qualtrics API → Databricks Notebook (scheduled) → Delta Table → Tableau
+
+    Schedule: Daily at 6 AM
+    
+    Databricks Notebook Steps:
+    1. Pull new responses from Qualtrics API
+    2. Apply cleaning rules
+    3. Join with player_base table
+    4. Update survey_responses Delta table
+    5. Trigger Tableau extract refresh
+
+--------------------------------------------------------------------------------
+PATTERN 3: Ad-Hoc Analysis
+--------------------------------------------------------------------------------
+
+    Qualtrics → CSV Export → Local Python/Jupyter → Findings → Presentation
+
+    For quick analysis not needing full pipeline:
+    1. Export CSV from Qualtrics
+    2. Load in Jupyter notebook
+    3. Clean with pandas
+    4. Analyze with scipy/statsmodels
+    5. Visualize with matplotlib/seaborn
+    6. Document findings
+
+================================================================================
+QUICK REFERENCE CARD
+================================================================================
+
+TOOL            BEST FOR                           LIMITATIONS
+─────────────────────────────────────────────────────────────────────────────
+PostgreSQL      Storage, SQL queries, joins        No stats tests
+Databricks      Processing, Python analysis        Cluster startup time
+Qualtrics       Survey design & collection         Basic analysis only
+Tableau         Visualization, dashboards          No statistical tests
+
+COMMON TASKS                               PRIMARY TOOL
+─────────────────────────────────────────────────────────────────────────────
+Design survey questions                    Qualtrics
+Build targeting audience                   PostgreSQL/Databricks (SQL)
+Distribute survey                          Qualtrics
+Clean survey responses                     Databricks (Python)
+Join survey with behavioral data           Databricks (SQL/Python)
+Run statistical significance tests         Databricks (Python: scipy)
+Create visualizations                      Tableau
+Build stakeholder dashboard                Tableau
+Present findings                           Tableau + PowerPoint
+
+================================================================================
+

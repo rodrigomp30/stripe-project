@@ -1,0 +1,558 @@
+================================================================================
+SURVEY QUESTION DESIGN FRAMEWORK
+A Decision Guide for Planning Survey Questions
+================================================================================
+
+This framework teaches you HOW TO THINK about survey design — from business
+question to survey question to output data. Use it as a step-by-step guide
+when designing new surveys.
+
+================================================================================
+PHASE 1: START WITH THE BUSINESS QUESTION
+================================================================================
+
+Before writing any survey question, answer this:
+
+    "What decision will change based on what players tell us?"
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BUSINESS QUESTION → LEARNING NEED → SURVEY APPROACH                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ "Should we revert, adjust, or keep?"                                        │
+│   → Direction + magnitude of sentiment                                      │
+│   → Satisfaction scale + comparison to before                               │
+│                                                                             │
+│ "Which aspect is causing problems?"                                         │
+│   → Attribution to specific elements                                        │
+│   → Multi-item rating OR MaxDiff                                            │
+│                                                                             │
+│ "Is this hurting specific player types more?"                               │
+│   → Segment-level differences                                               │
+│   → Same questions, analyzed by segment                                     │
+│                                                                             │
+│ "What would players prefer instead?"                                        │
+│   → Alternative preferences                                                 │
+│   → Open-text OR preference ranking                                         │
+│                                                                             │
+│ "How urgent is this?"                                                       │
+│   → Behavioral intent (quit risk)                                           │
+│   → Continue-playing intent scale                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+EXERCISE: Write your business questions first. Each one becomes a research
+question that needs at least one survey question to answer it.
+
+
+================================================================================
+PHASE 2: MAP BUSINESS → RESEARCH → SURVEY → OUTPUT
+================================================================================
+
+Mental Model:
+
+    BUSINESS QUESTION (stakeholder needs to decide something)
+            ↓
+    RESEARCH QUESTION (what do we need to learn to inform that decision?)
+            ↓
+    SURVEY QUESTION(S) (what do we ask players to learn that?)
+            ↓
+    OUTPUT DATA (what metric/insight does each question produce?)
+
+--------------------------------------------------------------------------------
+EXAMPLE MAPPING
+--------------------------------------------------------------------------------
+
+Business Question: Should we revert the shotgun nerf?
+
+┌──────────────────────┬────────────────────────────┬─────────────────────────┐
+│ Research Question    │ Survey Question            │ Output Data             │
+├──────────────────────┼────────────────────────────┼─────────────────────────┤
+│ How do players feel? │ Satisfaction with changes  │ Mean score, % pos/neg   │
+│                      │ (1-5 scale)                │                         │
+├──────────────────────┼────────────────────────────┼─────────────────────────┤
+│ Which players most   │ Playstyle self-ID          │ Satisfaction BY segment │
+│ affected?            │                            │                         │
+├──────────────────────┼────────────────────────────┼─────────────────────────┤
+│ What's the problem?  │ Rate specific attributes   │ Attribute-level scores  │
+│                      │ (damage, fire rate, etc.)  │                         │
+├──────────────────────┼────────────────────────────┼─────────────────────────┤
+│ What would fix it?   │ Open text on changes       │ Coded themes, frequency │
+└──────────────────────┴────────────────────────────┴─────────────────────────┘
+
+
+================================================================================
+PHASE 3: CHOOSE QUESTION TYPE (DECISION TREE)
+================================================================================
+
+What do you need to learn?
+        │
+        ├── "How much?" (magnitude) ──────────────► SCALE (Likert, slider)
+        │       Output: Mean, distribution, % in ranges
+        │
+        ├── "Which one?" (choice) ────────────────► SINGLE-SELECT
+        │       Output: % choosing each, mode
+        │
+        ├── "Which ones?" (multiple) ─────────────► MULTI-SELECT
+        │       Output: % selecting each, co-occurrence
+        │
+        ├── "In what order?" (priority) ──────────► RANKING or MaxDiff
+        │       Output: Priority order, importance scores
+        │
+        ├── "What matters most?" (trade-offs) ───► MaxDiff or CONJOINT
+        │       Output: Relative importance, utility scores
+        │
+        ├── "Better or worse vs. before?" ───────► COMPARISON SCALE
+        │       Output: Direction of change perception
+        │
+        └── "Why? / What else?" (discovery) ─────► OPEN-ENDED
+                Output: Themes, quotes, unexpected insights
+
+
+================================================================================
+PHASE 4: QUESTION TYPE REFERENCE
+================================================================================
+
+--------------------------------------------------------------------------------
+TYPE 1: SATISFACTION SCALE (Likert)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You need to measure MAGNITUDE of feeling
+
+TEMPLATE:
+    "How satisfied are you with [specific thing]?"
+    
+    ○ Very dissatisfied (1)
+    ○ Dissatisfied (2)
+    ○ Neutral (3)
+    ○ Satisfied (4)
+    ○ Very satisfied (5)
+
+OUTPUT:
+    • Mean score — Overall sentiment (3.2 = slightly negative, 4.1 = positive)
+    • Distribution — Are opinions polarized or clustered?
+    • Top-2-Box (T2B) — % selecting 4 or 5 (industry standard for "positive")
+    • Bottom-2-Box (B2B) — % selecting 1 or 2 (your "problem" population)
+
+DESIGN DECISIONS:
+    ┌─────────────────────────┬──────────────────┬──────────────────────────┐
+    │ Choice                  │ Recommendation   │ Why                      │
+    ├─────────────────────────┼──────────────────┼──────────────────────────┤
+    │ 5-point vs 7-point      │ 5-point          │ Easier, sufficient       │
+    │ Include neutral?        │ Yes, always      │ Forcing = bias           │
+    │ Label all vs endpoints  │ Label all        │ Reduces ambiguity        │
+    └─────────────────────────┴──────────────────┴──────────────────────────┘
+
+
+--------------------------------------------------------------------------------
+TYPE 2: ATTRIBUTE MATRIX (Multi-Item Likert)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You need to diagnose WHICH ASPECT is driving overall sentiment
+
+TEMPLATE:
+    "Rate [Feature] on the following:"
+    
+                              Very Poor  Poor  Neutral  Good  Excellent
+    Fun to use                    ○       ○       ○       ○       ○
+    Balanced vs other options     ○       ○       ○       ○       ○
+    Visual/audio feedback         ○       ○       ○       ○       ○
+    Feels fair to play against    ○       ○       ○       ○       ○
+
+OUTPUT:
+    • Attribute-level scores — Which specific aspects are strong/weak
+    • Gap analysis — Which attributes have biggest gap from "Good"
+    • Driver analysis — Which attributes correlate with overall satisfaction
+
+DESIGN DECISIONS:
+    ┌─────────────────────────┬──────────────────┬──────────────────────────┐
+    │ Choice                  │ Recommendation   │ Why                      │
+    ├─────────────────────────┼──────────────────┼──────────────────────────┤
+    │ How many attributes?    │ 4-8 maximum      │ Survey fatigue           │
+    │ Which attributes?       │ Only actionable  │ Don't ask what you can't │
+    │                         │ ones             │ change                   │
+    │ Order                   │ Randomize        │ Prevents order bias      │
+    └─────────────────────────┴──────────────────┴──────────────────────────┘
+
+
+--------------------------------------------------------------------------------
+TYPE 3: COMPARISON TO BEFORE (Change Direction)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You made a change and need to know if it made things BETTER or WORSE
+
+TEMPLATE:
+    "Compared to BEFORE [the change], your experience is..."
+    
+    ○ Much worse
+    ○ Somewhat worse
+    ○ About the same
+    ○ Somewhat better
+    ○ Much better
+
+OUTPUT:
+    • Net improvement score — % better minus % worse
+    • Change magnitude — How dramatic is the perceived shift?
+    • Stability indicator — High "about the same" = change didn't register
+
+KEY INSIGHT:
+    Satisfaction tells you "how good is it NOW"
+    Comparison tells you "did the CHANGE help or hurt"
+    
+    A feature can have LOW satisfaction but show IMPROVEMENT (it was worse before)
+
+
+--------------------------------------------------------------------------------
+TYPE 4: SINGLE-SELECT (Forced Choice)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You need to identify the PRIMARY driver or MOST important thing
+
+TEMPLATE:
+    "What is the BIGGEST problem with [Feature]?"
+    
+    ○ Option A
+    ○ Option B
+    ○ Option C
+    ○ Option D
+    ○ No problems — it works well
+
+OUTPUT:
+    • Mode — The most common answer (where to focus)
+    • Distribution — How concentrated vs. dispersed are the problems
+    • Prioritization — Forces respondents to choose, reveals true priority
+
+DESIGN DECISIONS:
+    ┌─────────────────────────┬──────────────────┬──────────────────────────┐
+    │ Choice                  │ Recommendation   │ Why                      │
+    ├─────────────────────────┼──────────────────┼──────────────────────────┤
+    │ Include "none/other"?   │ Yes              │ Prevents false choice    │
+    │ How many options?       │ 4-7              │ Too many = overload      │
+    │ Mutually exclusive?     │ Must be          │ Each option distinct     │
+    └─────────────────────────┴──────────────────┴──────────────────────────┘
+
+
+--------------------------------------------------------------------------------
+TYPE 5: MULTI-SELECT (Check All That Apply)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You want to understand the BREADTH of issues/interests
+
+TEMPLATE:
+    "Which of these issues have you experienced?" (Select all that apply)
+    
+    □ Issue A
+    □ Issue B
+    □ Issue C
+    □ Issue D
+    □ None of the above
+
+OUTPUT:
+    • Frequency per option — % experiencing each issue
+    • Total issues per person — How widespread is multi-problem experience
+    • Co-occurrence — Which issues appear together (suggests common root cause)
+
+WARNING: Multi-select doesn't tell you IMPORTANCE. Someone might check 5 things
+but only really care about 1.
+
+
+--------------------------------------------------------------------------------
+TYPE 6: MaxDiff (Best-Worst Scaling)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You need TRUE PRIORITIZATION among 5+ options
+
+TEMPLATE:
+    "Of these changes, which had the MOST POSITIVE and MOST NEGATIVE impact?"
+    
+                            MOST NEGATIVE    MOST POSITIVE
+    Shotgun damage nerf          ○                ○
+    New POI additions            ○                ○
+    Vehicle speed buff           ○                ○
+    Storm circle changes         ○                ○
+    
+    (Repeated across multiple sets with different combinations)
+
+OUTPUT:
+    • Utility scores — True relative importance (not just frequency)
+    • Clear ranking — Discriminates even among closely-rated items
+    • Avoids "everything is important" — Forces trade-offs
+
+WHEN TO USE MaxDiff vs SIMPLE RANKING:
+    ┌────────────────────────────────────┬──────────────────┐
+    │ Situation                          │ Use              │
+    ├────────────────────────────────────┼──────────────────┤
+    │ 3-4 items                          │ Simple ranking   │
+    │ 5-8 items                          │ MaxDiff          │
+    │ 8+ items                           │ MaxDiff          │
+    │ Items vary widely in importance    │ MaxDiff          │
+    │ Quick pulse check                  │ Simple ranking   │
+    └────────────────────────────────────┴──────────────────┘
+
+
+--------------------------------------------------------------------------------
+TYPE 7: INTENT SCALE (Behavioral Prediction)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You need to predict FUTURE BEHAVIOR (will they keep playing? buy?)
+
+TEMPLATE:
+    "How likely are you to continue playing [Game] in the next month?"
+    
+    ○ Definitely will not
+    ○ Probably will not
+    ○ Might or might not
+    ○ Probably will
+    ○ Definitely will
+
+OUTPUT:
+    • Top-2-Box intent — % "Probably" + "Definitely" (retention prediction)
+    • At-risk population — % in bottom-2-box
+    • Urgency indicator — Low intent = urgent problem
+
+KEY INSIGHT: Intent questions predict behavior better than satisfaction.
+Someone can be dissatisfied but still plan to play (and vice versa).
+
+
+--------------------------------------------------------------------------------
+TYPE 8: OPEN-ENDED (Qualitative Discovery)
+--------------------------------------------------------------------------------
+
+WHEN TO USE: You don't know what you don't know; need unexpected insights
+
+TEMPLATE:
+    "In your own words, what would you change about [Feature]?"
+    
+    [Free text response]
+
+OUTPUT:
+    • Themes — Categories of feedback (coded by you or AI)
+    • Frequency — How often each theme appears
+    • Player language — Exact words they use (valuable for communication)
+    • Unexpected insights — Things you didn't think to ask about
+
+DESIGN DECISIONS:
+    ┌─────────────────────────┬──────────────────┬──────────────────────────┐
+    │ Choice                  │ Recommendation   │ Why                      │
+    ├─────────────────────────┼──────────────────┼──────────────────────────┤
+    │ Required vs optional    │ Optional         │ Required = junk          │
+    │ Placement               │ After closed Qs  │ Context primes thought   │
+    │ Character limit         │ 500-1000 chars   │ Enough, not rambling     │
+    └─────────────────────────┴──────────────────┴──────────────────────────┘
+
+
+================================================================================
+PHASE 5: SURVEY STRUCTURE — HOW SECTIONS CONNECT
+================================================================================
+
+A well-designed survey has a LOGICAL FLOW where each section builds on
+the previous:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SECTION 1: SCREENING / CONTEXT                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Purpose:   Confirm respondent is qualified; establish their context         │
+│ Questions: Playstyle, experience with feature, hours played recently        │
+│ Output:    Defines who is answering; enables segment analysis               │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SECTION 2: OVERALL SENTIMENT                                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Purpose:   Get topline satisfaction BEFORE diving into details              │
+│ Questions: Overall satisfaction, comparison to before                       │
+│ Output:    The headline number; answers "are players happy or not?"         │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SECTION 3: DIAGNOSTIC / ATTRIBUTION                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Purpose:   Understand WHY they feel that way                                │
+│ Questions: Attribute ratings, problem identification, MaxDiff               │
+│ Output:    What specifically is driving the overall sentiment               │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SECTION 4: BEHAVIORAL INTENT                                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Purpose:   Understand consequences of current sentiment                     │
+│ Questions: Continue playing intent, recommend intent (NPS)                  │
+│ Output:    Urgency indicator; predicts business impact                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SECTION 5: OPEN DISCOVERY                                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Purpose:   Capture what you didn't think to ask                             │
+│ Questions: Open-ended "what would you change"                               │
+│ Output:    Unexpected insights, player quotes, new themes                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SECTION 6: DEMOGRAPHICS / CLASSIFICATION (optional)                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Purpose:   Enable subgroup analysis                                         │
+│ Questions: Age, region, platform (if not from behavioral data)              │
+│ Output:    Allows segment comparisons in analysis                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+PHASE 6: DESIGN REVIEW CHECKLIST
+================================================================================
+
+Before finalizing your survey, validate against this checklist:
+
+--------------------------------------------------------------------------------
+FOR EACH QUESTION:
+--------------------------------------------------------------------------------
+
+□ NECESSARY
+  "What decision does this question inform? If I remove it, what do I lose?"
+
+□ ANSWERABLE
+  "Can respondents realistically answer this? Do they have the knowledge?"
+
+□ UNAMBIGUOUS
+  "Is there only ONE way to interpret this question?"
+
+□ ACTIONABLE
+  "If I get this answer, can we do something with it?"
+
+□ NON-LEADING
+  "Am I pushing them toward a particular answer?"
+
+--------------------------------------------------------------------------------
+FOR THE SURVEY AS A WHOLE:
+--------------------------------------------------------------------------------
+
+□ COMPLETE
+  "Does every research question have at least one survey question?"
+
+□ CONCISE
+  "Is every question earning its place? (target: 5-12 questions max)"
+
+□ LOGICAL FLOW
+  "Does each section naturally lead to the next?"
+
+□ BALANCED
+  "Are positive and negative response options equal?"
+
+
+================================================================================
+PHASE 7: OUTPUT MAP — WHAT YOU'LL LEARN
+================================================================================
+
+Create this map BEFORE you launch:
+
+┌───────────┬─────────────────┬──────────────────┬────────────────────────────┐
+│ Question  │ Output Metric   │ How Calculated   │ Answers Business Question  │
+├───────────┼─────────────────┼──────────────────┼────────────────────────────┤
+│ Q1: Sat.  │ Mean (1-5),     │ Average; % 4-5   │ "Are players happy with    │
+│           │ T2B%            │                  │ the change?"               │
+├───────────┼─────────────────┼──────────────────┼────────────────────────────┤
+│ Q2: Comp. │ Net change      │ % better -       │ "Did the change help?"     │
+│           │ score           │ % worse          │                            │
+├───────────┼─────────────────┼──────────────────┼────────────────────────────┤
+│ Q3: Attr. │ Attribute       │ Mean per         │ "Which aspect is the       │
+│           │ scores          │ attribute        │ problem?"                  │
+├───────────┼─────────────────┼──────────────────┼────────────────────────────┤
+│ Q4: Prob. │ Problem         │ % selecting      │ "Where should we focus?"   │
+│           │ frequency       │ each             │                            │
+├───────────┼─────────────────┼──────────────────┼────────────────────────────┤
+│ Q5: Int.  │ T2B intent      │ % prob +         │ "Will players keep         │
+│           │                 │ definitely       │ playing?"                  │
+├───────────┼─────────────────┼──────────────────┼────────────────────────────┤
+│ Q6: Open  │ Theme           │ Code and count   │ "What are we missing?"     │
+│           │ frequencies     │                  │                            │
+└───────────┴─────────────────┴──────────────────┴────────────────────────────┘
+
+
+================================================================================
+EXAMPLE: FULL DESIGN FOR FEATURE FEEDBACK
+================================================================================
+
+BUSINESS QUESTION: "Should we adjust, remove, or keep the new Thunder Shotgun?"
+
+┌─────┬────────────────────────────┬──────────────┬─────────────────────────────┐
+│ RQ  │ Survey Question            │ Type         │ Output → Informs            │
+├─────┼────────────────────────────┼──────────────┼─────────────────────────────┤
+│ RQ1 │ "How satisfied are you     │ Likert (1-5) │ Mean: 3.2, T2B: 38%         │
+│     │ with the Thunder Shotgun?" │              │ → Overall direction         │
+├─────┼────────────────────────────┼──────────────┼─────────────────────────────┤
+│ RQ2 │ "Compared to other         │ Comparison   │ Net: -12%                   │
+│     │ shotguns, Thunder is..."   │              │ → Relative positioning      │
+├─────┼────────────────────────────┼──────────────┼─────────────────────────────┤
+│ RQ3 │ "Rate on: damage, fire     │ Attribute    │ Damage: 2.1, Balance: 2.3   │
+│     │ rate, balance, fun"        │ matrix       │ → Where to fix              │
+├─────┼────────────────────────────┼──────────────┼─────────────────────────────┤
+│ RQ4 │ "How likely to continue    │ Intent (1-5) │ T2B: 67%                    │
+│     │ if Thunder stays as is?"   │              │ → Urgency                   │
+├─────┼────────────────────────────┼──────────────┼─────────────────────────────┤
+│ RQ5 │ "In your own words, what   │ Open-ended   │ "range damage" (34%)        │
+│     │ would improve it?"         │              │ → Specific fixes            │
+└─────┴────────────────────────────┴──────────────┴─────────────────────────────┘
+
+SUMMARY STATEMENT (written after analysis):
+
+    "38% of players are satisfied with the Thunder Shotgun (below our 50%
+    target). The main issues are perceived imbalance (2.3/5) and damage
+    tuning (2.1/5). 34% of open-text comments mention 'range damage' as
+    the specific problem. Despite dissatisfaction, 67% still intend to
+    keep playing, suggesting this is important but not urgent."
+
+
+================================================================================
+QUICK REFERENCE: QUESTION TYPE SELECTION
+================================================================================
+
+┌────────────────────────────────┬─────────────────────────────────────────────┐
+│ If you need to know...         │ Use this question type                      │
+├────────────────────────────────┼─────────────────────────────────────────────┤
+│ How satisfied overall          │ Likert scale (1-5)                          │
+│ What specifically is good/bad  │ Attribute matrix                            │
+│ Better or worse than before    │ Comparison scale                            │
+│ The single biggest issue       │ Single-select                               │
+│ All issues they've experienced │ Multi-select                                │
+│ True priority among many items │ MaxDiff                                     │
+│ Will they keep playing/buying  │ Intent scale                                │
+│ What you didn't think to ask   │ Open-ended                                  │
+│ Which option they'd prefer     │ Preference / Conjoint                       │
+└────────────────────────────────┴─────────────────────────────────────────────┘
+
+
+================================================================================
+METRICS GLOSSARY
+================================================================================
+
+Mean Score
+    Average of all responses on a scale (e.g., 3.2 out of 5)
+    Interpretation: <3.0 = negative, 3.0-3.5 = neutral, >3.5 = positive
+
+Top-2-Box (T2B)
+    Percentage selecting the top 2 options (e.g., 4 or 5 on 5-point scale)
+    Industry standard for "positive" sentiment
+
+Bottom-2-Box (B2B)
+    Percentage selecting bottom 2 options
+    Your "problem" population
+
+Net Score
+    % positive minus % negative (e.g., NPS, Net Improvement)
+    Range: -100 to +100
+
+Mode
+    Most frequently selected answer
+    Useful for single-select questions
+
+Distribution
+    How spread out responses are
+    Shows if opinions are unified or polarized
+
+Utility Score (MaxDiff)
+    Relative importance value from MaxDiff analysis
+    Higher = more important; enables true ranking
+
+
+================================================================================
+END OF FRAMEWORK
+================================================================================
+
